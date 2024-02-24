@@ -14,7 +14,6 @@ def build_graph():
 
     # TODO : Build university graph
 
-
     # Build Courses graph
     with open("data/CATALOG.csv", "r") as csvfile:
         reader = csv.DictReader(csvfile)
