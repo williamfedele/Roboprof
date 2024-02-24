@@ -5,8 +5,8 @@ teach deep learning?”
 
 
 ## Initial Setup
-- Create conda environment using this command `conda env create -f environment.yml`
-- Run `conda activate roboprof`
+- Ensure you have Poetry set up on your computer
+- After cloning the repo, run `poetry shell` then `poetry install`
 - Run `python main.py`, you should expect to see output/graph.ttl created
 
 

@@ -6,7 +6,7 @@ authors = ["Malek Jerbi <malek.jerbi@gmail.Com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 rdflib = "^7.0.0"
 black = "^24.2.0"
 
