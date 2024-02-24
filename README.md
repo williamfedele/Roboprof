@@ -11,7 +11,7 @@ teach deep learning?”
 
 
 ## During development
-- Upon adding new dependencies, make sure to run `conda env export > environment.yml` to update our environment file
+- Use `poetry add ...` for installing a new package
 - Don't forget to update the this README file when appropriate
 
 ## Project structure
