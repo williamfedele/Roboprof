@@ -1,22 +1,28 @@
 import csv
-from rdflib import Graph, Literal, RDF, URIRef
+from rdflib import Graph, Literal, RDF, URIRef, Namespace
 from rdflib.namespace import FOAF, XSD
 import os
 
 
+# TODO: figure out what to use instead of example
+EXAMPLE = Namespace("http://example.org/")
+WIKIDATA = Namespace("http://www.wikidata.org/entity/")
+
 def build_graph():
     g = Graph()
+    g.bind("foaf", FOAF)
 
-    # define namespace
-    ns = URIRef("http://concordia.org/courses/")
+    # TODO : Build university graph
 
+
+    # Build Courses graph
     with open("data/CATALOG.csv", "r") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            course_uri = ns + row["Key"]
+            course_key = row["Key"]
 
-            # Add triples using the course URI
-            g.add((course_uri, FOAF.name, Literal(row["Title"], datatype=XSD.string)))
+            # TODO: find a better namespace that FOAF for name of an object
+            g.add((URIRef(EXAMPLE[course_key]), FOAF.name, Literal(row["Title"], datatype=XSD.string)))
             # ... add more properties
 
     output_dir = "output"
