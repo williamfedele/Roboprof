@@ -14,6 +14,17 @@ def build_graph():
 
     # TODO : Build university graph
 
+
+# building a course : needs to look like this :
+# focudata:COMP474
+#   a focu:Course ;
+#   rdfs:label "Course"@en ;
+#   focu:courseName "Intelligent Systems" ;
+#   focu:courseSubject "COMP" ;
+#   focu:courseNumber "474"^^xsd:integer ;
+#   focu:courseCredits "4"^^xsd:integer ;
+#   focu:courseDescription "Description of the course" ;
+#   focu:courseOutlineLink "Outline link" .
     # Build Courses graph
     with open("data/CATALOG.csv", "r") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -28,4 +39,5 @@ def build_graph():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    g.serialize(destination="output/graph.ttl", format="ntriples")
+    g.serialize(destination="output/ntriples.ttl", format="ntriples")
+    g.serialize(destination="output/turtles.ttl", format="turtle")

@@ -1,0 +1,107 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix focu: <http://focu.io/schema#> .
+@prefix focudata: <http://focu.io/data#> .
+
+# == Student == #
+focu:Student
+  a rdfs:Class ;
+  rdfs:subClassOf foaf:Person ;
+  rdfs:label "Student"@en .
+
+
+focu:studentId
+  a rdf:Property ;
+  rdfs:label "student ID"@en ;
+  rdfs:comment "Unique identifier for a student."@en ;
+  rdfs:domain focu:Student ;
+  rdfs:range xsd:string .
+
+focudata:william
+    a focu:Student ;
+    focu:studentId "S123456789";
+    foaf:firstName "William";
+    foaf:lastName "Fedele";
+    foaf:age "24"^^xsd:integer;
+    foaf:mbox "email@email.com";
+    focu:enrolledAt focudata:cu .
+
+focu:completedCourse
+  a rdf:Property ;
+  rdfs:label "completed the course"@en ;
+  rdfs:comment "Student completed course."@en ;
+  rdfs:domain focu:Student ;
+  rdfs:range focu:Course .
+
+# == Course == #
+
+focu:Course
+  a rdfs:Class ;
+  foaf:name xsd:string .
+
+
+# == University == #
+
+focu:University
+  a rdfs:Class ;
+  rdfs:subClassOf foaf:Organization ;
+  rdfs:seeAlso xsd:string ;
+  rdfs:label "University"@en .
+
+
+focudata:Concordia
+  a focu:University ;
+  rdfs:label "Concordia University" ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Concordia_University> .
+  
+
+# == Course == #
+focu:Course
+  a rdfs:Class ;
+  rdfs:label "Course"@en ;
+  rdfs:comment "Represents a course offered by a university."@en .
+
+# Course Properties
+focu:courseName
+  a rdf:Property ;
+  rdfs:label "course name"@en ;
+  rdfs:comment "The name of the course."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range xsd:string .
+
+focu:courseSubject
+  a rdf:Property ;
+  rdfs:label "course subject"@en ;
+  rdfs:comment "The subject area of the course, e.g., COMP, SOEN."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range xsd:string .
+
+focu:courseNumber
+  a rdf:Property ;
+  rdfs:label "course number"@en ;
+  rdfs:comment "The course number."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range xsd:integer .
+
+focu:courseCredits
+  a rdf:Property ;
+  rdfs:label "course credits"@en ;
+  rdfs:comment "Number of credits for the course."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range xsd:integer .
+
+focu:courseDescription
+  a rdf:Property ;
+  rdfs:label "course description"@en ;
+  rdfs:comment "Description of the course content."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range xsd:string .
+
+focu:courseOutlineLink
+  a rdf:Property ;
+  rdfs:label "course outline link"@en ;
+  rdfs:comment "A link to the course outline, if available."@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range rdfs:Resource .
