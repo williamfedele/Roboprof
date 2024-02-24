@@ -6,7 +6,7 @@ teach deep learning?”
 
 ## Initial Setup
 - Ensure you have Poetry set up on your computer
-- After cloning the repo, run `poetry shell` then `poetry install`
+- After cloning the repo, run `poetry install` then `poetry shell`
 - Run `python main.py`, you should expect to see output/graph.ttl created
 
 
