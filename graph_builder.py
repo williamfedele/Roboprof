@@ -23,12 +23,13 @@ def build_graph():
 
     # Build Courses graph
     for index, row in df_courses.iterrows():
-        # NOTE: we're using the key as the URI. could be more interesting to use
-        # the code+number (so COMP474) since that's also unique
-        course_uri = FOCUDATA[row["Key"]]
         code = row["Course code"].strip()
-        number = row["Course number"].strip()
+        number = row["Course number"].strip().split(" ")[0]
+        if code == "" or number == "":
+            continue
 
+        #course_uri = FOCUDATA[row["Key"]]
+        course_uri = FOCUDATA[f"{code}_{number}"]
         title = row["Title"]
         description = row["Description"]
         credits = None
@@ -55,5 +56,5 @@ def build_graph():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    g_final.serialize(destination="output/ntriples.ttl", format="ntriples")
+    g_final.serialize(destination="output/ntriples.nt", format="ntriples")
     g_final.serialize(destination="output/turtles.ttl", format="turtle")
