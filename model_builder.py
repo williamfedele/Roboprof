@@ -27,11 +27,11 @@ CONTENT_PATH = "./content"
 FOCU = Namespace("http://focu.io/schema#")
 FOCUDATA = Namespace("http://focu.io/data#")
 
-g = Graph()
-g.bind("focu", FOCU)
-g.bind("focudata", FOCUDATA)
-
 def build_lectures():
+
+    g = Graph()
+    g.bind("focu", FOCU)
+    g.bind("focudata", FOCUDATA)
 
     courses = os.listdir(CONTENT_PATH)
     for course in courses:
@@ -88,6 +88,7 @@ def build_lectures():
                 g.add((lec_uri, FOCU.hasContent, content_uri))
 
     g.serialize(destination="output/lectures.ttl", format="turtle")
+    return g
 
 if __name__ == "__main__":
     build_lectures()
