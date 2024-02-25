@@ -14,6 +14,9 @@ df_course_components = pd.read_csv("data/CU_SR_OPEN_DATA_CATALOG.csv", encoding=
 
 
 def build_graph():
+    g_model = Graph()
+    g_model.parse("model.ttl")
+
     g = Graph()
     g.bind("focu", FOCU)
     g.bind("focudata", FOCUDATA)
@@ -46,9 +49,11 @@ def build_graph():
             g.add((course_uri, FOCU.courseCredits, Literal(credits, datatype=XSD.float)))
         g.add((course_uri, FOCU.courseDescription, Literal(description)))
 
+    g_final = g_model + g
+
     output_dir = "output"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    g.serialize(destination="output/ntriples.ttl", format="ntriples")
-    g.serialize(destination="output/turtles.ttl", format="turtle")
+    g_final.serialize(destination="output/ntriples.ttl", format="ntriples")
+    g_final.serialize(destination="output/turtles.ttl", format="turtle")
