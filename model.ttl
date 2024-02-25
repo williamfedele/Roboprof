@@ -131,6 +131,13 @@ focu:lectureNumber
   rdfs:domain focu:Lecture ;
   rdfs:range xsd:integer .
 
+focu:hasContent
+  a rdf:Property ;
+  rdfs:label "lecture content property"@en ;
+  rdfs:comment "Connect lecture with content."@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range Focu:Content .
+
 focu:Content 
   a rdf:Class ;
   rdfs:label "lecture content"@en ;
@@ -165,104 +172,7 @@ focu:lectureBelongsTo
 
 focu:contentLink
   a rdf:Property ;
-  rdfs:label "lecture connection to course"@en ;
-  rdfs:comment "A connection between a lecture and a course"@en ;
+  rdfs:label "Lecture content link"@en ;
+  rdfs:comment "A connection between some content and the corresponding link."@en ;
   rdfs:domain focu:Content ;
   rdfs:range rdfs:Resource .
-
-focudata:COMP_474_6741_Slide1
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides01.pdf> .
-  
-focudata:COMP_474_6741_Slide2
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides02.pdf> .
-
-focudata:COMP_474_6741_Slide3
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides03.pdf> .
-
-focudata:COMP_474_6741_Slide4
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides04.pdf> .
-
-focudata:COMP_474_6741_Slide5
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides05.pdf> .
-
-focudata:COMP_474_6741_Slide6
-  a focu:Slide ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/slides06.pdf> .
-
-focudata:COMP_474_6741_Worksheet1
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet01.pdf> .
-  
-focudata:COMP_474_6741_Worksheet2
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet02.pdf> .
-
-focudata:COMP_474_6741_Worksheet3
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet03.pdf> .
-
-focudata:COMP_474_6741_Worksheet4
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet04.pdf> .
-
-focudata:COMP_474_6741_Worksheet5
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet05.pdf> .
-
-focudata:COMP_474_6741_Worksheet6
-  a focu:Worksheet ;
-  focu:contentLink <Roboprof/COMP_474_6741/lecture1/worksheet06.pdf> .
-
-# TODO Add mandatory readings for each lecture
-
-focudata:COMP_474_6741_Lecture1
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "1"^^xsd:integer ;
-  focu:lectureName "Introduction to Intelligent Systems" ;
-  focu:Slide focudata:COMP_474_6741_Slide1 .
-  
-focudata:COMP_474_6741_Lecture2
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "2"^^xsd:integer ;
-  focu:lectureName "Knowledge Graphs" ;
-  focu:Slide focudata:COMP_474_6741_Slide2 ;
-  focu:Worksheet focudata:COMP_474_6741_Worksheet1 .
-
-focudata:COMP_474_6741_Lecture3
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "3"^^xsd:integer ;
-  focu:lectureName "Knowledge Graphs: Vocabularies & Ontologies" ;
-  focu:Slide focudata:COMP_474_6741_Slide3 ;
-  focu:Worksheet focudata:COMP_474_6741_Worksheet2 .
-
-focudata:COMP_474_6741_Lecture4
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "4"^^xsd:integer ;
-  focu:lectureName "Knowledge Base Queries" ;
-  focu:Slide focudata:COMP_474_6741_Slide4 ;
-  focu:Worksheet focudata:COMP_474_6741_Worksheet3 .
-
-focudata:COMP_474_6741_Lecture5
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "5"^^xsd:integer ;
-  focu:lectureName "Recommender Systems" ;
-  focu:Slide focudata:COMP_474_6741_Slide5 ;
-  focu:Worksheet focudata:COMP_474_6741_Worksheet4 .
-
-focudata:COMP_474_6741_Lecture6
-  a focu:Lecture ;
-  focu:lectureBelongsTo focudata:COMP_474, focudata:COMP_6741 ;
-  focu:lectureNumber "6"^^xsd:integer ;
-  focu:lectureName "Introduction to Machine Learning for Intelligent Systems" ;
-  focu:Slide focudata:COMP_474_6741_Slide6 ;
-  focu:Worksheet focudata:COMP_474_6741_Worksheet5 .
