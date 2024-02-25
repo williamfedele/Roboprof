@@ -42,7 +42,6 @@ def build_graph():
             credits = course_component.iloc[0]
 
         g.add((course_uri, RDF.type, FOCU.Course))
-        # g.add((course_uri, RDFS.label, Literal("Course", lang="en"))) # TODO: do we need this?
         g.add((course_uri, FOCU.courseName, Literal(title)))
         g.add((course_uri, FOCU.courseSubject, Literal(code)))
         g.add((course_uri, FOCU.courseNumber, Literal((number))))
