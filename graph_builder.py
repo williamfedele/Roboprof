@@ -1,39 +1,50 @@
 import csv
 from rdflib import Graph, Literal, RDF, URIRef, Namespace
-from rdflib.namespace import FOAF, XSD
+from rdflib.namespace import FOAF, XSD, RDFS
 import os
+import pandas as pd
 
+FOCU = Namespace("http://focu.io/schema#")
+FOCUDATA = Namespace("http://focu.io/data#")
 
-# TODO: figure out what to use instead of example
-EXAMPLE = Namespace("http://example.org/")
-WIKIDATA = Namespace("http://www.wikidata.org/entity/")
+df_courses = pd.read_csv("data/CATALOG.csv")
+# NOTE: we are completely ignoring the rows that don't have a course code or course number
+df_courses = df_courses.dropna(subset=["Course code", "Course number"])
+df_course_components = pd.read_csv("data/CU_SR_OPEN_DATA_CATALOG.csv", encoding="utf-16")
+
 
 def build_graph():
     g = Graph()
-    g.bind("foaf", FOAF)
+    g.bind("focu", FOCU)
+    g.bind("focudata", FOCUDATA)
 
-    # TODO : Build university graph
-
-
-# building a course : needs to look like this :
-# focudata:COMP474
-#   a focu:Course ;
-#   rdfs:label "Course"@en ;
-#   focu:courseName "Intelligent Systems" ;
-#   focu:courseSubject "COMP" ;
-#   focu:courseNumber "474"^^xsd:integer ;
-#   focu:courseCredits "4"^^xsd:integer ;
-#   focu:courseDescription "Description of the course" ;
-#   focu:courseOutlineLink "Outline link" .
     # Build Courses graph
-    with open("data/CATALOG.csv", "r") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            course_key = row["Key"]
+    for index, row in df_courses.iterrows():
+        # NOTE: we're using the key as the URI. could be more interesting to use
+        # the code+number (so COMP474) since that's also unique
+        course_uri = FOCUDATA[row["Key"]]
+        code = row["Course code"].strip()
+        number = row["Course number"].strip()
 
-            # TODO: find a better namespace that FOAF for name of an object
-            g.add((URIRef(EXAMPLE[course_key]), FOAF.name, Literal(row["Title"], datatype=XSD.string)))
-            # ... add more properties
+        title = row["Title"]
+        description = row["Description"]
+        credits = None
+
+        # NOTE: this could be optimized by merging the two dataframes at init
+        course_component = df_course_components[
+            (df_course_components["Subject"] == code) & (df_course_components["Catalog"] == number)
+        ]["Class Units"]
+        if not course_component.empty:
+            credits = course_component.iloc[0]
+
+        g.add((course_uri, RDF.type, FOCU.Course))
+        # g.add((course_uri, RDFS.label, Literal("Course", lang="en"))) # TODO: do we need this?
+        g.add((course_uri, FOCU.courseName, Literal(title)))
+        g.add((course_uri, FOCU.courseSubject, Literal(code)))
+        g.add((course_uri, FOCU.courseNumber, Literal((number))))
+        if credits:
+            g.add((course_uri, FOCU.courseCredits, Literal(credits, datatype=XSD.float)))
+        g.add((course_uri, FOCU.courseDescription, Literal(description)))
 
     output_dir = "output"
     if not os.path.exists(output_dir):
