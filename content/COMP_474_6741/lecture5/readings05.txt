@@ -1,0 +1,3 @@
+Collective Intelligence in Action,Satnam Alag,Chapter 2
+Collective Intelligence in Action,Satnam Alag,Chapter 3
+Introduction to Information Retrieval,Christopher D. Manning,Prabhakar Raghavan,Hinrich Schütze, Chapter 8

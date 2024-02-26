@@ -158,6 +158,13 @@ focu:Reading
   rdfs:label "worksheet lecture content"@en ;
   rdfs:comment "Represents a reading lecture content."@en .
 
+focu:readingDescription
+  a rdf:Property ;
+  rdfs:label "Reading description"@en ;
+  rdfs:comment "The details of an assigned lecture reading"@en ;
+  rdfs:domain focu:Reading ;
+  rdfs:range xsd:string .
+
 focu:OtherContent
   a focu:Content ;
   rdfs:label "worksheet lecture content"@en ;

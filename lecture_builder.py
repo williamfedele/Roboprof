@@ -13,12 +13,14 @@ Each course folder contains lecture folders in the format lecture{i} where 'i' i
 Each lecture folder contains some type of content such as:
     slidesXX.pdf
     worksheetXX.pdf
-    readingXX.pdf
+    readingsXX.pdf
     otherXX.pdf
 
 XX values should be distinct for URI usage.
 
 name.txt file contains the name of the lecture on the first line. Ex: Knowledge Graphs
+readingsXX.txt should contain one reading per line
+
 """
 
 
@@ -60,33 +62,43 @@ def build_lectures():
             content = os.listdir(content_path)
             for c in content:
 
+                # remove file extensions
+                fileName = c.split(".")[0]
+
                 # the lecture name is stored in a name.txt file
                 if c == "name.txt":
                     with open(f"{content_path}/name.txt", "r") as file:
                         lec_name = file.readline().strip()
                         g.add((lec_uri, FOCU.lectureName, Literal(lec_name)))
                     continue
+                elif "readings" in c.lower():
+                    # create multiple reading objects for each line of the readingsXX.txt file
+                    with open(f"{content_path}/{c}", "r") as file:
+                        for line_num, line in enumerate(file, 1):
+                            content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}_{line_num}"]
 
-                # remove file extensions
-                fileName = c.split(".")[0]
-                content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]
-
-                g.add((content_uri, FOCU.contentLink, FOCUDATA[f"{course}_{lecture}_{c}"]))
-
-                # extract the type of lecture content from the name of the file.
-                type = None
-                if "slides" in c.lower():
-                    type = FOCU.Slide
-                elif "worksheet" in c.lower():
-                    type = FOCU.Worksheet
-                elif "reading" in c.lower():
-                    type = FOCU.Reading
+                            g.add((content_uri, RDF.type, FOCU.Reading))
+                            g.add((content_uri, FOCU.readingDescription, Literal(line.strip())))
+                            g.add((lec_uri, FOCU.hasContent, content_uri))
+                    continue
                 else:
-                    type = FOCU.OtherContent
+                    content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]
+                    content_link = f"{content_path}/{c}"  # relative path to the file
 
-                # finalize content and connect it to the current lecture
-                g.add((content_uri, RDF.type, type))
-                g.add((lec_uri, FOCU.hasContent, content_uri))
+                    g.add((content_uri, FOCU.contentLink, Literal(content_link)))
+
+                    # extract the type of lecture content from the name of the file.
+                    type = None
+                    if "slides" in c.lower():
+                        type = FOCU.Slide
+                    elif "worksheet" in c.lower():
+                        type = FOCU.Worksheet
+                    else:
+                        type = FOCU.OtherContent
+
+                    # finalize content and connect it to the current lecture
+                    g.add((content_uri, RDF.type, type))
+                    g.add((lec_uri, FOCU.hasContent, content_uri))
 
     g.serialize(destination="output/lectures.ttl", format="turtle")
     return g
