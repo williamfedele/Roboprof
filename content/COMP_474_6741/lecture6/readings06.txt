@@ -1,0 +1,3 @@
+Introduction to Machine Learning with Python,Andreas C Müller,Sarah Guido,Chapter 2
+Introduction to Machine Learning with Python,Andreas C Müller,Sarah Guido,Chapter 3
+Introduction to Machine Learning with Python,Andreas C Müller,Sarah Guido,Chapter 5

@@ -9,7 +9,8 @@
 focu:Student
   a rdfs:Class ;
   rdfs:subClassOf foaf:Person ;
-  rdfs:label "Student"@en .
+  rdfs:label "Student"@en ;
+  rdfs:comment "Represents a student."@en .
 
 
 focu:studentId
@@ -39,7 +40,9 @@ focu:completedCourse
 
 focu:Course
   a rdfs:Class ;
-  foaf:name xsd:string .
+  foaf:name xsd:string ;
+  rdfs:label "Course"@en ;
+  rdfs:comment "Represents a course."@en .
 
 
 # == University == #
@@ -48,7 +51,8 @@ focu:University
   a rdfs:Class ;
   rdfs:subClassOf foaf:Organization ;
   rdfs:seeAlso xsd:string ;
-  rdfs:label "University"@en .
+  rdfs:label "University"@en ;
+  rdfs:comment "Represents a university."@en .
 
 
 focudata:Concordia
@@ -104,4 +108,78 @@ focu:courseOutlineLink
   rdfs:label "course outline link"@en ;
   rdfs:comment "A link to the course outline, if available."@en ;
   rdfs:domain focu:Course ;
+  rdfs:range rdfs:Resource .
+
+# == Lecture == #
+
+focu:Lecture
+  a rdf:Class ;
+  rdfs:label "lecture"@en ;
+  rdfs:comment "Represents a lecture."@en .
+
+focu:lectureName
+  a rdf:Property ;
+  rdfs:label "lecture name"@en ;
+  rdfs:comment "The name of the lecture."@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range xsd:string .
+
+focu:lectureNumber
+  a rdf:Property ;
+  rdfs:label "lecture number"@en ;
+  rdfs:comment "The lecture number."@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range xsd:integer .
+
+focu:hasContent
+  a rdf:Property ;
+  rdfs:label "lecture content property"@en ;
+  rdfs:comment "Connect lecture with content."@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range Focu:Content .
+
+focu:Content 
+  a rdf:Class ;
+  rdfs:label "lecture content"@en ;
+  rdfs:comment "Represents any kind of lecture content."@en .
+
+focu:Slide
+  a focu:Content ;
+  rdfs:label "slide lecture content"@en ;
+  rdfs:comment "Represents a slide lecture content."@en .
+
+focu:Worksheet
+  a focu:Content ;
+  rdfs:label "worksheet lecture content"@en ;
+  rdfs:comment "Represents a worksheet lecture content."@en .
+  
+focu:Reading
+  a focu:Content ;
+  rdfs:label "worksheet lecture content"@en ;
+  rdfs:comment "Represents a reading lecture content."@en .
+
+focu:readingDescription
+  a rdf:Property ;
+  rdfs:label "Reading description"@en ;
+  rdfs:comment "The details of an assigned lecture reading"@en ;
+  rdfs:domain focu:Reading ;
+  rdfs:range xsd:string .
+
+focu:OtherContent
+  a focu:Content ;
+  rdfs:label "worksheet lecture content"@en ;
+  rdfs:comment "Represents unnamed lecture content."@en .
+
+focu:lectureBelongsTo
+  a rdf:Property ;
+  rdfs:label "lecture connection to course"@en ;
+  rdfs:comment "A connection between a lecture and a course"@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range focu:Course .
+
+focu:contentLink
+  a rdf:Property ;
+  rdfs:label "Lecture content link"@en ;
+  rdfs:comment "A connection between some content and the corresponding link."@en ;
+  rdfs:domain focu:Content ;
   rdfs:range rdfs:Resource .
