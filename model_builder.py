@@ -27,6 +27,7 @@ CONTENT_PATH = "./content"
 FOCU = Namespace("http://focu.io/schema#")
 FOCUDATA = Namespace("http://focu.io/data#")
 
+
 def build_lectures():
 
     g = Graph()
@@ -52,7 +53,7 @@ def build_lectures():
             g.add((lec_uri, RDF.type, FOCU.Lecture))
 
             # extract the lecture number
-            lec_num = lecture[len("Lecture"):]
+            lec_num = lecture[len("lecture") :]
             g.add((lec_uri, FOCU.lectureNumber, Literal(lec_num, datatype=XSD.integer)))
 
             content_path = f"{CONTENT_PATH}/{course}/{lecture}"
@@ -61,7 +62,7 @@ def build_lectures():
 
                 # the lecture name is stored in a name.txt file
                 if c == "name.txt":
-                    with open(f"{content_path}/name.txt", 'r') as file:
+                    with open(f"{content_path}/name.txt", "r") as file:
                         lec_name = file.readline().strip()
                         g.add((lec_uri, FOCU.lectureName, Literal(lec_name)))
                     continue
@@ -82,13 +83,14 @@ def build_lectures():
                     type = FOCU.Reading
                 else:
                     type = FOCU.OtherContent
-                    
+
                 # finalize content and connect it to the current lecture
                 g.add((content_uri, RDF.type, type))
                 g.add((lec_uri, FOCU.hasContent, content_uri))
 
     g.serialize(destination="output/lectures.ttl", format="turtle")
     return g
+
 
 if __name__ == "__main__":
     build_lectures()
