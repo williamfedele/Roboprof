@@ -1,8 +1,9 @@
 import os
-from rdflib import Graph, Namespace
+from rdflib import Graph, RDF, RDFS, Literal, URIRef
 from course_builder import build_courses
 from lecture_builder import build_lectures
 from constants import FOCU, FOCUDATA, VIVO
+
 
 
 
@@ -13,6 +14,9 @@ def build_graph():
     g_model.bind("focudata", FOCUDATA)
     g_model.bind("vivo", VIVO)
 
+    g_model.add((FOCUDATA.Concordia, RDF.type, VIVO.University))
+    g_model.add((FOCUDATA.Concordia, RDFS.label, Literal("Concordia University")))
+    g_model.add((FOCUDATA.Concordia, RDFS.seeAlso, URIRef("http://dbpedia.org/resource/Concordia_University")))
 
     g_courses = build_courses()
     g_lectures = build_lectures()

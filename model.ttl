@@ -37,22 +37,6 @@ focu:completedCourse
   rdfs:domain focu:Student ;
   rdfs:range vivo:Course .
 
-
-# == University == #
-
-focu:University
-  a rdfs:Class ;
-  rdfs:subClassOf foaf:Organization ;
-  rdfs:seeAlso xsd:string ;
-  rdfs:label "University"@en ;
-  rdfs:comment "Represents a university."@en .
-
-
-# TODO: replace by vivo
-focudata:Concordia # do this in python instead ?
-  a focu:University ;
-  rdfs:label "Concordia University" ;
-  rdfs:seeAlso <http://dbpedia.org/resource/Concordia_University> .
   
 
 # Course Properties
