@@ -1,11 +1,9 @@
-from rdflib import Graph, Literal, RDF, URIRef, Namespace
-from rdflib.namespace import FOAF, XSD, RDFS
+from rdflib import Graph, Literal, RDF
+from rdflib.namespace import XSD
 import pandas as pd
+from constants import FOCU, FOCUDATA, VIVO
 
 
-FOCU = Namespace("http://focu.io/schema#")
-FOCUDATA = Namespace("http://focu.io/data#")
-VIVO = Namespace("http://vivoweb.org/ontology/core#")
 
 df_courses = pd.read_csv("data/CATALOG.csv")
 # NOTE: we are completely ignoring the rows that don't have a course code or course number
@@ -15,9 +13,6 @@ df_course_components = pd.read_csv("data/CU_SR_OPEN_DATA_CATALOG.csv", encoding=
 
 def build_courses(university : str = "Concordia"):
     g = Graph()
-    g.bind("focu", FOCU)
-    g.bind("focudata", FOCUDATA)
-    g.bind("vivo", VIVO)
 
     # Build Courses graph
     for index, row in df_courses.iterrows():

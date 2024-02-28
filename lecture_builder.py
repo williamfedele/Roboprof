@@ -1,7 +1,7 @@
-from rdflib import Graph, Namespace, RDF, Literal
+from rdflib import Graph, RDF, Literal
 from rdflib.namespace import XSD
 import os
-
+from constants import FOCU, FOCUDATA
 
 """
 Fully automated lecture and lecture content generation.
@@ -26,15 +26,11 @@ readingsXX.txt should contain one reading per line
 
 CONTENT_PATH = "./content"
 
-FOCU = Namespace("http://focu.io/schema#")
-FOCUDATA = Namespace("http://focu.io/data#")
 
 
 def build_lectures():
 
     g = Graph()
-    g.bind("focu", FOCU)
-    g.bind("focudata", FOCUDATA)
 
     courses = os.listdir(CONTENT_PATH)
     for course in courses:

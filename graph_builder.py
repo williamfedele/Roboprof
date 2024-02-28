@@ -1,15 +1,18 @@
 import os
-from rdflib import Graph
+from rdflib import Graph, Namespace
 from course_builder import build_courses
 from lecture_builder import build_lectures
-
-
+from constants import FOCU, FOCUDATA, VIVO
 
 
 
 def build_graph():
     g_model = Graph()
     g_model.parse("model.ttl")
+    g_model.bind("focu", FOCU)
+    g_model.bind("focudata", FOCUDATA)
+    g_model.bind("vivo", VIVO)
+
 
     g_courses = build_courses()
     g_lectures = build_lectures()
