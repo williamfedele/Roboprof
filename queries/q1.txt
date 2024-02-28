@@ -10,7 +10,7 @@ PREFIX focudata: <http://focu.io/data#>
 SELECT ?course ?name WHERE {
   ?course rdf:type vivo:Course .
   ?course vivo:offeredBy focudata:Concordia .
-  OPTIONAL { ?course focu:courseName ?name . }
+  ?course focu:courseName ?name .
 }
 
 ```
