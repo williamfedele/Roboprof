@@ -136,7 +136,7 @@ focu:hasContent
   rdfs:label "lecture content property"@en ;
   rdfs:comment "Connect lecture with content."@en ;
   rdfs:domain focu:Lecture ;
-  rdfs:range Focu:Content .
+  rdfs:range focu:Content .
 
 focu:Content 
   a rdf:Class ;
