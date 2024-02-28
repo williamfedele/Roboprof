@@ -5,6 +5,7 @@ import pandas as pd
 
 FOCU = Namespace("http://focu.io/schema#")
 FOCUDATA = Namespace("http://focu.io/data#")
+VIVO = Namespace("http://vivoweb.org/ontology/core#")
 
 df_courses = pd.read_csv("data/CATALOG.csv")
 # NOTE: we are completely ignoring the rows that don't have a course code or course number
@@ -16,6 +17,7 @@ def build_courses(university : str = "Concordia"):
     g = Graph()
     g.bind("focu", FOCU)
     g.bind("focudata", FOCUDATA)
+    g.bind("vivo", VIVO)
 
     # Build Courses graph
     for index, row in df_courses.iterrows():
@@ -37,13 +39,15 @@ def build_courses(university : str = "Concordia"):
         if not course_component.empty:
             credits = course_component.iloc[0]
 
-        g.add((course_uri, RDF.type, FOCU.Course))
+        g.add((course_uri, RDF.type, VIVO.Course))
         g.add((course_uri, FOCU.courseName, Literal(title)))
         g.add((course_uri, FOCU.courseSubject, Literal(code)))
         g.add((course_uri, FOCU.courseNumber, Literal((number))))
         if credits:
-            g.add((course_uri, FOCU.courseCredits, Literal(credits, datatype=XSD.float)))
+            g.add((course_uri, VIVO.courseCredits, Literal(credits, datatype=XSD.float)))
         g.add((course_uri, FOCU.courseDescription, Literal(description)))
-        g.add((course_uri, FOCU.offeredBy, FOCUDATA[university]))
+        g.add((course_uri, VIVO.offeredBy, FOCUDATA[university]))
     
     return g
+
+
