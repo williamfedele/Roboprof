@@ -1,0 +1,47 @@
+1. List all courses offered by [university]
+query:
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+PREFIX focudata: <http://focu.io/data#>
+
+SELECT ?course ?name WHERE {
+  ?course rdf:type focu:Course .
+  ?course focu:offeredBy focudata:Concordia .
+  OPTIONAL { ?course focu:courseName ?name . }
+}
+```
+
+===> result:
+```
+"head": {
+    "vars": [
+      "course",
+      "name"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "course": {
+          "type": "uri",
+          "value": "http://focu.io/data#ACCO_330"
+        },
+        "name": {
+          "type": "literal",
+          "value": "Cost and Management Accounting"
+        }
+      },
+      {
+        "course": {
+          "type": "uri",
+          "value": "http://focu.io/data#ACCO_355"
+        },
+        "name": {
+          "type": "literal",
+          "value": "Analysis of Financial Statements"
+        }
+      },
+      ...
+```
