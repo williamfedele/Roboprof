@@ -12,7 +12,7 @@ df_courses = df_courses.dropna(subset=["Course code", "Course number"])
 df_course_components = pd.read_csv("data/CU_SR_OPEN_DATA_CATALOG.csv", encoding="utf-16")
 
 
-def build_courses():
+def build_courses(university : str = "Concordia"):
     g = Graph()
     g.bind("focu", FOCU)
     g.bind("focudata", FOCUDATA)
@@ -44,5 +44,6 @@ def build_courses():
         if credits:
             g.add((course_uri, FOCU.courseCredits, Literal(credits, datatype=XSD.float)))
         g.add((course_uri, FOCU.courseDescription, Literal(description)))
+        g.add((course_uri, FOCU.offeredBy, FOCUDATA[university]))
     
     return g

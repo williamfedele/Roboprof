@@ -55,7 +55,8 @@ focu:University
   rdfs:comment "Represents a university."@en .
 
 
-focudata:Concordia
+# TODO: replace by vivo
+focudata:Concordia # do this in python instead ?
   a focu:University ;
   rdfs:label "Concordia University" ;
   rdfs:seeAlso <http://dbpedia.org/resource/Concordia_University> .
@@ -109,6 +110,13 @@ focu:courseOutlineLink
   rdfs:comment "A link to the course outline, if available."@en ;
   rdfs:domain focu:Course ;
   rdfs:range rdfs:Resource .
+
+focu:offeredBy
+  a rdf:Property ;
+  rdfs:label "offered by which university"@en ;
+  rdfs:comment "Specifies the University giving this course"@en ;
+  rdfs:domain focu:Course ;
+  rdfs:range focu:University . # TODO: replace by vivo
 
 # == Lecture == #
 
