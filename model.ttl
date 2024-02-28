@@ -4,6 +4,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix focu: <http://focu.io/schema#> .
 @prefix focudata: <http://focu.io/data#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
 
 # == Student == #
 focu:Student
@@ -34,80 +35,44 @@ focu:completedCourse
   rdfs:label "completed the course"@en ;
   rdfs:comment "Student completed course."@en ;
   rdfs:domain focu:Student ;
-  rdfs:range focu:Course .
+  rdfs:range vivo:Course .
 
-# == Course == #
-
-focu:Course
-  a rdfs:Class ;
-  foaf:name xsd:string ;
-  rdfs:label "Course"@en ;
-  rdfs:comment "Represents a course."@en .
-
-
-# == University == #
-
-focu:University
-  a rdfs:Class ;
-  rdfs:subClassOf foaf:Organization ;
-  rdfs:seeAlso xsd:string ;
-  rdfs:label "University"@en ;
-  rdfs:comment "Represents a university."@en .
-
-
-focudata:Concordia
-  a focu:University ;
-  rdfs:label "Concordia University" ;
-  rdfs:seeAlso <http://dbpedia.org/resource/Concordia_University> .
   
-
-# == Course == #
-focu:Course
-  a rdfs:Class ;
-  rdfs:label "Course"@en ;
-  rdfs:comment "Represents a course offered by a university."@en .
 
 # Course Properties
 focu:courseName
   a rdf:Property ;
   rdfs:label "course name"@en ;
   rdfs:comment "The name of the course."@en ;
-  rdfs:domain focu:Course ;
+  rdfs:domain vivo:Course ;
   rdfs:range xsd:string .
 
 focu:courseSubject
   a rdf:Property ;
   rdfs:label "course subject"@en ;
   rdfs:comment "The subject area of the course, e.g., COMP, SOEN."@en ;
-  rdfs:domain focu:Course ;
+  rdfs:domain vivo:Course ;
   rdfs:range xsd:string .
 
 focu:courseNumber
   a rdf:Property ;
   rdfs:label "course number"@en ;
   rdfs:comment "The course number."@en ;
-  rdfs:domain focu:Course ;
-  rdfs:range xsd:integer .
-
-focu:courseCredits
-  a rdf:Property ;
-  rdfs:label "course credits"@en ;
-  rdfs:comment "Number of credits for the course."@en ;
-  rdfs:domain focu:Course ;
+  rdfs:domain vivo:Course ;
   rdfs:range xsd:integer .
 
 focu:courseDescription
   a rdf:Property ;
   rdfs:label "course description"@en ;
   rdfs:comment "Description of the course content."@en ;
-  rdfs:domain focu:Course ;
+  rdfs:domain vivo:Course ;
   rdfs:range xsd:string .
 
 focu:courseOutlineLink
   a rdf:Property ;
   rdfs:label "course outline link"@en ;
   rdfs:comment "A link to the course outline, if available."@en ;
-  rdfs:domain focu:Course ;
+  rdfs:domain vivo:Course ;
   rdfs:range rdfs:Resource .
 
 # == Lecture == #
@@ -136,7 +101,7 @@ focu:hasContent
   rdfs:label "lecture content property"@en ;
   rdfs:comment "Connect lecture with content."@en ;
   rdfs:domain focu:Lecture ;
-  rdfs:range Focu:Content .
+  rdfs:range focu:Content .
 
 focu:Content 
   a rdf:Class ;
@@ -175,7 +140,7 @@ focu:lectureBelongsTo
   rdfs:label "lecture connection to course"@en ;
   rdfs:comment "A connection between a lecture and a course"@en ;
   rdfs:domain focu:Lecture ;
-  rdfs:range focu:Course .
+  rdfs:range vivo:Course .
 
 focu:contentLink
   a rdf:Property ;
