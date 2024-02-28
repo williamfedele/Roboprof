@@ -4,7 +4,6 @@ import pandas as pd
 from constants import FOCU, FOCUDATA, VIVO
 
 
-
 df_courses = pd.read_csv("data/CATALOG.csv")
 # NOTE: we are completely ignoring the rows that don't have a course code or course number
 df_courses = df_courses.dropna(subset=["Course code", "Course number"])
@@ -21,7 +20,7 @@ def build_courses():
         if code == "" or number == "":
             continue
 
-        #course_uri = FOCUDATA[row["Key"]]
+        # course_uri = FOCUDATA[row["Key"]]
         course_uri = FOCUDATA[f"{code}_{number}"]
         title = row["Title"]
         description = row["Description"]
@@ -42,7 +41,5 @@ def build_courses():
             g.add((course_uri, VIVO.courseCredits, Literal(credits, datatype=XSD.float)))
         g.add((course_uri, FOCU.courseDescription, Literal(description)))
         g.add((course_uri, VIVO.offeredBy, FOCUDATA.Concordia))
-    
+
     return g
-
-

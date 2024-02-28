@@ -27,20 +27,18 @@ readingsXX.txt should contain one reading per line
 CONTENT_PATH = "./content"
 
 
-
 def build_lectures():
-
     g = Graph()
 
     courses = os.listdir(CONTENT_PATH)
     for course in courses:
-        if course == ".DS_Store": # TODO: is there a better fix?
+        if course == ".DS_Store":  # TODO: is there a better fix?
             continue
         lec_path = f"{CONTENT_PATH}/{course}"
         lectures = os.listdir(lec_path)
 
         for lecture in lectures:
-            if lecture == ".DS_Store": # TODO: is there a better fix?
+            if lecture == ".DS_Store":  # TODO: is there a better fix?
                 continue
             lec_uri = FOCUDATA[f"{course}_{lecture}"]
 
@@ -60,7 +58,7 @@ def build_lectures():
             content_path = f"{CONTENT_PATH}/{course}/{lecture}"
             content = os.listdir(content_path)
             for c in content:
-                if c == ".DS_Store": # TODO: is there a better fix?
+                if c == ".DS_Store":  # TODO: is there a better fix?
                     continue
                 # remove file extensions
                 fileName = c.split(".")[0]

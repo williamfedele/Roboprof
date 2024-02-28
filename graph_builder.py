@@ -5,8 +5,6 @@ from lecture_builder import build_lectures
 from constants import FOCU, FOCUDATA, VIVO
 
 
-
-
 def build_graph():
     g_model = Graph()
     g_model.parse("model.ttl")
