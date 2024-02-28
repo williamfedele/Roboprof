@@ -1,7 +1,9 @@
 from rdflib import Graph, RDF, Literal
 from rdflib.namespace import XSD
-import os
 from constants import FOCU, FOCUDATA
+from helpers import visible_files_iterator
+
+
 
 """
 Fully automated lecture and lecture content generation.
@@ -30,16 +32,9 @@ CONTENT_PATH = "./content"
 def build_lectures():
     g = Graph()
 
-    courses = os.listdir(CONTENT_PATH)
-    for course in courses:
-        if course == ".DS_Store":  # TODO: is there a better fix?
-            continue
+    for course in visible_files_iterator(CONTENT_PATH):
         lec_path = f"{CONTENT_PATH}/{course}"
-        lectures = os.listdir(lec_path)
-
-        for lecture in lectures:
-            if lecture == ".DS_Store":  # TODO: is there a better fix?
-                continue
+        for lecture in visible_files_iterator(lec_path):
             lec_uri = FOCUDATA[f"{course}_{lecture}"]
 
             # cross listed courses should be stored as COMP_474_6741
@@ -56,10 +51,7 @@ def build_lectures():
             g.add((lec_uri, FOCU.lectureNumber, Literal(lec_num, datatype=XSD.integer)))
 
             content_path = f"{CONTENT_PATH}/{course}/{lecture}"
-            content = os.listdir(content_path)
-            for c in content:
-                if c == ".DS_Store":  # TODO: is there a better fix?
-                    continue
+            for c in visible_files_iterator(content_path):
                 # remove file extensions
                 fileName = c.split(".")[0]
 
