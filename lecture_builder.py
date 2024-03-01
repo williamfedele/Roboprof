@@ -90,7 +90,6 @@ def build_lectures():
                     g.add((content_uri, RDF.type, type))
                     g.add((lec_uri, FOCU.hasContent, content_uri))
 
-    g.serialize(destination="output/lectures.ttl", format="turtle")
     return g
 
 
