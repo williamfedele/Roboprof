@@ -1,0 +1,4 @@
+Recommender system,https://dbpedia.org/resource/Recommender_system
+Euclidean distance,https://dbpedia.org/resource/Euclidean_distance
+Cosine similarity,https://dbpedia.org/resource/Cosine_similarity
+TF*IDF,https://dbpedia.org/resource/Tf%E2%80%93idf

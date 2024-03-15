@@ -1,0 +1,3 @@
+Conversational bot,https://dbpedia.org/resource/Chatbot
+Tokenization,https://dbpedia.org/resource/Lexical_analysis
+NLP,https://dbpedia.org/resource/Natural_language_processing

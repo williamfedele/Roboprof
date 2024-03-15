@@ -1,4 +1,4 @@
-from rdflib import Graph, RDF, Literal
+from rdflib import Graph, RDF, RDFS, Literal
 from rdflib.namespace import XSD
 from constants import FOCU, FOCUDATA
 from helpers import visible_files_iterator
@@ -21,7 +21,8 @@ Each lecture folder contains some type of content such as:
 XX values should be distinct for URI usage.
 
 name.txt file contains the name of the lecture on the first line. Ex: Knowledge Graphs
-readingsXX.txt should contain one reading per line
+readingsXX.txt should contain one reading per line for each required reading found in the slides
+topics.txt contains topics extracted from the lecture slides on each line along with a relevant dbpedia/wikidata link. These topics are automatically linked to the corresponding lecture.
 
 """
 
@@ -70,6 +71,18 @@ def build_lectures():
                             g.add((content_uri, RDF.type, FOCU.Reading))
                             g.add((content_uri, FOCU.readingDescription, Literal(line.strip())))
                             g.add((lec_uri, FOCU.hasContent, content_uri))
+                    continue
+                elif c == "topics.txt":
+                    with open(f"{content_path}/{c}", "r") as file:
+                        for line_num, line in enumerate(file, 1):
+                            topic_name = line.split(",")[0].replace(' ', '_')
+                            topic_dbpedia = line.split(",")[1]
+                            topic_uri = FOCUDATA[f"Topic_{topic_name.replace(' ', '_')}"]
+
+                            g.add((topic_uri, RDF.type, FOCU.Topic))
+                            g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
+                            g.add((topic_uri, RDFS.seeAlso, Literal(topic_dbpedia.strip())))
+                            g.add((topic_uri, FOCU.topicFoundInLecture, lec_uri))
                     continue
                 else:
                     content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]

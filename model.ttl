@@ -148,3 +148,24 @@ focu:contentLink
   rdfs:comment "A connection between some content and the corresponding link."@en ;
   rdfs:domain focu:Content ;
   rdfs:range rdfs:Resource .
+
+# == Lecture == #
+
+focu:Topic
+  a rdf:Class ;
+  rdfs:label "topic"@en ;
+  rdfs:comment "Represents a topic seen from a specified location."@en .
+
+focu:topicName
+  a rdf:Property ;
+  rdfs:label "topic name"@en ;
+  rdfs:comment "The name of the topic."@en ;
+  rdfs:domain focu:Topic ;
+  rdfs:range xsd:string .
+
+focu:topicFoundInLecture
+  a rdf:Property ;
+  rdfs:label "topic connection to source"@en ;
+  rdfs:comment "A connection between a topic and the corresponding lecture."@en ;
+  rdfs:domain focu:Topic ;
+  rdfs:range focu:Lecture .
