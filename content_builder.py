@@ -30,7 +30,7 @@ topics.txt contains topics extracted from the lecture slides on each line along 
 CONTENT_PATH = "./content"
 
 
-def build_lectures():
+def build_content():
     g = Graph()
 
     for course in visible_files_iterator(CONTENT_PATH):
@@ -107,4 +107,4 @@ def build_lectures():
 
 
 if __name__ == "__main__":
-    build_lectures()
+    build_content()
