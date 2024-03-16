@@ -75,14 +75,15 @@ def build_content():
                 elif c == "topics.txt":
                     with open(f"{content_path}/{c}", "r") as file:
                         for line_num, line in enumerate(file, 1):
-                            topic_name = line.split(",")[0].replace(' ', '_')
+                            topic_name = line.split(",")[0]
                             topic_dbpedia = line.split(",")[1]
-                            topic_uri = FOCUDATA[f"Topic_{topic_name.replace(' ', '_')}"]
+                            topic_uri = FOCUDATA[f"{topic_name.replace(' ', '_')}"]
 
                             g.add((topic_uri, RDF.type, FOCU.Topic))
                             g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
                             g.add((topic_uri, RDFS.seeAlso, Literal(topic_dbpedia.strip())))
-                            g.add((topic_uri, FOCU.topicFoundInLecture, lec_uri))
+                            g.add((topic_uri, FOCU.provenance, lec_uri))  
+                            g.add((lec_uri, FOCU.hasTopic, topic_uri))
                     continue
                 else:
                     content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]

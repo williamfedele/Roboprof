@@ -149,6 +149,13 @@ focu:contentLink
   rdfs:domain focu:Content ;
   rdfs:range rdfs:Resource .
 
+focu:hasTopic
+  a rdf:Property ;
+  rdfs:label "lecture topics"@en ;
+  rdfs:comment "A link between a lecture and its topics."@en ;
+  rdfs:domain focu:Lecture ;
+  rdfs:range focu:Topic .
+
 # == Lecture == #
 
 focu:Topic
@@ -163,7 +170,7 @@ focu:topicName
   rdfs:domain focu:Topic ;
   rdfs:range xsd:string .
 
-focu:topicFoundInLecture
+focu:provenance
   a rdf:Property ;
   rdfs:label "topic connection to source"@en ;
   rdfs:comment "A connection between a topic and the corresponding lecture."@en ;
