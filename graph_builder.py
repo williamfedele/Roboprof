@@ -1,7 +1,7 @@
 import os
 from rdflib import Graph, RDF, RDFS, Literal, URIRef
 from course_builder import build_courses
-from lecture_builder import build_lectures
+from content_builder import build_content
 from constants import FOCU, FOCUDATA, VIVO
 
 
@@ -17,7 +17,7 @@ def build_graph():
     g_model.add((FOCUDATA.Concordia, RDFS.seeAlso, URIRef("http://dbpedia.org/resource/Concordia_University")))
 
     g_courses = build_courses()
-    g_lectures = build_lectures()
+    g_lectures = build_content()
 
     g_final = g_model + g_courses + g_lectures
 

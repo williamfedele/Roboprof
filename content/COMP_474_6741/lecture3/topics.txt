@@ -1,0 +1,5 @@
+RDF Schema,https://dbpedia.org/resource/RDF_Schema
+Vocabulary,https://dbpedia.org/resource/Controlled_vocabulary
+FOAF,https://dbpedia.org/resource/FOAF
+Dublin Core,https://dbpedia.org/resource/Dublin_Core
+SKOS,https://dbpedia.org/resource/Simple_Knowledge_Organization_System
