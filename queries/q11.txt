@@ -1,0 +1,23 @@
+query:
+
+```
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?grades ?course WHERE {
+  ?student focu:studentId 23456789 .
+  ?student focu:CompletedCourses ?completed .
+  ?completed focu:achievedInCourse ?course .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "426" .
+  ?completed focu:achievedGrade ?grades .
+}
+```
+
+result:
+
+```
+"C+"
+"B"
+```

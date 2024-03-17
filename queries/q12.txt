@@ -1,0 +1,20 @@
+query:
+
+```
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?studentid WHERE {
+  ?student focu:CompletedCourses ?completed .
+  ?student focu:studentId ?studentid .
+  ?completed focu:achievedInCourse ?course .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "474" .
+}
+```
+
+result:
+
+```
+"12345678"
+"23456789"
+```

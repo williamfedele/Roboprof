@@ -1,0 +1,22 @@
+query:
+
+```
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?course ?grade WHERE {
+  ?student focu:studentId 23456789 .
+  ?student focu:CompletedCourses ?completed .
+  ?completed focu:achievedInCourse ?course .
+  ?completed focu:achievedGrade ?grade .
+}
+```
+
+result:
+
+```
+"http://focu.io/data#COMP_426","C+"
+"http://focu.io/data#COMP_426","B"
+"http://focu.io/data#COMP_442","A+"
+"http://focu.io/data#COMP_345","D+"
+"http://focu.io/data#COMP_474","B+"
+```
