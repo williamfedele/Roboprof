@@ -7,36 +7,45 @@
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 
 # == Student == #
-focu:Student
-  a rdfs:Class ;
-  rdfs:subClassOf foaf:Person ;
-  rdfs:label "Student"@en ;
-  rdfs:comment "Represents a student."@en .
-
-
 focu:studentId
   a rdf:Property ;
   rdfs:label "student ID"@en ;
   rdfs:comment "Unique identifier for a student."@en ;
-  rdfs:domain focu:Student ;
+  rdfs:domain vivo:Student ;
   rdfs:range xsd:string .
 
-focudata:william
-    a focu:Student ;
-    focu:studentId "S123456789";
-    foaf:firstName "William";
-    foaf:lastName "Fedele";
-    foaf:age "24"^^xsd:integer;
-    foaf:mbox "email@email.com";
-    focu:enrolledAt focudata:cu .
-
-focu:completedCourse
+focu:CompletedCourses
   a rdf:Property ;
-  rdfs:label "completed the course"@en ;
-  rdfs:comment "Student completed course."@en ;
-  rdfs:domain focu:Student ;
+  rdfs:label "list of completed courses"@en ;
+  rdfs:comment "List of completed courses for a student."@en ;
+  rdfs:domain vivo:Student ;
+  rdfs:range focu:CourseCompleted .
+
+focu:CourseCompleted
+  a rdfs:Class ;
+  rdfs:label "Student completed a course"@en ;
+  rdfs:comment "Represents a students completion of a course."@en .
+
+focu:achievedByStudent
+  a rdf:Property ;
+  rdfs:label "student id for course completion"@en ;
+  rdfs:comment "Student ID who completed a course."@en ;
+  rdfs:domain focu:CourseCompleted ;
+  rdfs:range vivo:Student .
+
+focu:achievedInCourse
+  a rdf:Property ;
+  rdfs:label "course id for course completion"@en ;
+  rdfs:comment "Course ID for a completed course."@en ;
+  rdfs:domain focu:CourseCompleted ;
   rdfs:range vivo:Course .
 
+focu:achievedGrade
+  a rdf:Property ;
+  rdfs:label "grade for completed course"@en ;
+  rdfs:comment "Grade achieved for a completed course."@en ;
+  rdfs:domain focu:CourseCompleted ;
+  rdfs:range xsd:string .
   
 
 # Course Properties

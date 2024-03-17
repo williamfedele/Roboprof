@@ -40,6 +40,6 @@ def build_courses():
         if credits:
             g.add((course_uri, VIVO.courseCredits, Literal(credits, datatype=XSD.float)))
         g.add((course_uri, FOCU.courseDescription, Literal(description)))
-        g.add((course_uri, VIVO.offeredBy, FOCUDATA.Concordia))
+        g.add((course_uri, VIVO.offeredBy, FOCUDATA.Concordia_University))
 
     return g
