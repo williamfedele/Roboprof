@@ -19,7 +19,7 @@ def build_graph():
     g_lectures = build_content()
     g_grades = build_grades()
 
-    g_final = g_universities + g_model + g_courses + g_lectures + g_students + g_grades
+    g_final = g_model + g_universities + g_courses + g_lectures + g_students + g_grades
 
     output_dir = "output"
     if not os.path.exists(output_dir):
