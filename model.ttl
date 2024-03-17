@@ -46,6 +46,13 @@ focu:achievedGrade
   rdfs:comment "Grade achieved for a completed course."@en ;
   rdfs:domain focu:CourseCompleted ;
   rdfs:range xsd:string .
+
+focu:achievedDatetime
+  a rdf:Property ;
+  rdfs:label "grade for completed course"@en ;
+  rdfs:comment "Grade achieved for a completed course."@en ;
+  rdfs:domain focu:CourseCompleted ;
+  rdfs:range xsd:dateTime .
   
 
 # Course Properties

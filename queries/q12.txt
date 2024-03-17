@@ -3,7 +3,7 @@ query:
 ```
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?studentid WHERE {
+SELECT DISTINCT ?studentid WHERE {
   ?student focu:CompletedCourses ?completed .
   ?student focu:studentId ?studentid .
   ?completed focu:achievedInCourse ?course .
@@ -15,6 +15,6 @@ SELECT ?studentid WHERE {
 result:
 
 ```
-"12345678"
 "23456789"
+"12345678"
 ```

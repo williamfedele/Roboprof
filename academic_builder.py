@@ -33,17 +33,18 @@ def build_students():
 
 def build_grades():
     g = Graph()
-    df_grades = pd.read_csv("data/grades.csv", names=['SID','Course','Grade'], skiprows=1)
+    df_grades = pd.read_csv("data/grades.csv", names=['SID','Course','Grade', 'Date'], skiprows=1)
     for index, row in df_grades.iterrows():
         student_uri = FOCUDATA[f"{row['SID']}"]
         course_uri = FOCUDATA[f"{row['Course']}"]
-        completion_uri = FOCUDATA[f"{row['SID']}_{row['Course']}"]
+        completion_uri = FOCUDATA[f"{row['SID']}_{row['Course']}_{row['Date']}"]
 
         # new completion
         g.add((completion_uri, RDF.type, FOCU.CourseCompleted))
         g.add((completion_uri, FOCU.achievedGrade, Literal(row['Grade'])))
         g.add((completion_uri, FOCU.achievedByStudent, student_uri))
         g.add((completion_uri, FOCU.achievedInCourse, course_uri))
+        g.add((completion_uri, FOCU.achievedDate, Literal(row['Date'], datatype=XSD.date)))
         # add to the students list of completed courses
         g.add((student_uri, FOCU.CompletedCourses, completion_uri))
     return g
