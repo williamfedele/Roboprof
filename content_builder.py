@@ -1,4 +1,4 @@
-from rdflib import Graph, RDF, RDFS, Literal
+from rdflib import Graph, RDF, RDFS, Literal, URIRef
 from rdflib.namespace import XSD
 from constants import FOCU, FOCUDATA
 from helpers import visible_files_iterator
@@ -81,7 +81,7 @@ def build_content():
 
                             g.add((topic_uri, RDF.type, FOCU.Topic))
                             g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
-                            g.add((topic_uri, RDFS.seeAlso, Literal(topic_dbpedia.strip())))
+                            g.add((topic_uri, RDFS.seeAlso, URIRef(topic_dbpedia.strip())))
                             g.add((topic_uri, FOCU.provenance, lec_uri))  
                             g.add((lec_uri, FOCU.hasTopic, topic_uri))
                     continue
