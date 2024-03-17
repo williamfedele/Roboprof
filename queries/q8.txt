@@ -1,0 +1,25 @@
+query:
+
+```
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?content ?type WHERE {
+  ?lecture focu:lectureNumber 2 .
+  ?lecture focu:lectureBelongsTo ?course .
+  ?lecture focu:hasContent ?content .
+  ?content rdf:type ?type .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "474" .
+}
+```
+
+result:
+
+```
+"http://focu.io/data#COMP_474_6741_lecture2_readings02_2","http://focu.io/schema#Reading"
+"http://focu.io/data#COMP_474_6741_lecture2_readings02_1","http://focu.io/schema#Reading"
+"http://focu.io/data#COMP_474_6741_lecture2_slides02","http://focu.io/schema#Slide"
+"http://focu.io/data#COMP_474_6741_lecture2_worksheet01","http://focu.io/schema#Worksheet"
+```

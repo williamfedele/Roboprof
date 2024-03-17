@@ -1,0 +1,49 @@
+query:
+
+```
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+PREFIX focudata: <http://focu.io/data#>
+
+SELECT ?topic WHERE {
+  ?topic focu:provenance ?lecture .
+  ?lecture focu:lectureBelongsTo ?course .
+  ?lecture focu:hasTopic ?topic .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "474" .
+}
+```
+
+result:
+
+```
+"http://focu.io/data#RDF"
+"http://focu.io/data#Text_mining"
+"http://focu.io/data#Intelligent_agents"
+"http://focu.io/data#AI"
+"http://focu.io/data#Knowledge_graphs"
+"http://focu.io/data#Cross-Validation"
+"http://focu.io/data#Machine_learning"
+"http://focu.io/data#k-Nearest-Neighbor"
+"http://focu.io/data#Euclidean_distance"
+"http://focu.io/data#Overfitting"
+"http://focu.io/data#Underfitting"
+"http://focu.io/data#K-means_clustering"
+"http://focu.io/data#RDF_Schema"
+"http://focu.io/data#FOAF"
+"http://focu.io/data#SKOS"
+"http://focu.io/data#Vocabulary"
+"http://focu.io/data#Dublin_Core"
+"http://focu.io/data#TF-IDF"
+"http://focu.io/data#Euclidean_distance"
+"http://focu.io/data#Cosine_similarity"
+"http://focu.io/data#Recommender_system"
+"http://focu.io/data#NLP"
+"http://focu.io/data#Tokenization"
+"http://focu.io/data#NLP"
+"http://focu.io/data#Conversational_bot"
+"http://focu.io/data#Tokenization"
+"http://focu.io/data#Linked_Open_Data"
+"http://focu.io/data#SPARQL"
+```

@@ -1,0 +1,22 @@
+query:
+
+```
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+PREFIX focudata: <http://focu.io/data#>
+
+SELECT DISTINCT ?course WHERE {
+  ?topic rdf:type focu:Topic .
+  ?topic focu:topicName "NLP" .
+  ?topic focu:provenance ?lecture .
+  ?lecture focu:lectureBelongsTo ?course .
+}
+```
+
+result:
+
+```
+"http://focu.io/data#COMP_474"
+"http://focu.io/data#COMP_6741"
+```
