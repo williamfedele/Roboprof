@@ -1,0 +1,26 @@
+query:
+
+```
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX focu: <http://focu.io/schema#>
+PREFIX focudata: <http://focu.io/data#>
+
+SELECT ?content WHERE {
+  ?topic focu:topicName "NLP" .
+  ?topic focu:provenance ?lecture .
+  ?lecture focu:lectureBelongsTo ?course .
+  ?lecture focu:hasTopic ?topic .
+  ?lecture focu:hasContent ?content .
+  ?content rdf:type focu:Reading .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "474" .
+}
+```
+
+result:
+
+```
+"http://focu.io/data#COMP_474_6741_lecture8_readings08_1"
+"http://focu.io/data#COMP_474_6741_lecture7_readings07_1"
+```
