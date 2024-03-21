@@ -89,7 +89,7 @@ def build_content():
                     content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]
                     content_link = f"{content_path}/{c}"  # relative path to the file
 
-                    g.add((content_uri, FOCU.contentLink, Literal(content_link)))
+                    g.add((content_uri, FOCU.contentLink, URIRef(content_link)))
 
                     # extract the type of lecture content from the name of the file.
                     type = None

@@ -192,3 +192,8 @@ focu:provenance
   rdfs:comment "A connection between a topic and the corresponding lecture."@en ;
   rdfs:domain focu:Topic ;
   rdfs:range focu:Lecture .
+
+# == HARDCODED seeAlso LINK FOR QUERY 7 == #
+
+focudata:COMP_442
+  rdfs:seeAlso <https://users.encs.concordia.ca/~paquet/wiki/index.php?title=COMP442/6421_-_winter_2024> .

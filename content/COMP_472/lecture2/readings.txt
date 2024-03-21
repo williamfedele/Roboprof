@@ -1,2 +1,0 @@
-Chapter 4-4.3 (incl.) on Heuristic Search in the Luger AI book
-Chapter 3: Searching for Solutions in Pool & Mackworth, Artificial Intelligence
