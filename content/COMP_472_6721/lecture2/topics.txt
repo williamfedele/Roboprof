@@ -1,0 +1,2 @@
+Breadth-first search,https://dbpedia.org/resource/Breadth-first_search
+Depth-first search,https://dbpedia.org/resource/Depth-first_search

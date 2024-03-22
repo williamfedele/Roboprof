@@ -9,7 +9,7 @@ PREFIX focudata: <http://focu.io/data#>
 
 SELECT ?course ?name ?subject WHERE {
   ?course rdf:type vivo:Course .
-  ?course vivo:offeredBy focudata:Concordia .
+  ?course vivo:offeredBy focudata:Concordia_University .
   ?course focu:courseSubject ?subject .
   FILTER(?subject="COMP") .
   ?course focu:courseName ?name .

@@ -1,0 +1,2 @@
+Machine Learning,https://dbpedia.org/resource/Machine_learning
+Naive Bayes,https://dbpedia.org/resource/Naive_Bayes_classifier
