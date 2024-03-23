@@ -1,10 +1,5 @@
-query:
-
-```
-PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
-PREFIX focudata: <http://focu.io/data#>
 
 SELECT ?topic WHERE {
   ?topic rdf:type focu:Topic .
@@ -14,13 +9,3 @@ SELECT ?topic WHERE {
   ?course focu:courseSubject "COMP" .
   ?course focu:courseNumber "474" .
 }
-```
-
-result:
-
-```
-"http://focu.io/data#Text_mining"
-"http://focu.io/data#Intelligent_agents"
-"http://focu.io/data#AI"
-"http://focu.io/data#Knowledge_graphs"
-```

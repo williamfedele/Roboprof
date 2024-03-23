@@ -1,6 +1,3 @@
-query:
-
-```
 PREFIX focu: <http://focu.io/schema#>
 
 SELECT DISTINCT ?studentid WHERE {
@@ -10,11 +7,3 @@ SELECT DISTINCT ?studentid WHERE {
   ?course focu:courseSubject "COMP" .
   ?course focu:courseNumber "474" .
 }
-```
-
-result:
-
-```
-"23456789"
-"12345678"
-```

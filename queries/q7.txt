@@ -1,6 +1,3 @@
-query:
-
-```
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -12,10 +9,3 @@ SELECT ?link WHERE {
   ?course focu:courseNumber "442" .
   ?course rdfs:seeAlso ?link
 }
-```
-
-result:
-
-```
-"https://users.encs.concordia.ca/~paquet/wiki/index.php?title=COMP442/6421_-_winter_2024"
-```
