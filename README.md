@@ -24,6 +24,9 @@ For example, Roboprof is able to answer questions such as, “What is course COM
 - `content_builder.py` script is responsible for parsing the content subfolder and its contents. This folder contains more subfolders for each course we've chosen to include. Each course has another subfolder for each lecture which contains their slides, worksheets and other contents.
 - `course_builder.py` script is responsible for parsing the two Concordia University CSV catalogs containing all of the courses and related fields.
 - `graph_builder.py` script is responsible for executing each of the above 3 scripts using their methods which each return a graph. This script then consolidates them into one graph and outputs the result into turtle format and ntriples format within the output folder.
+- `constants.py` script simply holds our namespace domains to avoid repetition.
+- `helpers.py` script provides generic reusable methods we found useful to have use over many files so we extracted the method into this file.
+- `main.py` script is the main entry point for the project. Executes the graph construction in `graph_builder.py`.
 
 ## SPARQL server setup
 First, make sure to generate our ttl/nt files by running python main.py.
