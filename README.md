@@ -1,13 +1,12 @@
 Roboprof is an intelligent agent that can answer university course- and student-related questions, using a knowledge graph and natural language processing.
-For example, Roboprof is able to answer questions such as, “What is course COMP
-474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia
-teach deep learning?”
+For example, Roboprof is able to answer questions such as, “What is course COMP 474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia teach deep learning?”
 
 ## Initial Setup
 - Ensure you have Poetry set up on your computer
 - After cloning the repo, run `poetry install` to install dependencies then `poetry shell` to enter the shell environment.
 
 ## Generate output files
+- WARNING: This project has been designed to run in a specific folder structure as layed out in the GitHub repo. Modifying the folder structure will likely cause issues with reading the datasets and script importing.
 - Make sure you have `CATALOG.csv` and `CU_SR_OPEN_DATA_CATALOG.csv` from `https://opendata.concordia.ca/datasets/`
 - Run `python main.py`, this will parse the model, use the `course_builder`, `lecture_builder`, and `academic_builder`, merge the individual graphs and save them to folder `output`. you should expect to see `output/ntriples.ttl` and `output/turtles.ttl` created.
 
@@ -16,12 +15,18 @@ teach deep learning?”
 - Don't forget to update the this README file when appropriate
 
 ## Project structure
-- `data` folder contains the datasets used for this project, can be downloaded from `https://opendata.concordia.ca/datasets/`
-- `content` folder contains lectures and slides
+- `data` folder contains the datasets used for this project, can be downloaded from `https://opendata.concordia.ca/datasets/`. It also contains CSVs such as grades.csv and students.csv in order to create some Student classes along with course completions in order to facilitate our queries.
+- `content` folder contains lectures and their contents for 2 courses we chose for this assignment.
 - `queries` folder contains the queries and their outputs
 
+## Project scripts
+- `academic_builder.py` script is responsible for parsing the grades, students, and universities CSV files in the data folder and creating their respective triples.
+- `content_builder.py` script is responsible for parsing the content subfolder and its contents. This folder contains more subfolders for each course we've chosen to include. Each course has another subfolder for each lecture which contains their slides, worksheets and other contents.
+- `course_builder.py` script is responsible for parsing the two Concordia University CSV catalogs containing all of the courses and related fields.
+- `graph_builder.py` script is responsible for executing each of the above 3 scripts using their methods which each return a graph. This script then consolidates them into one graph and outputs the result into turtle format and ntriples format within the output folder.
+
 ## SPARQL server setup
-first, make sure to generate our ttl/nt files by running python main.py.
+First, make sure to generate our ttl/nt files by running python main.py.
 
 On Mac:
 - Install Apache Jena Fuseki (`brew install fuseki` if you have homebrew).
