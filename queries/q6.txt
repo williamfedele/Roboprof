@@ -1,20 +1,8 @@
-query:
-
-```
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
-PREFIX focudata: <http://focu.io/data#>
 
 SELECT ?credits WHERE {
   ?course focu:courseSubject "COMP" .
   ?course focu:courseNumber "474" .
   ?course vivo:courseCredits ?credits .
 }
-```
-
-result:
-
-```
-"4.0"
-```

@@ -5,11 +5,11 @@ teach deep learning?”
 
 ## Initial Setup
 - Ensure you have Poetry set up on your computer
-- After cloning the repo, run `poetry install` then `poetry shell`
+- After cloning the repo, run `poetry install` to install dependencies then `poetry shell` to enter the shell environment.
 
 ## Generate output files
 - Make sure you have `CATALOG.csv` and `CU_SR_OPEN_DATA_CATALOG.csv` from `https://opendata.concordia.ca/datasets/`
-- Run `python main.py`, this will parse the model, use the `course_builder` and the `lecture_builder`, merge the graphs and save them to folder `output`. you should expect to see `output/ntriples.ttl` and `output/turtles.ttl` created.
+- Run `python main.py`, this will parse the model, use the `course_builder`, `lecture_builder`, and `academic_builder`, merge the individual graphs and save them to folder `output`. you should expect to see `output/ntriples.ttl` and `output/turtles.ttl` created.
 
 ## During development
 - Use `poetry add ...` for installing a new package

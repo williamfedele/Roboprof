@@ -1,7 +1,3 @@
-1. List all courses offered by [university]
-query:
-
-```
 PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
@@ -12,63 +8,3 @@ SELECT ?course ?name WHERE {
   ?course vivo:offeredBy focudata:Concordia_University .
   ?course focu:courseName ?name .
 }
-
-```
-
-===> result:
-- in table:
-```
-1
-<http://focu.io/data#ACTT_332>
-Improvisation
-2
-<http://focu.io/data#BTM_496>
-Information Technology Strategy, Management and Sourcing
-3
-<http://focu.io/data#DANC_320>
-Choreography I
-4
-<http://focu.io/data#MANA_481>
-Introduction to Management Consulting
-5
-<http://focu.io/data#MARK_485>
-Business to Business Marketing
-6
-<http://focu.io/data#FMAN_203>
-INTRO. TO ANIMATION I
-...
-```
-
-- in json:
-```
-{
-  "head": {
-    "vars": [
-      "course",
-      "name"
-    ]
-  },
-  "results": {
-    "bindings": [
-      {
-        "course": {
-          "type": "uri",
-          "value": "http://focu.io/data#ACTT_332"
-        },
-        "name": {
-          "type": "literal",
-          "value": "Improvisation"
-        }
-      },
-      {
-        "course": {
-          "type": "uri",
-          "value": "http://focu.io/data#BTM_496"
-        },
-        "name": {
-          "type": "literal",
-          "value": "Information Technology Strategy, Management and Sourcing"
-        }
-      },
-      ...
-```
