@@ -1,2 +1,0 @@
-SPARQL,https://dbpedia.org/resource/SPARQL
-Linked Open Data,https://dbpedia.org/resource/Linked_data

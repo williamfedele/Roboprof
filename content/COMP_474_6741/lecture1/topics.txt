@@ -1,4 +1,0 @@
-Text mining,https://dbpedia.org/resource/Text_mining
-Knowledge graphs,https://dbpedia.org/resource/Knowledge_graph
-Intelligent agents,https://dbpedia.org/resource/Intelligent_agent
-AI,https://dbpedia.org/resource/Artificial_intelligence

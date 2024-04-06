@@ -1,2 +1,0 @@
-Turing Test,https://dbpedia.org/resource/Turing_test
-ELIZA,https://dbpedia.org/resource/ELIZA

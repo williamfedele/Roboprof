@@ -1,2 +1,0 @@
-NLP,https://dbpedia.org/resource/Natural_language_processing
-Tokenization,https://dbpedia.org/resource/Lexical_analysis
