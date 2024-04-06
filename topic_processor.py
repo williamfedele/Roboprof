@@ -17,7 +17,7 @@ def process(file):
     named_entities = {
         (ent.text.strip(), ent._.url_wikidata)
         for ent in doc.ents
-        if ent.label_ in ["ORG", "GPE", "PERSON"] and ent._.url_wikidata
+        if ent.label_ in ["ORG"] and ent._.url_wikidata
     }
 
     return named_entities
