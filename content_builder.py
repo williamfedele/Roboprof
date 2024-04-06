@@ -2,7 +2,7 @@ from rdflib import Graph, RDF, RDFS, Literal, URIRef
 from rdflib.namespace import XSD
 from constants import FOCU, FOCUDATA
 from helpers import visible_files_iterator
-
+import topic_processor
 
 
 """
@@ -72,24 +72,28 @@ def build_content():
                             g.add((content_uri, FOCU.readingDescription, Literal(line.strip())))
                             g.add((lec_uri, FOCU.hasContent, content_uri))
                     continue
-                elif c == "topics.txt":
-                    with open(f"{content_path}/{c}", "r") as file:
-                        for line_num, line in enumerate(file, 1):
-                            topic_name = line.split(",")[0]
-                            topic_dbpedia = line.split(",")[1]
-                            topic_uri = FOCUDATA[f"{topic_name.replace(' ', '_')}"]
-
-                            g.add((topic_uri, RDF.type, FOCU.Topic))
-                            g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
-                            g.add((topic_uri, RDFS.seeAlso, URIRef(topic_dbpedia.strip())))
-                            g.add((topic_uri, FOCU.provenance, lec_uri))  
-                            g.add((lec_uri, FOCU.hasTopic, topic_uri))
-                    continue
-                else:
+                elif "slides" in c.lower() or "worksheet" in c.lower():
                     content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]
                     content_link = f"{content_path}/{c}"  # relative path to the file
-
                     g.add((content_uri, FOCU.contentLink, URIRef(content_link)))
+
+                    # generate topics from slides and worksheets using spaCy
+                    # get named entities from the document
+                    named_entities = topic_processor.process(content_link)
+                    for e in named_entities:
+                        # entity format: (NAME, WIKIDATA_LINK)
+
+                        topic_name = e[0]
+                        topic_dbpedia = e[1]
+                        if not topic_name.replace(" ", "").isalnum():
+                            continue
+                        topic_uri = FOCUDATA[f"T_{topic_name.replace(' ', '_')}"]
+
+                        g.add((topic_uri, RDF.type, FOCU.Topic))
+                        g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
+                        g.add((topic_uri, RDFS.seeAlso, URIRef(topic_dbpedia.strip())))
+                        g.add((topic_uri, FOCU.provenance, lec_uri))
+                        g.add((lec_uri, FOCU.hasTopic, topic_uri))
 
                     # extract the type of lecture content from the name of the file.
                     type = None
@@ -97,11 +101,17 @@ def build_content():
                         type = FOCU.Slide
                     elif "worksheet" in c.lower():
                         type = FOCU.Worksheet
-                    else:
-                        type = FOCU.OtherContent
+
+                    # finalize this content and connect it to the current lecture
+                    g.add((content_uri, RDF.type, type))
+                    g.add((lec_uri, FOCU.hasContent, content_uri))
+                else:
+                    content_uri = FOCUDATA[f"{course}_{lecture}_{fileName}"]
+                    content_link = f"{content_path}/{c}"  # relative path to the file
+                    g.add((content_uri, FOCU.contentLink, URIRef(content_link)))
 
                     # finalize content and connect it to the current lecture
-                    g.add((content_uri, RDF.type, type))
+                    g.add((content_uri, RDF.type, FOCU.OtherContent))
                     g.add((lec_uri, FOCU.hasContent, content_uri))
 
     return g

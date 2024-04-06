@@ -1,7 +1,0 @@
-K-means clustering,https://dbpedia.org/resource/K-means_clustering
-Euclidean distance,https://dbpedia.org/resource/Euclidean_distance
-k-Nearest-Neighbor,https://dbpedia.org/resource/K-nearest_neighbors_algorithm
-Machine learning,https://dbpedia.org/resource/Machine_learning
-Overfitting,https://dbpedia.org/resource/Overfitting
-Underfitting,https://dbpedia.org/resource/Overfitting
-Cross-Validation,https://dbpedia.org/resource/Cross-validation_(statistics)
