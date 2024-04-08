@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?topicName (SAMPLE(?wikidata) AS ?wiki) (SAMPLE(?lecture) AS ?event) (SAMPLE(?content) as ?resource) 
+WHERE 
+{
+  ?course focu:courseSubject "COMP" ;
+  		  focu:courseNumber "474" .
+  ?lecture focu:lectureBelongsTo ?course ;
+           focu:hasContent ?content .
+  ?content focu:hasTopic ?topic .
+  ?topic focu:topicName ?topicName ;
+         rdfs:seeAlso ?wikidata .
+}
+GROUP BY ?topicName 

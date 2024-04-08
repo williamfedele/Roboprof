@@ -3280,6 +3280,34 @@ focudata:COMP_451 a vivo:Course ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
 
+focudata:COMP_472_6721_lecture1 a focu:Lecture ;
+    focu:hasContent focudata:COMP_472_6721_lecture1_readings01_1,
+        focudata:COMP_472_6721_lecture1_readings01_2,
+        focudata:COMP_472_6721_lecture1_slides01 ;
+    focu:lectureBelongsTo focudata:COMP_472,
+        focudata:COMP_6721 ;
+    focu:lectureName "Introduction to Artificial Intelligence" ;
+    focu:lectureNumber 1 .
+
+focudata:COMP_472_6721_lecture2 a focu:Lecture ;
+    focu:hasContent focudata:COMP_472_6721_lecture2_readings02_1,
+        focudata:COMP_472_6721_lecture2_readings02_2,
+        focudata:COMP_472_6721_lecture2_slides_02,
+        focudata:COMP_472_6721_lecture2_worksheet01 ;
+    focu:lectureBelongsTo focudata:COMP_472,
+        focudata:COMP_6721 ;
+    focu:lectureName "State Space Search" ;
+    focu:lectureNumber 2 .
+
+focudata:COMP_472_6721_lecture3 a focu:Lecture ;
+    focu:hasContent focudata:COMP_472_6721_lecture3_readings03_1,
+        focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_472_6721_lecture3_worksheet02 ;
+    focu:lectureBelongsTo focudata:COMP_472,
+        focudata:COMP_6721 ;
+    focu:lectureName "Introduction to Machine Learning and Naive Bayes Classification" ;
+    focu:lectureNumber 3 .
+
 focudata:COMP_473 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
     focu:courseName "Pattern Recognition" ;
@@ -3287,6 +3315,86 @@ focudata:COMP_473 a vivo:Course ;
     focu:courseSubject "COMP" ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
+
+focudata:COMP_474_6741_lecture1 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture1_readings01_1,
+        focudata:COMP_474_6741_lecture1_readings01_2,
+        focudata:COMP_474_6741_lecture1_readings01_3,
+        focudata:COMP_474_6741_lecture1_slides01 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Introduction to Intelligent Systems" ;
+    focu:lectureNumber 1 .
+
+focudata:COMP_474_6741_lecture2 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture2_readings02_1,
+        focudata:COMP_474_6741_lecture2_readings02_2,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture2_worksheet01 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Knowledge Graphs" ;
+    focu:lectureNumber 2 .
+
+focudata:COMP_474_6741_lecture3 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture3_readings03_1,
+        focudata:COMP_474_6741_lecture3_readings03_2,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture3_worksheet02 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Knowledge Graphs: Vocabularies & Ontologies" ;
+    focu:lectureNumber 3 .
+
+focudata:COMP_474_6741_lecture4 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture4_readings04_1,
+        focudata:COMP_474_6741_lecture4_readings04_2,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture4_worksheet03 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Knowledge Base Queries" ;
+    focu:lectureNumber 4 .
+
+focudata:COMP_474_6741_lecture5 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture5_readings05_1,
+        focudata:COMP_474_6741_lecture5_readings05_2,
+        focudata:COMP_474_6741_lecture5_readings05_3,
+        focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture5_worksheet04 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Recommender Systems" ;
+    focu:lectureNumber 5 .
+
+focudata:COMP_474_6741_lecture6 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture6_readings06_1,
+        focudata:COMP_474_6741_lecture6_readings06_2,
+        focudata:COMP_474_6741_lecture6_readings06_3,
+        focudata:COMP_474_6741_lecture6_slides06,
+        focudata:COMP_474_6741_lecture6_worksheet05 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Introduction to Machine Learning for Intelligent Systems" ;
+    focu:lectureNumber 6 .
+
+focudata:COMP_474_6741_lecture7 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture7_readings07_1,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture7_worksheet06 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Intelligent Agents" ;
+    focu:lectureNumber 7 .
+
+focudata:COMP_474_6741_lecture8 a focu:Lecture ;
+    focu:hasContent focudata:COMP_474_6741_lecture8_readings08_1,
+        focudata:COMP_474_6741_lecture8_slides08,
+        focudata:COMP_474_6741_lecture8_worksheet07 ;
+    focu:lectureBelongsTo focudata:COMP_474,
+        focudata:COMP_6741 ;
+    focu:lectureName "Text Mining Systems" ;
+    focu:lectureNumber 8 .
 
 focudata:COMP_476 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, group project" ;
@@ -12461,8 +12569,8 @@ focu:hasContent a rdf:Property ;
 
 focu:hasTopic a rdf:Property ;
     rdfs:label "lecture topics"@en ;
-    rdfs:comment "A link between a lecture and its topics."@en ;
-    rdfs:domain focu:Lecture ;
+    rdfs:comment "A link between a type of content and its topics."@en ;
+    rdfs:domain focu:Content ;
     rdfs:range focu:Topic .
 
 focu:lectureBelongsTo a rdf:Property ;
@@ -12485,9 +12593,9 @@ focu:lectureNumber a rdf:Property ;
 
 focu:provenance a rdf:Property ;
     rdfs:label "topic connection to source"@en ;
-    rdfs:comment "A connection between a topic and the corresponding lecture."@en ;
+    rdfs:comment "A connection between a topic and the content which it can be found."@en ;
     rdfs:domain focu:Topic ;
-    rdfs:range focu:Lecture .
+    rdfs:range focu:Content .
 
 focu:readingDescription a rdf:Property ;
     rdfs:label "Reading description"@en ;
@@ -12578,29 +12686,14 @@ focudata:COMP_472_6721_lecture1_readings01_1 a focu:Reading ;
 focudata:COMP_472_6721_lecture1_readings01_2 a focu:Reading ;
     focu:readingDescription "Introduction to Artificial Intelligence, https://plato.stanford.edu/entries/artificial-intelligence/" .
 
-focudata:COMP_472_6721_lecture1_slides01 a focu:Slide ;
-    focu:contentLink <./content/COMP_472_6721/lecture1/slides01.pdf> .
-
 focudata:COMP_472_6721_lecture2_readings02_1 a focu:Reading ;
     focu:readingDescription "Chapter 4-4.3 (incl.) on Heuristic Search in the Luger AI book" .
 
 focudata:COMP_472_6721_lecture2_readings02_2 a focu:Reading ;
     focu:readingDescription "Chapter 3: Searching for Solutions in Pool & Mackworth, Artificial Intelligence" .
 
-focudata:COMP_472_6721_lecture2_slides_02 a focu:Slide ;
-    focu:contentLink <./content/COMP_472_6721/lecture2/slides_02.pdf> .
-
-focudata:COMP_472_6721_lecture2_worksheet01 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_472_6721/lecture2/worksheet01.pdf> .
-
 focudata:COMP_472_6721_lecture3_readings03_1 a focu:Reading ;
     focu:readingDescription "Russell & Norvig: Chapter 18-18.2" .
-
-focudata:COMP_472_6721_lecture3_slides03 a focu:Slide ;
-    focu:contentLink <./content/COMP_472_6721/lecture3/slides03.pdf> .
-
-focudata:COMP_472_6721_lecture3_worksheet02 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_472_6721/lecture3/worksheet02.pdf> .
 
 focudata:COMP_474_6741_lecture1_readings01_1 a focu:Reading ;
     focu:readingDescription "Introduction to Artificial Intelligence, https://plato.stanford.edu/entries/artificial-intelligence/" .
@@ -12611,20 +12704,11 @@ focudata:COMP_474_6741_lecture1_readings01_2 a focu:Reading ;
 focudata:COMP_474_6741_lecture1_readings01_3 a focu:Reading ;
     focu:readingDescription "IBM Watson, https://en.wikipedia.org/wiki/Watson_(computer)" .
 
-focudata:COMP_474_6741_lecture1_slides01 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture1/slides01.pdf> .
-
 focudata:COMP_474_6741_lecture2_readings02_1 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 1" .
 
 focudata:COMP_474_6741_lecture2_readings02_2 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 2" .
-
-focudata:COMP_474_6741_lecture2_slides02 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture2/slides02.pdf> .
-
-focudata:COMP_474_6741_lecture2_worksheet01 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture2/worksheet01.pdf> .
 
 focudata:COMP_474_6741_lecture3_readings03_1 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 4" .
@@ -12632,23 +12716,11 @@ focudata:COMP_474_6741_lecture3_readings03_1 a focu:Reading ;
 focudata:COMP_474_6741_lecture3_readings03_2 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 7" .
 
-focudata:COMP_474_6741_lecture3_slides03 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture3/slides03.pdf> .
-
-focudata:COMP_474_6741_lecture3_worksheet02 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture3/worksheet02.pdf> .
-
 focudata:COMP_474_6741_lecture4_readings04_1 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 6" .
 
 focudata:COMP_474_6741_lecture4_readings04_2 a focu:Reading ;
     focu:readingDescription "A Developer’s Guide to the Semantic Web,Liyang Yu,Chapter 9" .
-
-focudata:COMP_474_6741_lecture4_slides04 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture4/slides04.pdf> .
-
-focudata:COMP_474_6741_lecture4_worksheet03 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture4/worksheet03.pdf> .
 
 focudata:COMP_474_6741_lecture5_readings05_1 a focu:Reading ;
     focu:readingDescription "Collective Intelligence in Action,Satnam Alag,Chapter 2" .
@@ -12659,12 +12731,6 @@ focudata:COMP_474_6741_lecture5_readings05_2 a focu:Reading ;
 focudata:COMP_474_6741_lecture5_readings05_3 a focu:Reading ;
     focu:readingDescription "Introduction to Information Retrieval,Christopher D. Manning,Prabhakar Raghavan,Hinrich Schütze, Chapter 8" .
 
-focudata:COMP_474_6741_lecture5_slides05 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture5/slides05.pdf> .
-
-focudata:COMP_474_6741_lecture5_worksheet04 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture5/worksheet04.pdf> .
-
 focudata:COMP_474_6741_lecture6_readings06_1 a focu:Reading ;
     focu:readingDescription "Introduction to Machine Learning with Python,Andreas C Müller,Sarah Guido,Chapter 2" .
 
@@ -12674,944 +12740,899 @@ focudata:COMP_474_6741_lecture6_readings06_2 a focu:Reading ;
 focudata:COMP_474_6741_lecture6_readings06_3 a focu:Reading ;
     focu:readingDescription "Introduction to Machine Learning with Python,Andreas C Müller,Sarah Guido,Chapter 5" .
 
-focudata:COMP_474_6741_lecture6_slides06 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture6/slides06.pdf> .
-
-focudata:COMP_474_6741_lecture6_worksheet05 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture6/worksheet05.pdf> .
-
 focudata:COMP_474_6741_lecture7_readings07_1 a focu:Reading ;
     focu:readingDescription "Natural Language Processing in Action,Hobson Lane,Cole Howard,Hannes Max Hapke,Chapter 12" .
-
-focudata:COMP_474_6741_lecture7_slides07 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture7/slides07.pdf> .
-
-focudata:COMP_474_6741_lecture7_worksheet06 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture7/worksheet06.pdf> .
 
 focudata:COMP_474_6741_lecture8_readings08_1 a focu:Reading ;
     focu:readingDescription "Natural Language Processing in Action,Hobson Lane,Cole Howard,Hannes Max Hapke,Chapter 11" .
 
-focudata:COMP_474_6741_lecture8_slides08 a focu:Slide ;
-    focu:contentLink <./content/COMP_474_6741/lecture8/slides08.pdf> .
-
-focudata:COMP_474_6741_lecture8_worksheet07 a focu:Worksheet ;
-    focu:contentLink <./content/COMP_474_6741/lecture8/worksheet07.pdf> .
-
 focudata:T_2D a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "2D" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1194763> .
 
 focudata:T_A12 a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "A12" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4648862> .
 
 focudata:T_A4 a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "A4" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1966303> .
 
 focudata:T_ACM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "ACM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2828191> .
 
 focudata:T_AIML a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "AIML" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q223898> .
 
-focudata:T_ANNIE a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
-    focu:topicName "ANNIE" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q19871464> .
-
-focudata:T_AP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
-    focu:topicName "AP" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q40469> .
-
 focudata:T_ASK a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "ASK" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q477284> .
 
 focudata:T_AVG a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "AVG" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q896547> .
 
 focudata:T_Admissibility a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Admissibility" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4683809> .
 
 focudata:T_Anomaly_Detection a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Anomaly Detection" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3560506> .
 
 focudata:T_Apple a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Apple" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q312> .
 
 focudata:T_Apple_Siri a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01 ;
     focu:topicName "Apple Siri" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q582159> .
 
 focudata:T_Approach a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Approach" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4781716> .
 
 focudata:T_Auteur a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Auteur" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q788514> .
 
 focudata:T_BA a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_worksheet01 ;
     focu:topicName "BA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1765120> .
 
-focudata:T_BFS a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
-    focu:topicName "BFS" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q325904>,
-        <https://www.wikidata.org/wiki/Q812816> .
-
 focudata:T_BSD_License a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "BSD License" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q191307> .
 
 focudata:T_BabelNet a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "BabelNet" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4837690> .
 
-focudata:T_Bayes a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
-    focu:topicName "Bayes" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q182505>,
-        <https://www.wikidata.org/wiki/Q208452> .
-
 focudata:T_Breadth a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Breadth" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q36253> .
 
 focudata:T_Brill a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Brill" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q462663>,
         <https://www.wikidata.org/wiki/Q917031> .
 
 focudata:T_C1 a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "C1" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q718147> .
 
 focudata:T_CAPTCHA a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "CAPTCHA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q484598> .
 
 focudata:T_CE a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "CE" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q208141> .
 
 focudata:T_COMP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "COMP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q15320335> .
 
 focudata:T_CONSTRUCT a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "CONSTRUCT" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q659390> .
 
 focudata:T_CONTROL a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "CONTROL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1247268> .
 
 focudata:T_CS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "CS" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q209357> .
 
 focudata:T_CSV a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "CSV" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q935809> .
 
 focudata:T_CU a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "CU" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q239539> .
 
 focudata:T_Cambridge_University a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "Cambridge University" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q35794> .
 
 focudata:T_Cambridge_University_Press a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "Cambridge University Press" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q912887> .
 
 focudata:T_Capital_Letters a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "Capital Letters" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q47460540> .
 
 focudata:T_Chess a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Chess" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q718> .
 
 focudata:T_Chunking a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Chunking" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q11725> .
 
 focudata:T_Classes a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Classes" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4479242> .
 
 focudata:T_Classifiers a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Classifiers" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1744628> .
 
 focudata:T_Community a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Community" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2630741> .
 
 focudata:T_Comparing a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "Comparing" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q645999> .
 
 focudata:T_Construct a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Construct" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q13409045> .
 
 focudata:T_Content a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "Content" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1260632> .
 
 focudata:T_Conversational a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Conversational" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q52943> .
 
 focudata:T_Core a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Core" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q19481932> .
 
 focudata:T_Currencies a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Currencies" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q8142> .
 
 focudata:T_DCG a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "DCG" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q23641777> .
 
 focudata:T_DFA a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "DFA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1153070> .
 
 focudata:T_DIAGRAM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "DIAGRAM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5165665> .
 
 focudata:T_Data_Mining a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Data Mining" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q172491> .
 
 focudata:T_Data_Security a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Data Security" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3510521> .
 
 focudata:T_Data_Structures a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Data Structures" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q175263> .
 
 focudata:T_Dataset a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Dataset" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1172284> .
 
 focudata:T_Dawson_College a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_worksheet03 ;
     focu:topicName "Dawson College" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2983587> .
 
 focudata:T_Deep_Blue a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Deep Blue" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2293673> .
 
 focudata:T_Description_Logics a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Description Logics" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q387196> .
 
 focudata:T_Dewey_Decimal_Classification a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Dewey Decimal Classification" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q48460> .
 
 focudata:T_EGFR a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "EGFR" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q424401> .
 
 focudata:T_ELIZA a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "ELIZA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q580318> .
 
 focudata:T_EMM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_worksheet07 ;
     focu:topicName "EMM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5358282> .
 
 focudata:T_EOS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "EOS" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q249083> .
 
 focudata:T_Enron a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Enron" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q327646> .
 
 focudata:T_Evaluate a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_worksheet04 ;
     focu:topicName "Evaluate" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1379672> .
 
 focudata:T_FFF a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_worksheet05 ;
     focu:topicName "FFF" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q244750> .
 
 focudata:T_Federated_Query a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Federated Query" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5440717> .
 
 focudata:T_Finite_State_Machine a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Finite State Machine" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q176452> .
 
 focudata:T_Foothills a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Foothills" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q16977569> .
 
 focudata:T_Frame_Problem a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Frame Problem" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1185775> .
 
 focudata:T_Frames a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Frames" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q17005569> .
 
 focudata:T_GATE a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_worksheet07 ;
     focu:topicName "GATE" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3521595> .
 
 focudata:T_GOOD a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "GOOD" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5583067> .
 
 focudata:T_GSH a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "GSH" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5587274> .
 
 focudata:T_General_hill a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "General hill" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q336485> .
 
 focudata:T_Google_Knowledge_Graph a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Google Knowledge Graph" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q648625> .
 
 focudata:T_Graph a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Graph" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2479726> .
 
 focudata:T_HBO a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "HBO" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q23633> .
 
 focudata:T_HNB a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_worksheet02 ;
     focu:topicName "HNB" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q15995137> .
 
 focudata:T_HTTP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "HTTP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q8777> .
 
 focudata:T_Hepple a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Hepple" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2581086> .
 
 focudata:T_Heuristics a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Heuristics" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5748260> .
 
 focudata:T_Hill_Climbing a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Hill Climbing" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q820272> .
 
 focudata:T_House_of_Cards a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "House of Cards" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3330940> .
 
 focudata:T_Hypothesis a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Hypothesis" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1136221> .
 
 focudata:T_INFINITY a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "INFINITY" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q6029979> .
 
 focudata:T_ISO a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "ISO" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q930439> .
 
 focudata:T_Instances a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Instances" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3101213> .
 
 focudata:T_Intel a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Intel" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q248> .
 
 focudata:T_Intelligence a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Intelligence" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q83500> .
 
 focudata:T_JM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "JM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1688576> .
 
 focudata:T_Jeopardy a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Jeopardy" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3211698> .
 
 focudata:T_KDD a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "KDD" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q172491> .
 
 focudata:T_KNN a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "KNN" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1071612> .
 
 focudata:T_Knight a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Knight" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q102083> .
 
 focudata:T_Kurzweil a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Kurzweil" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q495548> .
 
 focudata:T_LLM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "LLM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q754848> .
 
 focudata:T_LOC a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "LOC" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3945070>,
         <https://www.wikidata.org/wiki/Q942695> .
 
 focudata:T_Linked_Open_Data a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Linked Open Data" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q515701> .
 
 focudata:T_Logistic_Regression a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Logistic Regression" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1132755> .
 
 focudata:T_Lotus_Development a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Lotus Development" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q909169> .
 
 focudata:T_Loyola_College a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Loyola College" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q6694542> .
 
 focudata:T_MAP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "MAP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4863657> .
 
 focudata:T_MIN a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "MIN" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q953046> .
 
 focudata:T_MOD a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "MOD" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q48815227> .
 
 focudata:T_MS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "MS" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1494> .
 
 focudata:T_Machine_Learning a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "Machine Learning" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2539> .
 
 focudata:T_McGill_University a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_worksheet01 ;
     focu:topicName "McGill University" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q201492> .
 
 focudata:T_Measure a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Measure" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q48799060> .
 
 focudata:T_Microsoft_Tay a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01 ;
     focu:topicName "Microsoft Tay" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q23518144> .
 
 focudata:T_N a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "N" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q627> .
 
 focudata:T_NAD a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "NAD" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1959710> .
 
 focudata:T_NADP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "NADP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q12499775> .
 
-focudata:T_NER a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
-    focu:topicName "NER" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q787383> .
-
 focudata:T_NLU a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "NLU" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1078276> .
 
 focudata:T_NP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "NP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1135434>,
         <https://www.wikidata.org/wiki/Q1401131> .
 
 focudata:T_NULL a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "NULL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q861529> .
 
 focudata:T_Need a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Need" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q190258> .
 
 focudata:T_Netflix a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Netflix" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q907311> .
 
 focudata:T_Noisy_Data a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Noisy Data" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q30587856> .
 
 focudata:T_OPE a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "OPE" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3883909> .
 
 focudata:T_OPTIONAL a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "OPTIONAL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q187860>,
         <https://www.wikidata.org/wiki/Q7099021> .
 
 focudata:T_OpenCalais a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "OpenCalais" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5018342> .
 
 focudata:T_Oracle_Spatial a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Oracle Spatial" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3508244> .
 
 focudata:T_PDF a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "PDF" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q42332> .
 
 focudata:T_PHP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "PHP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q59> .
 
 focudata:T_POST a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "POST" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2764521> .
 
 focudata:T_Paris_Hilton a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "Paris Hilton" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q47899> .
 
 focudata:T_Penn_Treebank a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Penn Treebank" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q811525> .
 
 focudata:T_Prentice_Hall a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Prentice Hall" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q443253> .
 
 focudata:T_PubMed a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "PubMed" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q180686> .
 
 focudata:T_PyTorch a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "PyTorch" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q47509047> .
 
 focudata:T_Q96 a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Q96" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7265361> .
 
 focudata:T_Query_Interface a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Query Interface" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5975453> .
 
 focudata:T_RDF_Schema a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "RDF Schema" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1751819> .
 
 focudata:T_RET a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "RET" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q839557> .
 
 focudata:T_Recommendations a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "Recommendations" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q326124>,
         <https://www.wikidata.org/wiki/Q554950> .
 
 focudata:T_Refinitiv a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01 ;
     focu:topicName "Refinitiv" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q60741469> .
 
 focudata:T_Reyes a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Reyes" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q16236481> .
 
 focudata:T_Roman_Catholic_Church a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Roman Catholic Church" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q9592> .
 
 focudata:T_Rubik a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Rubik" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q20727062> .
 
 focudata:T_SAAS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01 ;
     focu:topicName "SAAS" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q671488> .
 
 focudata:T_SHRUTI a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "SHRUTI" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7504343> .
 
 focudata:T_SOAP a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "SOAP" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q189620> .
 
 focudata:T_SPAM a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "SPAM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q606132> .
 
 focudata:T_SPARQL a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "SPARQL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q54871> .
 
 focudata:T_SUM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "SUM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q13570696> .
 
 focudata:T_SVM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "SVM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7395090> .
 
 focudata:T_Schemas a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Schemas" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1051200> .
 
 focudata:T_Search a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Search" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3953588> .
 
 focudata:T_Semantic_Networks a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Semantic Networks" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1045785> .
 
 focudata:T_Server a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Server" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q11288> .
 
 focudata:T_Side_Effect a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Side Effect" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7508263> .
 
 focudata:T_Speech a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Speech" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7575368> .
 
 focudata:T_Stanford a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Stanford" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q41506> .
 
 focudata:T_State_Graph a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "State Graph" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q230885> .
 
 focudata:T_State_Space_Representation a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "State Space Representation" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q230945> .
 
 focudata:T_State_Space_Search a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "State Space Search" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2033871> .
 
 focudata:T_Stopword a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Stopword" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q80735> .
 
 focudata:T_TN a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "TN" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1509> .
 
 focudata:T_Tagging a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Tagging" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q180160> .
 
 focudata:T_TensorFlow a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "TensorFlow" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q21447895> .
 
 focudata:T_The_Apache_Software_Foundation a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "The Apache Software Foundation" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q489709> .
 
 focudata:T_The_Glass_Palace a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "The Glass Palace" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3225164> .
 
 focudata:T_Token a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Token" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q172841> .
 
 focudata:T_Tokenization a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_worksheet07 ;
     focu:topicName "Tokenization" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1948408> .
 
 focudata:T_Tokens a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Tokens" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q85847828> .
 
 focudata:T_Toothache a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03 ;
     focu:topicName "Toothache" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2744030> .
 
 focudata:T_Transducers a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Transducers" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q215928> .
 
 focudata:T_UniProt a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "UniProt" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q905695> .
 
 focudata:T_Uninformed a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02 ;
     focu:topicName "Uninformed" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q815577> .
 
 focudata:T_University a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_worksheet07 ;
     focu:topicName "University" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3918> .
 
 focudata:T_University_of_Sheffield a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "University of Sheffield" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q823917> .
 
 focudata:T_Unstructured_Information_Management_Architecture a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Unstructured Information Management Architecture" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1539155> .
 
 focudata:T_Vocabularies a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Vocabularies" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4052547> .
 
 focudata:T_WORSER a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "WORSER" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q21196673> .
 
 focudata:T_WWW a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "WWW" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q15117072> .
 
 focudata:T_Wikidata a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "Wikidata" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2013> .
 
 focudata:T_Workflow a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Workflow" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q30602204> .
 
 focudata:T_YOUS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "YOUS" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1165897> .
 
 focudata:T_YouTube a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "YouTube" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q866> .
 
 focudata:T_ec a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "ec" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1274252> .
 
 focudata:T_the_Turing_Test a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01 ;
     focu:topicName "the Turing Test" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q26973017> .
 
 focudata:T_thesauri a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "thesauri" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q17152639> .
 
 focudata:T_vvv a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "vvv" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q24689> .
 
@@ -13624,223 +13645,246 @@ focudata:12345678 a vivo:Student ;
     foaf:lastName "Fedele" ;
     foaf:mbox "email@email.com" .
 
+focudata:COMP_474_6741_lecture6_worksheet05 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture6/worksheet05.pdf> ;
+    focu:hasTopic focudata:T_FFF .
+
 focudata:T_A2 a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "A2" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q888603> .
 
+focudata:T_ANNIE a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08,
+        focudata:COMP_474_6741_lecture8_worksheet07 ;
+    focu:topicName "ANNIE" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q19871464> .
+
+focudata:T_AP a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture5_worksheet04 ;
+    focu:topicName "AP" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q40469> .
+
 focudata:T_API a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "API" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q165194>,
         <https://www.wikidata.org/wiki/Q466043> .
 
 focudata:T_Alexa a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Alexa" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1674441>,
         <https://www.wikidata.org/wiki/Q3814475> .
 
 focudata:T_Amazon a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Amazon" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3884> .
 
 focudata:T_Artificial_Intelligence a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture2,
-        focudata:COMP_474_6741_lecture1 ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02,
+        focudata:COMP_474_6741_lecture1_slides01 ;
     focu:topicName "Artificial Intelligence" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q109875730>,
         <https://www.wikidata.org/wiki/Q4801033> .
 
 focudata:T_BERT a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "BERT" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q61726893>,
         <https://www.wikidata.org/wiki/Q840922> .
 
+focudata:T_BFS a focu:Topic ;
+    focu:provenance focudata:COMP_472_6721_lecture2_slides_02,
+        focudata:COMP_472_6721_lecture2_worksheet01 ;
+    focu:topicName "BFS" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q325904>,
+        <https://www.wikidata.org/wiki/Q812816> .
+
+focudata:T_Bayes a focu:Topic ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_472_6721_lecture3_worksheet02 ;
+    focu:topicName "Bayes" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q182505>,
+        <https://www.wikidata.org/wiki/Q208452> .
+
 focudata:T_Compute a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_worksheet04,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Compute" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4036474> .
 
 focudata:T_Dublin_Core a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Dublin Core" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q624610> .
 
 focudata:T_EDA a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "EDA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1194864>,
         <https://www.wikidata.org/wiki/Q201478> .
 
 focudata:T_Exploratory_Data_Analysis a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Exploratory Data Analysis" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1322871> .
 
 focudata:T_Frey a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Frey" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q7326995> .
 
 focudata:T_Google_Search a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Google Search" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q9366> .
 
 focudata:T_IR a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "IR" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q11388> .
 
 focudata:T_Information_Retrieval a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Information Retrieval" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q816826> .
 
 focudata:T_Intro a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Intro" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q3153713>,
         <https://www.wikidata.org/wiki/Q6058759> .
 
 focudata:T_Linked_Data a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Linked Data" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q515701> .
 
 focudata:T_McGill a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_worksheet01,
+        focudata:COMP_474_6741_lecture7_worksheet06 ;
     focu:topicName "McGill" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q201492> .
 
 focudata:T_Microsoft a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Microsoft" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2283> .
 
 focudata:T_Motivation a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "Motivation" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q644302>,
         <https://www.wikidata.org/wiki/Q6917873> .
 
 focudata:T_NB a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "NB" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q222751> .
 
+focudata:T_NER a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture8_slides08,
+        focudata:COMP_474_6741_lecture8_worksheet07 ;
+    focu:topicName "NER" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q787383> .
+
 focudata:T_OWL a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "OWL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q826165>,
         <https://www.wikidata.org/wiki/Q994371> .
 
 focudata:T_Primer a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Primer" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q16000421> .
 
 focudata:T_QA a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "QA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q613918> .
 
 focudata:T_RAM a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "RAM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q173104> .
 
-focudata:T_Recommender_Systems a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture5 ;
-    focu:topicName "Recommender Systems" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q554950> .
-
-focudata:T_SELECT a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
-    focu:topicName "SELECT" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1164001>,
-        <https://www.wikidata.org/wiki/Q3179671> .
-
 focudata:T_SHRDLU a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_474_6741_lecture2 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02 ;
     focu:topicName "SHRDLU" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1778029> .
 
 focudata:T_Springer_International_Publishing a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Springer International Publishing" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q21096327> .
 
 focudata:T_TBL a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "TBL" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q4001328> .
 
 focudata:T_Target a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture5 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_474_6741_lecture5_worksheet04 ;
     focu:topicName "Target" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1046951> .
 
 focudata:T_Text a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03 ;
     focu:topicName "Text" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q234460>,
         <https://www.wikidata.org/wiki/Q65175049> .
 
 focudata:T_Text_Mining a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Text Mining" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q676880> .
 
 focudata:T_UIMA a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "UIMA" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1539155> .
 
 focudata:T_Wikipedia a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Wikipedia" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q52> .
 
 focudata:T_XML a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "XML" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q2115> .
 
@@ -13860,6 +13904,11 @@ focudata:COMP_472 a vivo:Course ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
 
+focudata:COMP_472_6721_lecture2_worksheet01 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_472_6721/lecture2/worksheet01.pdf> ;
+    focu:hasTopic focudata:T_BA,
+        focudata:T_BFS .
+
 focudata:COMP_6721 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
     focu:courseName "Introduction to Artificial Intelligence" ;
@@ -13868,133 +13917,127 @@ focudata:COMP_6721 a vivo:Course ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
 
-focudata:T_DBpedia a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
-    focu:topicName "DBpedia" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q465> .
-
 focudata:T_Deep_Learning a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Deep Learning" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q197536> .
 
 focudata:T_Eliza a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "Eliza" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q5363475>,
         <https://www.wikidata.org/wiki/Q580318> .
 
-focudata:T_FOAF a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture5 ;
-    focu:topicName "FOAF" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q11697560>,
-        <https://www.wikidata.org/wiki/Q1389366> .
-
-focudata:T_IRI a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4 ;
-    focu:topicName "IRI" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1674879>,
-        <https://www.wikidata.org/wiki/Q424583> .
-
 focudata:T_LOD a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "LOD" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q1505570>,
         <https://www.wikidata.org/wiki/Q1821756>,
         <https://www.wikidata.org/wiki/Q843863> .
 
+focudata:T_Recommender_Systems a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture5_worksheet04 ;
+    focu:topicName "Recommender Systems" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q554950> .
+
+focudata:T_FOAF a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture5_slides05 ;
+    focu:topicName "FOAF" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q11697560>,
+        <https://www.wikidata.org/wiki/Q1389366> .
+
+focudata:T_Google a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture7_slides07 ;
+    focu:topicName "Google" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q9366>,
+        <https://www.wikidata.org/wiki/Q95> .
+
+focudata:T_IRI a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture4_slides04 ;
+    focu:topicName "IRI" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1674879>,
+        <https://www.wikidata.org/wiki/Q424583> .
+
 focudata:T_P a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_472_6721_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
     focu:topicName "P" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q846354>,
         <https://www.wikidata.org/wiki/Q9946> .
 
+focudata:T_RDFS a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture6_slides06 ;
+    focu:topicName "RDFS" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1751819> .
+
+focudata:T_SELECT a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture4_worksheet03,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture7_worksheet06 ;
+    focu:topicName "SELECT" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1164001>,
+        <https://www.wikidata.org/wiki/Q3179671> .
+
 focudata:T_Turtle a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture4_slides04 ;
     focu:topicName "Turtle" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q114409>,
         <https://www.wikidata.org/wiki/Q223044>,
         <https://www.wikidata.org/wiki/Q758540> .
 
-focudata:T_Google a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
-    focu:topicName "Google" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q9366>,
-        <https://www.wikidata.org/wiki/Q95> .
-
-focudata:T_ML a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture6,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
-    focu:topicName "ML" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q2539>,
-        <https://www.wikidata.org/wiki/Q860654> .
-
-focudata:T_NLP a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
-    focu:topicName "NLP" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q30642> .
-
-focudata:T_RDFS a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture6 ;
-    focu:topicName "RDFS" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1751819> .
-
-focudata:T_AI a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_472_6721_lecture3,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture6 ;
-    focu:topicName "AI" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q2494121>,
-        <https://www.wikidata.org/wiki/Q403161> .
+focudata:T_DBpedia a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture4_worksheet03,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture7_worksheet06 ;
+    focu:topicName "DBpedia" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q465> .
 
 focudata:T_IBM a focu:Topic ;
-    focu:provenance focudata:COMP_472_6721_lecture1,
-        focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "IBM" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q37156> .
 
-focudata:T_RDF a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture7 ;
-    focu:topicName "RDF" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1367488>,
-        <https://www.wikidata.org/wiki/Q3575678>,
-        <https://www.wikidata.org/wiki/Q54872> .
+focudata:T_ML a focu:Topic ;
+    focu:provenance focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_472_6721_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture6_slides06,
+        focudata:COMP_474_6741_lecture7_worksheet06,
+        focudata:COMP_474_6741_lecture8_slides08 ;
+    focu:topicName "ML" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q2539>,
+        <https://www.wikidata.org/wiki/Q860654> .
 
 focudata:23456789 a vivo:Student ;
     focu:CompletedCourses focudata:23456789_COMP_345_2020-05-07,
@@ -14009,19 +14052,77 @@ focudata:23456789 a vivo:Student ;
     foaf:lastName "Appleseed" ;
     foaf:mbox "japple@email.com" .
 
+focudata:COMP_472_6721_lecture3_worksheet02 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_472_6721/lecture3/worksheet02.pdf> ;
+    focu:hasTopic focudata:T_AI,
+        focudata:T_Bayes,
+        focudata:T_HNB,
+        focudata:T_ML,
+        focudata:T_P .
+
+focudata:COMP_474_6741_lecture2_worksheet01 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture2/worksheet01.pdf> ;
+    focu:hasTopic focudata:T_Concordia_University,
+        focudata:T_Intelligent_Systems,
+        focudata:T_McGill,
+        focudata:T_McGill_University,
+        focudata:T_RDF .
+
+focudata:COMP_474_6741_lecture3_worksheet02 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture3/worksheet02.pdf> ;
+    focu:hasTopic focudata:T_FOAF,
+        focudata:T_IRI,
+        focudata:T_Intelligent_Systems,
+        focudata:T_RDF,
+        focudata:T_Turtle .
+
+focudata:COMP_474_6741_lecture4_worksheet03 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture4/worksheet03.pdf> ;
+    focu:hasTopic focudata:T_Concordia_University,
+        focudata:T_DBpedia,
+        focudata:T_Dawson_College,
+        focudata:T_Intelligent_Systems,
+        focudata:T_SELECT .
+
+focudata:T_AI a focu:Topic ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_472_6721_lecture3_slides03,
+        focudata:COMP_472_6721_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture6_slides06 ;
+    focu:topicName "AI" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q2494121>,
+        <https://www.wikidata.org/wiki/Q403161> .
+
 focudata:T_Intelligent_Systems a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture2_worksheet01,
+        focudata:COMP_474_6741_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture4_worksheet03,
+        focudata:COMP_474_6741_lecture5_worksheet04,
+        focudata:COMP_474_6741_lecture7_worksheet06,
+        focudata:COMP_474_6741_lecture8_worksheet07 ;
     focu:topicName "Intelligent Systems" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q150001> .
 
-focu:Content a rdf:Class ;
-    rdfs:label "lecture content"@en ;
-    rdfs:comment "Represents any kind of lecture content."@en .
+focudata:T_NLP a focu:Topic ;
+    focu:provenance focudata:COMP_472_6721_lecture1_slides01,
+        focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture7_worksheet06,
+        focudata:COMP_474_6741_lecture8_slides08,
+        focudata:COMP_474_6741_lecture8_worksheet07 ;
+    focu:topicName "NLP" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q30642> .
+
+focudata:COMP_474_6741_lecture5_worksheet04 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture5/worksheet04.pdf> ;
+    focu:hasTopic focudata:T_AP,
+        focudata:T_Compute,
+        focudata:T_Evaluate,
+        focudata:T_Intelligent_Systems,
+        focudata:T_Recommender_Systems,
+        focudata:T_Target .
 
 focudata:COMP_6741 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
@@ -14031,34 +14132,65 @@ focudata:COMP_6741 a vivo:Course ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
 
-focudata:T_Concordia_University a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture6,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
-    focu:topicName "Concordia University" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q326342>,
-        <https://www.wikidata.org/wiki/Q5159001> .
+focudata:T_RDF a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture2_worksheet01,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture3_worksheet02,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture7_worksheet06 ;
+    focu:topicName "RDF" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1367488>,
+        <https://www.wikidata.org/wiki/Q3575678>,
+        <https://www.wikidata.org/wiki/Q54872> .
 
 focudata:T_Software_Engineering a focu:Topic ;
-    focu:provenance focudata:COMP_474_6741_lecture1,
-        focudata:COMP_474_6741_lecture2,
-        focudata:COMP_474_6741_lecture3,
-        focudata:COMP_474_6741_lecture4,
-        focudata:COMP_474_6741_lecture5,
-        focudata:COMP_474_6741_lecture6,
-        focudata:COMP_474_6741_lecture7,
-        focudata:COMP_474_6741_lecture8 ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture6_slides06,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture8_slides08 ;
     focu:topicName "Software Engineering" ;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Q80993> .
+
+focu:Content a rdf:Class ;
+    rdfs:label "lecture content"@en ;
+    rdfs:comment "Represents any kind of lecture content."@en .
+
+focudata:COMP_474_6741_lecture8_worksheet07 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture8/worksheet07.pdf> ;
+    focu:hasTopic focudata:T_ANNIE,
+        focudata:T_EMM,
+        focudata:T_GATE,
+        focudata:T_Intelligent_Systems,
+        focudata:T_NER,
+        focudata:T_NLP,
+        focudata:T_Tokenization,
+        focudata:T_University .
 
 focu:Worksheet a focu:Content ;
     rdfs:label "worksheet lecture content"@en ;
     rdfs:comment "Represents a worksheet lecture content."@en .
+
+focudata:T_Concordia_University a focu:Topic ;
+    focu:provenance focudata:COMP_474_6741_lecture1_slides01,
+        focudata:COMP_474_6741_lecture2_slides02,
+        focudata:COMP_474_6741_lecture2_worksheet01,
+        focudata:COMP_474_6741_lecture3_slides03,
+        focudata:COMP_474_6741_lecture4_slides04,
+        focudata:COMP_474_6741_lecture4_worksheet03,
+        focudata:COMP_474_6741_lecture5_slides05,
+        focudata:COMP_474_6741_lecture6_slides06,
+        focudata:COMP_474_6741_lecture7_slides07,
+        focudata:COMP_474_6741_lecture8_slides08 ;
+    focu:topicName "Concordia University" ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q326342>,
+        <https://www.wikidata.org/wiki/Q5159001> .
 
 focudata:COMP_474 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
@@ -14072,18 +14204,29 @@ focu:Slide a focu:Content ;
     rdfs:label "slide lecture content"@en ;
     rdfs:comment "Represents a slide lecture content."@en .
 
+focudata:COMP_474_6741_lecture7_worksheet06 a focu:Worksheet ;
+    focu:contentLink <./content/COMP_474_6741/lecture7/worksheet06.pdf> ;
+    focu:hasTopic focudata:T_2D,
+        focudata:T_CU,
+        focudata:T_Capital_Letters,
+        focudata:T_DBpedia,
+        focudata:T_Intelligent_Systems,
+        focudata:T_ML,
+        focudata:T_McGill,
+        focudata:T_NLP,
+        focudata:T_OpenCalais,
+        focudata:T_Paris_Hilton,
+        focudata:T_RDF,
+        focudata:T_SELECT .
+
 focu:Lecture a rdf:Class ;
     rdfs:label "lecture"@en ;
     rdfs:comment "Represents a lecture."@en .
 
-focudata:COMP_472_6721_lecture2 a focu:Lecture ;
-    focu:hasContent focudata:COMP_472_6721_lecture2_readings02_1,
-        focudata:COMP_472_6721_lecture2_readings02_2,
-        focudata:COMP_472_6721_lecture2_slides_02,
-        focudata:COMP_472_6721_lecture2_worksheet01 ;
+focudata:COMP_472_6721_lecture2_slides_02 a focu:Slide ;
+    focu:contentLink <./content/COMP_472_6721/lecture2/slides_02.pdf> ;
     focu:hasTopic focudata:T_Admissibility,
         focudata:T_Artificial_Intelligence,
-        focudata:T_BA,
         focudata:T_BFS,
         focudata:T_Breadth,
         focudata:T_Data_Structures,
@@ -14098,16 +14241,53 @@ focudata:COMP_472_6721_lecture2 a focu:Lecture ;
         focudata:T_State_Graph,
         focudata:T_State_Space_Representation,
         focudata:T_State_Space_Search,
-        focudata:T_Uninformed ;
-    focu:lectureBelongsTo focudata:COMP_472,
-        focudata:COMP_6721 ;
-    focu:lectureName "State Space Search" ;
-    focu:lectureNumber 2 .
+        focudata:T_Uninformed .
 
-focudata:COMP_472_6721_lecture1 a focu:Lecture ;
-    focu:hasContent focudata:COMP_472_6721_lecture1_readings01_1,
-        focudata:COMP_472_6721_lecture1_readings01_2,
-        focudata:COMP_472_6721_lecture1_slides01 ;
+focudata:COMP_474_6741_lecture5_slides05 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture5/slides05.pdf> ;
+    focu:hasTopic focudata:T_AP,
+        focudata:T_Amazon,
+        focudata:T_Cambridge_University,
+        focudata:T_Cambridge_University_Press,
+        focudata:T_Comparing,
+        focudata:T_Concordia_University,
+        focudata:T_Content,
+        focudata:T_DCG,
+        focudata:T_FOAF,
+        focudata:T_GOOD,
+        focudata:T_IR,
+        focudata:T_MAP,
+        focudata:T_N,
+        focudata:T_Recommendations,
+        focudata:T_Recommender_Systems,
+        focudata:T_Software_Engineering,
+        focudata:T_WORSER .
+
+focudata:COMP_474_6741_lecture6_slides06 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture6/slides06.pdf> ;
+    focu:hasTopic focudata:T_AI,
+        focudata:T_BSD_License,
+        focudata:T_COMP,
+        focudata:T_CS,
+        focudata:T_Compute,
+        focudata:T_Concordia_University,
+        focudata:T_EDA,
+        focudata:T_Enron,
+        focudata:T_Exploratory_Data_Analysis,
+        focudata:T_House_of_Cards,
+        focudata:T_Intro,
+        focudata:T_ML,
+        focudata:T_Measure,
+        focudata:T_Motivation,
+        focudata:T_NB,
+        focudata:T_Netflix,
+        focudata:T_Noisy_Data,
+        focudata:T_P,
+        focudata:T_RDFS,
+        focudata:T_Software_Engineering .
+
+focudata:COMP_472_6721_lecture1_slides01 a focu:Slide ;
+    focu:contentLink <./content/COMP_472_6721/lecture1/slides01.pdf> ;
     focu:hasTopic focudata:T_AI,
         focudata:T_CAPTCHA,
         focudata:T_Chess,
@@ -14128,80 +14308,10 @@ focudata:COMP_472_6721_lecture1 a focu:Lecture ;
         focudata:T_NLU,
         focudata:T_RET,
         focudata:T_SHRDLU,
-        focudata:T_the_Turing_Test ;
-    focu:lectureBelongsTo focudata:COMP_472,
-        focudata:COMP_6721 ;
-    focu:lectureName "Introduction to Artificial Intelligence" ;
-    focu:lectureNumber 1 .
+        focudata:T_the_Turing_Test .
 
-focudata:COMP_474_6741_lecture5 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture5_readings05_1,
-        focudata:COMP_474_6741_lecture5_readings05_2,
-        focudata:COMP_474_6741_lecture5_readings05_3,
-        focudata:COMP_474_6741_lecture5_slides05,
-        focudata:COMP_474_6741_lecture5_worksheet04 ;
-    focu:hasTopic focudata:T_AP,
-        focudata:T_Amazon,
-        focudata:T_Cambridge_University,
-        focudata:T_Cambridge_University_Press,
-        focudata:T_Comparing,
-        focudata:T_Compute,
-        focudata:T_Concordia_University,
-        focudata:T_Content,
-        focudata:T_DCG,
-        focudata:T_Evaluate,
-        focudata:T_FOAF,
-        focudata:T_GOOD,
-        focudata:T_IR,
-        focudata:T_Intelligent_Systems,
-        focudata:T_MAP,
-        focudata:T_N,
-        focudata:T_Recommendations,
-        focudata:T_Recommender_Systems,
-        focudata:T_Software_Engineering,
-        focudata:T_Target,
-        focudata:T_WORSER ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Recommender Systems" ;
-    focu:lectureNumber 5 .
-
-focudata:COMP_474_6741_lecture6 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture6_readings06_1,
-        focudata:COMP_474_6741_lecture6_readings06_2,
-        focudata:COMP_474_6741_lecture6_readings06_3,
-        focudata:COMP_474_6741_lecture6_slides06,
-        focudata:COMP_474_6741_lecture6_worksheet05 ;
-    focu:hasTopic focudata:T_AI,
-        focudata:T_BSD_License,
-        focudata:T_COMP,
-        focudata:T_CS,
-        focudata:T_Compute,
-        focudata:T_Concordia_University,
-        focudata:T_EDA,
-        focudata:T_Enron,
-        focudata:T_Exploratory_Data_Analysis,
-        focudata:T_FFF,
-        focudata:T_House_of_Cards,
-        focudata:T_Intro,
-        focudata:T_ML,
-        focudata:T_Measure,
-        focudata:T_Motivation,
-        focudata:T_NB,
-        focudata:T_Netflix,
-        focudata:T_Noisy_Data,
-        focudata:T_P,
-        focudata:T_RDFS,
-        focudata:T_Software_Engineering ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Introduction to Machine Learning for Intelligent Systems" ;
-    focu:lectureNumber 6 .
-
-focudata:COMP_472_6721_lecture3 a focu:Lecture ;
-    focu:hasContent focudata:COMP_472_6721_lecture3_readings03_1,
-        focudata:COMP_472_6721_lecture3_slides03,
-        focudata:COMP_472_6721_lecture3_worksheet02 ;
+focudata:COMP_472_6721_lecture3_slides03 a focu:Slide ;
+    focu:contentLink <./content/COMP_472_6721/lecture3/slides03.pdf> ;
     focu:hasTopic focudata:T_A2,
         focudata:T_A4,
         focudata:T_AI,
@@ -14211,7 +14321,6 @@ focudata:COMP_472_6721_lecture3 a focu:Lecture ;
         focudata:T_Dataset,
         focudata:T_EDA,
         focudata:T_Exploratory_Data_Analysis,
-        focudata:T_HNB,
         focudata:T_Hypothesis,
         focudata:T_KDD,
         focudata:T_KNN,
@@ -14224,21 +14333,14 @@ focudata:COMP_472_6721_lecture3 a focu:Lecture ;
         focudata:T_Side_Effect,
         focudata:T_TN,
         focudata:T_Target,
-        focudata:T_Toothache ;
-    focu:lectureBelongsTo focudata:COMP_472,
-        focudata:COMP_6721 ;
-    focu:lectureName "Introduction to Machine Learning and Naive Bayes Classification" ;
-    focu:lectureNumber 3 .
+        focudata:T_Toothache .
 
 focu:Reading a focu:Content ;
     rdfs:label "worksheet lecture content"@en ;
     rdfs:comment "Represents a reading lecture content."@en .
 
-focudata:COMP_474_6741_lecture1 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture1_readings01_1,
-        focudata:COMP_474_6741_lecture1_readings01_2,
-        focudata:COMP_474_6741_lecture1_readings01_3,
-        focudata:COMP_474_6741_lecture1_slides01 ;
+focudata:COMP_474_6741_lecture1_slides01 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture1/slides01.pdf> ;
     focu:hasTopic focudata:T_API,
         focudata:T_Alexa,
         focudata:T_Apple_Siri,
@@ -14264,17 +14366,10 @@ focudata:COMP_474_6741_lecture1 a focu:Lecture ;
         focudata:T_SAAS,
         focudata:T_Software_Engineering,
         focudata:T_Text_Mining,
-        focudata:T_UIMA ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Introduction to Intelligent Systems" ;
-    focu:lectureNumber 1 .
+        focudata:T_UIMA .
 
-focudata:COMP_474_6741_lecture3 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture3_readings03_1,
-        focudata:COMP_474_6741_lecture3_readings03_2,
-        focudata:COMP_474_6741_lecture3_slides03,
-        focudata:COMP_474_6741_lecture3_worksheet02 ;
+focudata:COMP_474_6741_lecture3_slides03 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture3/slides03.pdf> ;
     focu:hasTopic focudata:T_ACM,
         focudata:T_AI,
         focudata:T_C1,
@@ -14286,7 +14381,6 @@ focudata:COMP_474_6741_lecture3 a focu:Lecture ;
         focudata:T_IRI,
         focudata:T_ISO,
         focudata:T_Instances,
-        focudata:T_Intelligent_Systems,
         focudata:T_LOC,
         focudata:T_Linked_Data,
         focudata:T_P,
@@ -14301,17 +14395,10 @@ focudata:COMP_474_6741_lecture3 a focu:Lecture ;
         focudata:T_Turtle,
         focudata:T_Vocabularies,
         focudata:T_thesauri,
-        focudata:T_vvv ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Knowledge Graphs: Vocabularies & Ontologies" ;
-    focu:lectureNumber 3 .
+        focudata:T_vvv .
 
-focudata:COMP_474_6741_lecture2 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture2_readings02_1,
-        focudata:COMP_474_6741_lecture2_readings02_2,
-        focudata:COMP_474_6741_lecture2_slides02,
-        focudata:COMP_474_6741_lecture2_worksheet01 ;
+focudata:COMP_474_6741_lecture2_slides02 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture2/slides02.pdf> ;
     focu:hasTopic focudata:T_A12,
         focudata:T_A2,
         focudata:T_AI,
@@ -14328,10 +14415,7 @@ focudata:COMP_474_6741_lecture2 a focu:Lecture ;
         focudata:T_Graph,
         focudata:T_IBM,
         focudata:T_IRI,
-        focudata:T_Intelligent_Systems,
         focudata:T_LLM,
-        focudata:T_McGill,
-        focudata:T_McGill_University,
         focudata:T_OWL,
         focudata:T_Oracle_Spatial,
         focudata:T_PHP,
@@ -14349,17 +14433,10 @@ focudata:COMP_474_6741_lecture2 a focu:Lecture ;
         focudata:T_WWW,
         focudata:T_Wikidata,
         focudata:T_Wikipedia,
-        focudata:T_YouTube ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Knowledge Graphs" ;
-    focu:lectureNumber 2 .
+        focudata:T_YouTube .
 
-focudata:COMP_474_6741_lecture4 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture4_readings04_1,
-        focudata:COMP_474_6741_lecture4_readings04_2,
-        focudata:COMP_474_6741_lecture4_slides04,
-        focudata:COMP_474_6741_lecture4_worksheet03 ;
+focudata:COMP_474_6741_lecture4_slides04 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture4/slides04.pdf> ;
     focu:hasTopic focudata:T_AVG,
         focudata:T_BabelNet,
         focudata:T_CONSTRUCT,
@@ -14368,14 +14445,12 @@ focudata:COMP_474_6741_lecture4 a focu:Lecture ;
         focudata:T_Construct,
         focudata:T_Currencies,
         focudata:T_DBpedia,
-        focudata:T_Dawson_College,
         focudata:T_Description_Logics,
         focudata:T_Federated_Query,
         focudata:T_Frey,
         focudata:T_Google,
         focudata:T_HTTP,
         focudata:T_IRI,
-        focudata:T_Intelligent_Systems,
         focudata:T_LOD,
         focudata:T_Linked_Data,
         focudata:T_Linked_Open_Data,
@@ -14397,26 +14472,17 @@ focudata:COMP_474_6741_lecture4 a focu:Lecture ;
         focudata:T_UniProt,
         focudata:T_Wikipedia,
         focudata:T_XML,
-        focudata:T_ec ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Knowledge Base Queries" ;
-    focu:lectureNumber 4 .
+        focudata:T_ec .
 
-focudata:COMP_474_6741_lecture7 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture7_readings07_1,
-        focudata:COMP_474_6741_lecture7_slides07,
-        focudata:COMP_474_6741_lecture7_worksheet06 ;
-    focu:hasTopic focudata:T_2D,
-        focudata:T_AIML,
+focudata:COMP_474_6741_lecture7_slides07 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture7/slides07.pdf> ;
+    focu:hasTopic focudata:T_AIML,
         focudata:T_ASK,
         focudata:T_Alexa,
         focudata:T_Amazon,
         focudata:T_Apple,
         focudata:T_Approach,
         focudata:T_CE,
-        focudata:T_CU,
-        focudata:T_Capital_Letters,
         focudata:T_Community,
         focudata:T_Concordia_University,
         focudata:T_Conversational,
@@ -14430,17 +14496,12 @@ focudata:COMP_474_6741_lecture7 a focu:Lecture ;
         focudata:T_Google_Search,
         focudata:T_HBO,
         focudata:T_IBM,
-        focudata:T_Intelligent_Systems,
         focudata:T_LOD,
         focudata:T_Loyola_College,
-        focudata:T_ML,
         focudata:T_MS,
-        focudata:T_McGill,
         focudata:T_Microsoft,
         focudata:T_NLP,
         focudata:T_OPE,
-        focudata:T_OpenCalais,
-        focudata:T_Paris_Hilton,
         focudata:T_Prentice_Hall,
         focudata:T_QA,
         focudata:T_RAM,
@@ -14451,16 +14512,10 @@ focudata:COMP_474_6741_lecture7 a focu:Lecture ;
         focudata:T_Springer_International_Publishing,
         focudata:T_Stopword,
         focudata:T_Workflow,
-        focudata:T_YOUS ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Intelligent Agents" ;
-    focu:lectureNumber 7 .
+        focudata:T_YOUS .
 
-focudata:COMP_474_6741_lecture8 a focu:Lecture ;
-    focu:hasContent focudata:COMP_474_6741_lecture8_readings08_1,
-        focudata:COMP_474_6741_lecture8_slides08,
-        focudata:COMP_474_6741_lecture8_worksheet07 ;
+focudata:COMP_474_6741_lecture8_slides08 a focu:Slide ;
+    focu:contentLink <./content/COMP_474_6741/lecture8/slides08.pdf> ;
     focu:hasTopic focudata:T_ANNIE,
         focudata:T_API,
         focudata:T_BERT,
@@ -14471,15 +14526,12 @@ focudata:COMP_474_6741_lecture8 a focu:Lecture ;
         focudata:T_Concordia_University,
         focudata:T_Deep_Learning,
         focudata:T_EGFR,
-        focudata:T_EMM,
         focudata:T_EOS,
-        focudata:T_GATE,
         focudata:T_GSH,
         focudata:T_Hepple,
         focudata:T_IBM,
         focudata:T_IR,
         focudata:T_Information_Retrieval,
-        focudata:T_Intelligent_Systems,
         focudata:T_JM,
         focudata:T_ML,
         focudata:T_MOD,
@@ -14504,18 +14556,12 @@ focudata:COMP_474_6741_lecture8 a focu:Lecture ;
         focudata:T_Text_Mining,
         focudata:T_The_Apache_Software_Foundation,
         focudata:T_Token,
-        focudata:T_Tokenization,
         focudata:T_Tokens,
         focudata:T_Transducers,
         focudata:T_UIMA,
-        focudata:T_University,
         focudata:T_University_of_Sheffield,
         focudata:T_Unstructured_Information_Management_Architecture,
-        focudata:T_XML ;
-    focu:lectureBelongsTo focudata:COMP_474,
-        focudata:COMP_6741 ;
-    focu:lectureName "Text Mining Systems" ;
-    focu:lectureNumber 8 .
+        focudata:T_XML .
 
 focu:Topic a rdf:Class ;
     rdfs:label "topic"@en ;
