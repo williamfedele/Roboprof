@@ -93,7 +93,6 @@ def build_content():
                         g.add((topic_uri, FOCU.topicName, Literal(topic_name)))
                         g.add((topic_uri, RDFS.seeAlso, URIRef(topic_dbpedia.strip())))
                         g.add((topic_uri, FOCU.provenance, content_uri))
-                        g.add((content_uri, FOCU.hasTopic, topic_uri))
 
                     # extract the type of lecture content from the name of the file.
                     type = None

@@ -8,7 +8,7 @@ WHERE
   		  focu:courseNumber "474" .
   ?lecture focu:lectureBelongsTo ?course ;
            focu:hasContent ?content .
-  ?content focu:hasTopic ?topic .
+  ?topic focu:provenance ?content .
   ?topic focu:topicName ?topicName ;
          rdfs:seeAlso ?wikidata .
 }
