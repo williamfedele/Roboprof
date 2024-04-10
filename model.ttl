@@ -168,8 +168,8 @@ focu:contentLink
 focu:hasTopic
   a rdf:Property ;
   rdfs:label "lecture topics"@en ;
-  rdfs:comment "A link between a lecture and its topics."@en ;
-  rdfs:domain focu:Lecture ;
+  rdfs:comment "A link between a type of content and its topics."@en ;
+  rdfs:domain focu:Content ;
   rdfs:range focu:Topic .
 
 # == Lecture == #
@@ -189,9 +189,9 @@ focu:topicName
 focu:provenance
   a rdf:Property ;
   rdfs:label "topic connection to source"@en ;
-  rdfs:comment "A connection between a topic and the corresponding lecture."@en ;
+  rdfs:comment "A connection between a topic and the content which it can be found."@en ;
   rdfs:domain focu:Topic ;
-  rdfs:range focu:Lecture .
+  rdfs:range focu:Content .
 
 # == HARDCODED seeAlso LINK FOR QUERY 7 == #
 
