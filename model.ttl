@@ -165,13 +165,6 @@ focu:contentLink
   rdfs:domain focu:Content ;
   rdfs:range rdfs:Resource .
 
-focu:hasTopic
-  a rdf:Property ;
-  rdfs:label "lecture topics"@en ;
-  rdfs:comment "A link between a type of content and its topics."@en ;
-  rdfs:domain focu:Content ;
-  rdfs:range focu:Topic .
-
 # == Lecture == #
 
 focu:Topic
