@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX focu: <http://focu.io/schema#>
+
+SELECT ?event ?resource
+WHERE 
+{
+  ?course rdf:type vivo:Course .
+  ?course focu:courseSubject "COMP" .
+  ?course focu:courseNumber "474" .
+  ?event focu:lectureBelongsTo ?course ;
+           focu:hasContent ?resource .
+  FILTER (
+    NOT EXISTS {
+        ?topic focu:provenance ?resource .
+    }
+  )
+}
+ORDER BY ?course
