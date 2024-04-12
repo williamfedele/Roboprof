@@ -17,17 +17,17 @@ PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?course ?event ?count
+SELECT ?course ?event (COUNT(?topic) AS ?count)
 WHERE 
 {
   ?course rdf:type vivo:Course .
-  ?lecture focu:lectureBelongsTo ?course ;
-           focu:hasContent ?event .
-  ?topic focu:provenance ?event ;
-	rdfs:seeAlso <https://www.wikidata.org/wiki/Q1367488> .
-  ?event ?mentionid ?topic .
-  ?mentionid focu:mentionCount ?count .
+  ?event focu:lectureBelongsTo ?course ;
+           focu:hasContent ?resource .
+  ?topic focu:provenance ?resource .
+  ?topic focu:topicName ?topicName ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q326342> .
 } 
+GROUP BY ?course ?event
 ORDER BY DESC(?count)
         """
 
