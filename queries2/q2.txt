@@ -7,9 +7,9 @@ SELECT ?course ?event (COUNT(?topic) AS ?count)
 WHERE 
 {
   ?course rdf:type vivo:Course .
-  ?lecture focu:lectureBelongsTo ?course ;
-           focu:hasContent ?event .
-  ?topic focu:provenance ?event .
+  ?event focu:lectureBelongsTo ?course ;
+           focu:hasContent ?resource .
+  ?topic focu:provenance ?resource .
   ?topic focu:topicName ?topicName ;
          rdfs:seeAlso <https://www.wikidata.org/wiki/Q326342> .
 } 
