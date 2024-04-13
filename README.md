@@ -5,7 +5,6 @@ For example, Roboprof is able to answer questions such as, “What is course COM
 - Ensure you have Poetry set up on your computer
 - After cloning the repo, run `poetry install` to install dependencies then `poetry shell` to enter the shell environment.
 - Run `python -m spacy download en_core_web_sm` in your environment in order to use spaCy for named entity disambiguation and Wikidata linking. This downloads a lightweight model for NLP purposes.
-- Run 'pip3 install rasa' in your environment to use Rasa for our chatbot. Poetry complains about dependency version conflicts and there doesn't seem to be a python version that satisfies Rasa and our other dependencies so this must be installed independently.
 
 ## Generate output files
 - WARNING: This project has been designed to run in a specific folder structure as layed out in the GitHub repo. Modifying the folder structure will likely cause issues with reading the datasets and script importing.

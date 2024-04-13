@@ -6,12 +6,13 @@ authors = ["Malek Jerbi <malek.jerbi@gmail.Com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "~3.10.0"
 rdflib = "^7.0.0"
-black = "^24.2.0"
-pandas = "^2.2.1"
+black = "22.12.0"
+pandas = "2.0.3"
 tika = "^2.6.0"
 spacyfishing = "^0.1.8"
+rasa = "^3.6.19"
 
 
 [tool.poetry.group.dev.dependencies]
