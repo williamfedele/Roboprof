@@ -14,7 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 
 import sys
 sys.path.append('../') # needed since sparql_api is in the parent directory. we can move sparql_api here as an alternative
-from sparql_api import make_query
+from sparql_query_manager import QueryManager
 
 
 class ActionAboutCourse(Action):
@@ -28,14 +28,12 @@ class ActionAboutCourse(Action):
         
         subject = course_name.split(' ')[0].upper()
         number = course_name.split(' ')[1]
-        query = f"SELECT ?description WHERE {{ ?course focu:courseSubject '{subject}' . ?course focu:courseNumber '{number}' . ?course focu:courseDescription ?description }} LIMIT 1"
-
-        response = make_query(query)
-        if response is None:
+        qm = QueryManager()
+        description = qm.query_about_course(subject, number)
+        
+        if description is None:
             dispatcher.utter_message(text="Sorry, I don't recognize that course.")
             return []
-        
-        description = response.json()['results']['bindings'][0]['description']['value']
 
         dispatcher.utter_message(text=f"Here's what I know: {description}")
         return []

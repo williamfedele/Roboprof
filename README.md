@@ -1,62 +1,96 @@
-Roboprof is an intelligent agent that can answer university course- and student-related questions, using a knowledge graph and natural language processing.
-For example, Roboprof is able to answer questions such as, “What is course COMP 474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia teach deep learning?”
+# Roboprof Project README
 
-## Initial Setup
-- Ensure you have Poetry set up on your computer
-- After cloning the repo, run `poetry install` to install dependencies then `poetry shell` to enter the shell environment.
-- Run `python -m spacy download en_core_web_sm` in your environment in order to use spaCy for named entity disambiguation and Wikidata linking. This downloads a lightweight model for NLP purposes.
+Roboprof is an intelligent agent designed to answer questions related to university courses and students by leveraging a knowledge graph and natural language processing techniques. It can handle queries like, “What is course COMP 474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia teach deep learning?”
 
-## Generate output files
-- WARNING: This project has been designed to run in a specific folder structure as layed out in the GitHub repo. Modifying the folder structure will likely cause issues with reading the datasets and script importing.
-- Make sure you have `CATALOG.csv` and `CU_SR_OPEN_DATA_CATALOG.csv` from `https://opendata.concordia.ca/datasets/`
-- Run `python main.py`, this will parse the model, use the `course_builder`, `lecture_builder`, and `academic_builder`, merge the individual graphs and save them to folder `output`. you should expect to see `output/ntriples.ttl` and `output/turtles.ttl` created.
+## Getting Started
 
-## During development
-- Use `poetry add ...` for installing a new package
-- Don't forget to update the this README file when appropriate
+### Initial Setup
+1. Ensure you have python 3.10 installed on your computer
+2. Ensure you have Poetry installed on your computer.
+3. Clone the repository and navigate to the project directory.
+4. Run the following commands to set up the environment:
+   ```
+   poetry install
+   poetry shell
+   python -m spacy download en_core_web_sm
+   ```
 
-## Project structure
-- `data` folder contains the datasets used for this project, can be downloaded from `https://opendata.concordia.ca/datasets/`. It also contains CSVs such as grades.csv and students.csv in order to create some Student classes along with course completions in order to facilitate our queries.
-- `content` folder contains lectures and their contents for 2 courses we chose for this assignment.
-- `queries` folder contains the queries from project part 1 and their outputs.
-- `queries2` folder contains the 4 additional SPARQL queries for project part 2 and their outputs.
-- `rasa` folder contains all Rasa related files for the chatbot. Models are not automatically checked into git to save space.
+### Process flow:
 
-## Project scripts
-- `academic_builder.py` script is responsible for parsing the grades, students, and universities CSV files in the data folder and creating their respective triples.
-- `content_builder.py` script is responsible for parsing the content subfolder and its contents. This folder contains more subfolders for each course we've chosen to include. Each course has another subfolder for each lecture which contains their slides, worksheets and other contents.
-- `course_builder.py` script is responsible for parsing the two Concordia University CSV catalogs containing all of the courses and related fields.
-- `graph_builder.py` script is responsible for executing each of the above 3 scripts using their methods which each return a graph. This script then consolidates them into one graph and outputs the result into turtle format and ntriples format within the output folder.
-- `topic_processor.py` script performs named entity recognition using Apache Tika for document parsing (PDF, etc) and spaCy entity fishing for entity recognition and wikidata LOD linking.
-- `constants.py` script simply holds our namespace domains to avoid repetition.
-- `helpers.py` script provides generic reusable methods we found useful to have use over many files so we extracted the method into this file.
-- `sparql_api.py` script abstracts away the connection info for our fuseki server.
-- `main.py` script is the main entry point for the project. Executes the graph construction in `graph_builder.py`.
+#### Set up Fuseki Server
+- Run the Fuseki server via:
+  ```
+  python main.py fuseki-server
+  ```
+  or follow the detailed setup instructions in the SPARQL server setup section below.
 
-## SPARQL server setup
-First, make sure to generate our ttl/nt files by running python main.py.
+#### Generate Graph Output Files
+- Ensure correct file structure as specified in the GitHub repository to avoid errors.
+- Download `CATALOG.csv` and `CU_SR_OPEN_DATA_CATALOG.csv` from:
+  ```
+  https://opendata.concordia.ca/datasets/
+  ```
+- Generate graph output by running:
+  ```
+  python main.py build_graph
+  ```
 
-On Mac:
-- Install Apache Jena Fuseki (`brew install fuseki` if you have homebrew).
-- Run `fuseki-server --version` to make sure it's installed.
-- To start the server, run `fuseki-server`.
-- Open your web browser and go to `http://localhost:3030/`.
-- Upload one of the ttl/nt files generated by your script.
-- Use the Fuseki interface to write and execute your SPARQL queries.
+#### Upload TTL Files to SPARQL Database
+- Confirm that the Fuseki server is active at localhost:3030, and that you have the file output/turtles.ttl
+- Execute:
+  ```
+  python main.py setup_database
+  ```
+  or simply:
+  ```
+  python main.py
+  ```
 
-On Windows (requires Java 17):
-- Download apache-jena-fuseki-5.0.0-rc1.zip from (https://jena.apache.org/download/).
-- Extract the downloaded ZIP file to a desired location on your system.
-- Open Command Prompt and navigate to the extracted folder.
-- Run `fuseki-server.bat --version` to make sure it's installed.
-- To start the server, run `fuseki-server.bat`.
-- Open your web browser and go to `http://localhost:3030/`.
-- Upload one of the ttl/nt files generated by your script.
-- Use the Fuseki interface to write and execute your SPARQL queries.
+### Development Guidelines
+- Add new packages via:
+  ```
+  poetry add <package_name>
+  ```
+- Keep this README updated with any significant changes.
 
-## Rasa Setup
-- Rasa requires one of the following Python versions: 3.7, 3.8, 3.9, 3.10
-- `cd rasa`
-- Run 'rasa train' to train the rasa model.
-- Run 'rasa run actions' in a terminal within the rasa directory to spin up the actions server.
-- Run 'rasa shell' in another terminal within the rasa directory to load the model and provide an interface for input.
+## Project Organization
+
+### Directories
+- `data`: Holds datasets from Concordia (downloadable [here](https://opendata.concordia.ca/datasets/)), and CSVs for student and course data.
+- `content`: Contains lecture materials for selected courses.
+- `queries`: Stores SPARQL queries and their results from project part 1.
+- `queries2`: Contains additional SPARQL queries for project part 2.
+- `rasa`: Includes all Rasa related files for the chatbot implementation.
+
+### Scripts Overview
+- `academic_builder.py`: Parses academic-related CSVs and builds RDF triples.
+- `content_builder.py`: Parses educational content for RDF graph construction.
+- `course_builder.py`: Handles the parsing of Concordia University's course catalogs.
+- `graph_builder.py`: Consolidates graphs from various parsers into a unified RDF graph.
+- `topic_processor.py`: Implements named entity recognition and linking to Wikidata.
+- `constants.py`: Maintains consistent URIs across scripts.
+- `helpers.py`: Provides reusable utility functions.
+- `sparql_api.py`: Manages connections to the Fuseki SPARQL server.
+- `main.py`: Central script initiating the Fuseki server, graph building, and database setup.
+
+### SPARQL Server Setup
+on Mac:
+- Install Apache Jena Fuseki via Homebrew: `brew install fuseki`.
+- Verify installation with `fuseki-server --version`.
+- Start the server using `fuseki-server` and access it at `http://localhost:3030/`.
+- Upload ttl/nt files and execute SPARQL queries through the Fuseki interface.
+
+on Windows:
+- Download and extract `apache-jena-fuseki-5.0.0-rc1.zip` from the [Apache Jena website](https://jena.apache.org/download/).
+- Use Command Prompt to navigate to the extracted folder and verify installation with `fuseki-server.bat --version`.
+- Start the server using `fuseki-server.bat` and access it at `http://localhost:3030/`.
+- Upload ttl/nt files and execute SPARQL queries through the Fuseki interface.
+
+### Rasa Setup
+- Ensure Python version is 3.10.
+- Navigate to the `rasa` directory.
+- Train the Rasa model with `rasa train`.
+- Start the actions server with `rasa run actions`.
+- In a different terminal: Interact with the trained model using `rasa shell`.
+
+This setup trains the Rasa model, runs the actions server, and opens a shell for interaction.
