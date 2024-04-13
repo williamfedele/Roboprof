@@ -56,6 +56,7 @@ On Windows (requires Java 17):
 
 ## Rasa Setup
 - Rasa requires one of the following Python versions: 3.7, 3.8, 3.9, 3.10
+- `cd rasa`
 - Run 'rasa train' to train the rasa model.
 - Run 'rasa run actions' in a terminal within the rasa directory to spin up the actions server.
 - Run 'rasa shell' in another terminal within the rasa directory to load the model and provide an interface for input.
