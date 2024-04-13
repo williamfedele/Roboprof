@@ -1,5 +1,5 @@
 import requests
-from constants import FUSEKI_BASE_URL
+from constants import FUSEKI_BASE_URL, DATASET_NAME
 
 headers = """
     PREFIX vivo: <http://vivoweb.org/ontology/core#>
@@ -11,7 +11,7 @@ headers = """
 
 
 def make_query(query):
-    rows = requests.get(FUSEKI_BASE_URL, params={'query': headers + query})
+    rows = requests.get(FUSEKI_BASE_URL + DATASET_NAME + "/", params={'query': headers + query})
     return rows
 
 # this is just an example. TODO: remove
