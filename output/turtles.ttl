@@ -3308,6 +3308,26 @@ focudata:COMP_472_6721_lecture3 a focu:Lecture ;
     focu:lectureName "Introduction to Machine Learning and Naive Bayes Classification" ;
     focu:lectureNumber 3 .
 
+focudata:COMP_472_lecture4 a focu:Lecture ;
+    focu:lectureBelongsTo focudata:COMP_472 ;
+    focu:lectureNumber 4 .
+
+focudata:COMP_472_lecture5 a focu:Lecture ;
+    focu:lectureBelongsTo focudata:COMP_472 ;
+    focu:lectureNumber 5 .
+
+focudata:COMP_472_lecture6 a focu:Lecture ;
+    focu:lectureBelongsTo focudata:COMP_472 ;
+    focu:lectureNumber 6 .
+
+focudata:COMP_472_lecture7 a focu:Lecture ;
+    focu:lectureBelongsTo focudata:COMP_472 ;
+    focu:lectureNumber 7 .
+
+focudata:COMP_472_lecture8 a focu:Lecture ;
+    focu:lectureBelongsTo focudata:COMP_472 ;
+    focu:lectureNumber 8 .
+
 focudata:COMP_473 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
     focu:courseName "Pattern Recognition" ;
@@ -12652,7 +12672,7 @@ focudata:T_DCG a focu:Topic ;
 focudata:T_DFA a focu:Topic ;
     focu:provenance focudata:COMP_474_6741_lecture7_slides07 ;
     focu:topicName "DFA" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q1153070> .
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q837528> .
 
 focudata:T_DIAGRAM a focu:Topic ;
     focu:provenance focudata:COMP_474_6741_lecture2_slides02 ;
@@ -13044,7 +13064,8 @@ focudata:T_Loyola_College a focu:Topic ;
 focudata:T_MAP a focu:Topic ;
     focu:provenance focudata:COMP_474_6741_lecture5_slides05 ;
     focu:topicName "MAP" ;
-    rdfs:seeAlso <https://www.wikidata.org/wiki/Q4863657> .
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Q2779095>,
+        <https://www.wikidata.org/wiki/Q4863657> .
 
 focudata:T_MIN a focu:Topic ;
     focu:provenance focudata:COMP_474_6741_lecture4_slides04 ;
@@ -14083,14 +14104,6 @@ focudata:COMP_426 a vivo:Course ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
 
-focudata:COMP_472 a vivo:Course ;
-    focu:courseDescription "Laboratory: 24 hours total, project" ;
-    focu:courseName "Artificial Intelligence" ;
-    focu:courseNumber "472" ;
-    focu:courseSubject "COMP" ;
-    vivo:courseCredits "4.0"^^xsd:float ;
-    vivo:offeredBy focudata:Concordia_University .
-
 focudata:COMP_472_6721_lecture2_worksheet01 a focu:Worksheet ;
     focu:contentLink <./content/COMP_472_6721/lecture2/worksheet01.pdf> .
 
@@ -14130,6 +14143,18 @@ focudata:COMP_474_6741_lecture4_worksheet03 a focu:Worksheet ;
 focudata:COMP_474_6741_lecture5_worksheet04 a focu:Worksheet ;
     focu:contentLink <./content/COMP_474_6741/lecture5/worksheet04.pdf> .
 
+focu:Content a rdf:Class ;
+    rdfs:label "lecture content"@en ;
+    rdfs:comment "Represents any kind of lecture content."@en .
+
+focudata:COMP_472 a vivo:Course ;
+    focu:courseDescription "Laboratory: 24 hours total, project" ;
+    focu:courseName "Artificial Intelligence" ;
+    focu:courseNumber "472" ;
+    focu:courseSubject "COMP" ;
+    vivo:courseCredits "4.0"^^xsd:float ;
+    vivo:offeredBy focudata:Concordia_University .
+
 focudata:COMP_6741 a vivo:Course ;
     focu:courseDescription "Laboratory: 24 hours total, project" ;
     focu:courseName "Intelligent Systems" ;
@@ -14137,10 +14162,6 @@ focudata:COMP_6741 a vivo:Course ;
     focu:courseSubject "COMP" ;
     vivo:courseCredits "4.0"^^xsd:float ;
     vivo:offeredBy focudata:Concordia_University .
-
-focu:Content a rdf:Class ;
-    rdfs:label "lecture content"@en ;
-    rdfs:comment "Represents any kind of lecture content."@en .
 
 focudata:COMP_474_6741_lecture8_worksheet07 a focu:Worksheet ;
     focu:contentLink <./content/COMP_474_6741/lecture8/worksheet07.pdf> .
@@ -14164,15 +14185,15 @@ focu:Slide a focu:Content ;
 focudata:COMP_474_6741_lecture7_worksheet06 a focu:Worksheet ;
     focu:contentLink <./content/COMP_474_6741/lecture7/worksheet06.pdf> .
 
-focu:Lecture a rdf:Class ;
-    rdfs:label "lecture"@en ;
-    rdfs:comment "Represents a lecture."@en .
-
 focudata:COMP_472_6721_lecture2_slides_02 a focu:Slide ;
     focu:contentLink <./content/COMP_472_6721/lecture2/slides_02.pdf> .
 
 focudata:COMP_474_6741_lecture5_slides05 a focu:Slide ;
     focu:contentLink <./content/COMP_474_6741/lecture5/slides05.pdf> .
+
+focu:Lecture a rdf:Class ;
+    rdfs:label "lecture"@en ;
+    rdfs:comment "Represents a lecture."@en .
 
 focudata:COMP_474_6741_lecture6_slides06 a focu:Slide ;
     focu:contentLink <./content/COMP_474_6741/lecture6/slides06.pdf> .
@@ -14212,3 +14233,4 @@ focu:Topic a rdf:Class ;
 focudata:Concordia_University a vivo:University ;
     rdfs:label "Concordia University" ;
     rdfs:seeAlso <https://dbpedia.org/resource/Concordia_University> .
+

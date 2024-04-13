@@ -3,7 +3,7 @@ from rdflib import Graph, RDF, RDFS, Literal, URIRef
 from course_builder import build_courses
 from content_builder import build_content
 from academic_builder import build_universities, build_students, build_grades
-from constants import FOCU, FOCUDATA, VIVO
+from constants import FOCU, FOCUDATA, VIVO, OUTPUT_NTRIPLES, OUTPUT_TURTLE
 
 
 def build_graph():
@@ -25,5 +25,5 @@ def build_graph():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    g_final.serialize(destination="output/ntriples.nt", format="ntriples")
-    g_final.serialize(destination="output/turtles.ttl", format="turtle")
+    g_final.serialize(destination=OUTPUT_NTRIPLES, format="ntriples")
+    g_final.serialize(destination=OUTPUT_TURTLE, format="turtle")
