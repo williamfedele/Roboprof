@@ -22,7 +22,7 @@ pipeline:
     OOV_token: _oov
     analyzer: char_wb
     min_ngram: 1
-    max_ngram: 4
+    max_ngram: 1
   - name: DIETClassifier
     epochs: 100
     constrain_similarities: true

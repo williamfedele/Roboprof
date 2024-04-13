@@ -5,15 +5,15 @@ nlu:
   examples: |
     - What is [COMP 474](course) about?
     - What is [_oov](course) about?
-    - What is [GEOG 210](course) about
+    - What is [geog 210](course) about
     - What is [_oov](course) about
     - Can you tell me about [SOEN 228](course)
     - Can you tell me about [_oov](course)
-    - Can you tell me about [COMP 474](course)?
+    - Can you tell me about [comp 474](course)?
     - Can you tell me about [_oov](course)?
     - Tell me about [GEOG 210](course)
     - Tell me about [_oov](course)
-    - Tell me about [SOEN 228](course)?
+    - Tell me about [soen 228](course)?
     - Tell me about [_oov](course)?
 
 

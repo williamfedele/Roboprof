@@ -37,5 +37,5 @@ class ActionAboutCourse(Action):
         
         description = response.json()['results']['bindings'][0]['description']['value']
 
-        dispatcher.utter_message(text=description)
+        dispatcher.utter_message(text=f"Here's what I know: {description}")
         return []
