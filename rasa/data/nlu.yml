@@ -16,6 +16,13 @@ nlu:
     - Tell me about [soen 228](course)?
     - Tell me about [_oov](course)?
 
+- intent: course_event_topics
+  examples: |
+    - Which topics are covered in [Lab #2 of COMP 474](course_event)?
+    - Tell me the topics covered in [Lecture 5 of Physics 101](course_event).
+    - What is discussed in [Workshop 1 of Digital Arts](course_event)?
+    - Can you show the topics from [Seminar on Computational Biology](course_event)?
+
 - intent: covers_topic
   examples: |
     - Which course events cover [Data Mining](topic)?
