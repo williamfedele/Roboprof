@@ -26,23 +26,6 @@ class QueryManager:
         return None
 
 
-    def example_query(self):
-        query = """
-SELECT ?course ?event (COUNT(?topic) AS ?count)
-WHERE 
-{
-  ?course rdf:type vivo:Course .
-  ?event focu:lectureBelongsTo ?course ;
-           focu:hasContent ?resource .
-  ?topic focu:provenance ?resource .
-  ?topic focu:topicName ?topicName ;
-         rdfs:seeAlso <https://www.wikidata.org/wiki/Q326342> .
-} 
-GROUP BY ?course ?event
-ORDER BY DESC(?count)
-        """
-        return self.make_query(query)
-
 if __name__ == "__main__":
     qm = QueryManager()
     print(qm.query_about_course("COMP", "474"))
