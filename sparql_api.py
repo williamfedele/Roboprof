@@ -1,22 +1,24 @@
 import requests
 from constants import FUSEKI_BASE_URL
 
+headers = """
+    PREFIX vivo: <http://vivoweb.org/ontology/core#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX focu: <http://focu.io/schema#>
+    """
+    
+
 
 def make_query(query):
-    rows = requests.get(FUSEKI_BASE_URL, params={'query': query})
+    rows = requests.get(FUSEKI_BASE_URL, params={'query': headers + query})
     return rows
-
 
 # this is just an example. TODO: remove
 def query2():
     
     # paste query here
     query = """
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX vivo: <http://vivoweb.org/ontology/core#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX focu: <http://focu.io/schema#>
-
 SELECT ?course ?event (COUNT(?topic) AS ?count)
 WHERE 
 {
