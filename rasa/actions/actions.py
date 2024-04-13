@@ -40,6 +40,44 @@ class ActionAboutCourse(Action):
         dispatcher.utter_message(text=f"Here's what I know: {description}")
         return []
     
+class ActionEventTopics(Action):
+    def name(self) -> str:
+        return "action_event_topics"
+
+    def run(self, dispatcher: CollectingDispatcher, 
+            tracker: Tracker, 
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        course_event = tracker.get_slot('course_event')
+        if not course_event:
+            dispatcher.utter_message(text="Please specify the course event you are interested in.")
+            return []
+
+        query = f"""
+        SELECT ?topic ?resourceURI 
+        WHERE {{
+            ?event focu:eventName "{course_event}" .
+            ?event focu:coversTopic ?topic .
+            ?topic focu:resourceURI ?resourceURI .
+        }}
+        """
+
+        response = make_query(query)
+        if response is None or 'results' not in response.json():
+            dispatcher.utter_message(text=f"No topics found for {course_event}.")
+            return []
+
+        results = response.json()['results']['bindings']
+        if results:
+            topics = [f"{result['topic']['value']} - {result['resourceURI']['value']}" for result in results]
+            response_message = "\n".join(topics)
+        else:
+            response_message = f"No topics found for {course_event}."
+
+        dispatcher.utter_message(text=response_message)
+        return []
+
+    
 class ActionCoversTopic(Action):
     def name(self):
         return "action_covers_topic"
