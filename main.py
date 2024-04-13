@@ -31,7 +31,5 @@ if __name__ == "__main__":
         if 'setup_database' in sys.argv:
             setup_database()
     else:
-        print("No command-line arguments provided. Running all tasks...")
-        start_fuseki()
-        build_graph_wrapper()
+        print("No command-line arguments provided. Running only the graph upload to the database")
         setup_database()

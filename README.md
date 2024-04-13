@@ -15,14 +15,7 @@ Roboprof is an intelligent agent designed to answer questions related to univers
    python -m spacy download en_core_web_sm
    ```
 
-### Main Script Execution
-Run the main script using:
-```
-python main.py
-```
-This initiates the tasks: `fuseki-server`, `build_graph`, `setup_database`.
-
-### Individual Task Instructions
+### Process flow:
 
 #### Set up Fuseki Server
 - Run the Fuseki server via:
@@ -43,16 +36,14 @@ This initiates the tasks: `fuseki-server`, `build_graph`, `setup_database`.
   ```
 
 #### Upload TTL Files to SPARQL Database
-- Confirm that the Fuseki server is active at localhost:3030.
+- Confirm that the Fuseki server is active at localhost:3030, and that you have the file output/turtles.ttl
 - Execute:
   ```
   python main.py setup_database
   ```
-
-#### Running Multiple Tasks
-- If ttl files are pre-generated, you can run:
+  or simply:
   ```
-  python main.py fuseki-server setup_database
+  python main.py
   ```
 
 ### Development Guidelines
