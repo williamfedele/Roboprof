@@ -24,6 +24,36 @@ class QueryManager:
             return data[0]['description']['value']
         
         return None
+    
+    def query_course_event_topics(self, event, eventNumber, courseSubject, courseNumber):
+
+        # we only have lecture content right now
+        lecture_variants = ['lecture','lec']
+        if event.lower() not in lecture_variants:
+            return None
+
+        query = f"""
+            SELECT ?topicName ?topic ?event
+            WHERE 
+            {{
+            ?course rdf:type vivo:Course .
+            ?course focu:courseSubject "{courseSubject.upper()}" .
+            ?course focu:courseNumber "{courseNumber}" .
+            ?event rdf:type focu:Lecture ;
+                        focu:lectureBelongsTo ?course ;
+                        focu:lectureNumber {eventNumber} ;
+                        focu:hasContent ?resource .
+            ?topic focu:provenance ?resource .
+            ?topic focu:topicName ?topicName ;
+            }}
+            ORDER BY ?topicName
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+
+        return response.json()['results']['bindings']
+
 
 
 if __name__ == "__main__":

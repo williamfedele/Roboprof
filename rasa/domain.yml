@@ -14,7 +14,7 @@ intents:
 
 entities:
   - course
-  - course_event
+  - event
   - topic
 
 actions:
@@ -29,12 +29,12 @@ slots:
     mappings:
       - type: from_entity
         entity: course
-  course_event:
+  event:
     type: text
     initial_value: "unknown"
     mappings:
       - type: from_entity
-        entity: course_event
+        entity: event
   topic:
     type: text
     initial_value: "unknown"

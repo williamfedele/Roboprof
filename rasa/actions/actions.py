@@ -39,38 +39,34 @@ class ActionAboutCourse(Action):
         return []
     
 class ActionEventTopics(Action):
-    def name(self) -> str:
+    def name(self):
         return "action_event_topics"
-
-    def run(self, dispatcher: CollectingDispatcher, 
-            tracker: Tracker, 
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        course_event = tracker.get_slot('course_event')
-        if not course_event:
+    def run(self, dispatcher, tracker, domain):
+        event = tracker.get_slot('event')
+        course = tracker.get_slot('course')
+        
+        # expecting event = 'Lecture 2', course = 'COMP 474'
+        if len(event.split(' ')) != 2 or len(course.split(' ')) != 2 or event == "unknown" or course == "unknown":
             dispatcher.utter_message(text="Please specify the course event you are interested in.")
             return []
 
-        query = f"""
-        SELECT ?topic ?resourceURI 
-        WHERE {{
-            ?event focu:eventName "{course_event}" .
-            ?event focu:coversTopic ?topic .
-            ?topic focu:resourceURI ?resourceURI .
-        }}
-        """
+        event_type = event.split(' ')[0]
+        event_num = int(event.split(' ')[1])
+        course_subject = course.split(' ')[0]
+        course_number = course.split(' ')[1]
 
-        response = make_query(query)
-        if response is None or 'results' not in response.json():
-            dispatcher.utter_message(text=f"No topics found for {course_event}.")
+        qm = QueryManager()
+        response = qm.query_course_event_topics(event_type, event_num, course_subject, course_number)
+        print(response)
+        if response is None:
+            dispatcher.utter_message(text=f"No topics found for {event} in {course}.")
             return []
-
-        results = response.json()['results']['bindings']
-        if results:
-            topics = [f"{result['topic']['value']} - {result['resourceURI']['value']}" for result in results]
-            response_message = "\n".join(topics)
+        
+        if response:
+            topics = [f"{row['topicName']['value']}, {row['topic']['value']}, {row['event']['value']}" for row in response]
+            response_message = "Here's what I found:\n"+"\n".join(topics)
         else:
-            response_message = f"No topics found for {course_event}."
+            response_message = f"No topics found for {event} in {course}."
 
         dispatcher.utter_message(text=response_message)
         return []

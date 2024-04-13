@@ -18,10 +18,22 @@ nlu:
 
 - intent: course_event_topics
   examples: |
-    - Which topics are covered in [Lab #2 of COMP 474](course_event)?
-    - Tell me the topics covered in [Lecture 5 of Physics 101](course_event).
-    - What is discussed in [Workshop 1 of Digital Arts](course_event)?
-    - Can you show the topics from [Seminar on Computational Biology](course_event)?
+    - Which topics are covered in [Lab 2](event) of [COMP 474](course)?
+    - Which topics are covered in [_oov](event) of [COMP 474](course)?
+    - Which topics are covered in [Lecture 4](event) of [_oov](course)?
+    - Which topics are covered in [_oov](event) of [_oov](course)?
+    - Tell me the topics covered in [Lecture 5](event) of [COMP 472](course).
+    - Tell me the topics covered in [_oov](event) of [comp 472](course).
+    - Tell me the topics covered in [Lecture 5](event) of [_oov](course).
+    - Tell me the topics covered in [_oov](event) of [_oov](course).
+    - What is discussed in [Workshop 1](event) of [Digital Arts](course)?
+    - What is discussed in [_oov](event) of [Digital Arts](course)?
+    - What is discussed in [Workshop 1](event) of [_oov](course)?
+    - What is discussed in [_oov](event) of [_oov](course)?
+    - Can you show the topics from [Seminar](event) in [SOEN 228](course)?
+    - Can you show the topics from [_oov](event) in [SOEN 228](course)?
+    - Can you show the topics from [Seminar](event) in [_oov](course)?
+    - Can you show the topics from [_oov](event) in [_oov](course)?
 
 - intent: covers_topic
   examples: |
@@ -47,7 +59,7 @@ nlu:
     - Can you tell me which course events cover [_oov](topic)?
     - Can you tell me which course events cover [deep learning](topic)
     - Can you tell me which course events cover [data security](topic)
-    - Can you tell me which course events cover [dbpedializa](topic)
+    - Can you tell me which course events cover [dbpedia](topic)
     - Can you tell me which course events cover [_oov](topic)
 
 
