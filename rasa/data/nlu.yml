@@ -16,7 +16,32 @@ nlu:
     - Tell me about [soen 228](course)?
     - Tell me about [_oov](course)?
 
-
+- intent: covers_topic
+  examples: |
+    - Which course events cover [Data Mining](topic)?
+    - Which course events cover [exploratory data analysis](topic)?
+    - Which course events cover [eliza](topic)?
+    - Which course events cover [_oov](topic)?
+    - Which course events cover [Data Mining](topic)
+    - Which course events cover [artificial intelligence](topic)
+    - Which course events cover [alexa](topic)
+    - Which course events cover [_oov](topic)
+    - Which courses cover [Data Mining](topic)?
+    - Which courses cover [exploratory data analysis](topic)?
+    - Which courses cover [eliza](topic)?
+    - Which courses cover [_oov](topic)?
+    - Which courses cover [Data Mining](topic)
+    - Which courses cover [exploratory data analysis](topic)
+    - Which courses cover [eliza](topic)
+    - Which courses cover [_oov](topic)
+    - Can you tell me which course events cover [Data Mining](topic)?
+    - Can you tell me which course events cover [exploratory data analysis](topic)?
+    - Can you tell me which course events cover [eliza](topic)?
+    - Can you tell me which course events cover [_oov](topic)?
+    - Can you tell me which course events cover [deep learning](topic)
+    - Can you tell me which course events cover [data security](topic)
+    - Can you tell me which course events cover [dbpedializa](topic)
+    - Can you tell me which course events cover [_oov](topic)
 
 
 - intent: greet

@@ -9,12 +9,15 @@ intents:
   - mood_unhappy
   - bot_challenge
   - about_course
+  - covers_topic
 
 entities:
   - course
+  - topic
 
 actions:
   - action_about_course
+  - action_covers_topic
 
 slots:
   course:
@@ -23,6 +26,12 @@ slots:
     mappings:
       - type: from_entity
         entity: course
+  topic:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: topic
 
 
 

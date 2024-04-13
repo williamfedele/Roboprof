@@ -9,7 +9,12 @@ stories:
     - intent: about_course
     - action: action_about_course
 
-
+- story: get courses events that cover a topic
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: covers_topic
+    - action: action_covers_topic
 
 
 

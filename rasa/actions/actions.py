@@ -22,7 +22,7 @@ class ActionAboutCourse(Action):
         return "action_about_course"
     def run(self, dispatcher, tracker, domain):
         course_name = tracker.get_slot('course')
-        if len(course_name.split(' ')) != 2 or not course_name:
+        if len(course_name.split(' ')) != 2 or not course_name or course_name == "unknown":
             dispatcher.utter_message(text="Sorry, I don't recognize that course.")
             return []
         
@@ -38,4 +38,48 @@ class ActionAboutCourse(Action):
         description = response.json()['results']['bindings'][0]['description']['value']
 
         dispatcher.utter_message(text=f"Here's what I know: {description}")
+        return []
+    
+class ActionCoversTopic(Action):
+    def name(self):
+        return "action_covers_topic"
+    def run(self, dispatcher, tracker, domain):
+        topic_name = tracker.get_slot('topic')
+
+        print(topic_name)
+        if topic_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
+            return []
+        
+        query = f"""
+            SELECT ?course ?event (COUNT(?topic) AS ?count)
+            WHERE 
+            {{
+            ?course rdf:type vivo:Course .
+            ?event focu:lectureBelongsTo ?course ;
+                    focu:hasContent ?resource .
+            ?topic focu:provenance ?resource .
+            ?topic focu:topicName ?topicName ;
+            filter contains(lcase(?topicName), "{topic_name.lower()}")
+            }}
+            GROUP BY ?course ?event
+            ORDER BY DESC(?count)
+        """
+
+        response = make_query(query)
+        if response is None or response.json()['results'] is None:
+            dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
+            return []
+        rows = response.json()['results']['bindings']
+        response = f"I found {topic_name} discussed here:"
+        for row in rows:
+            course = row['course']['value']
+            event = row['event']['value']
+            response += f"\n{course}, {event}"
+
+        # print(f"topic: {topic_name}")
+        # print(response.json()['results'])
+        #description = response.json()['results']['bindings'][0]['description']['value']
+
+        dispatcher.utter_message(text=response)
         return []
