@@ -1,87 +1,95 @@
-# Roboprof README
+# Roboprof Project README
 
-**Roboprof** is an intelligent agent designed to answer university course- and student-related questions using a knowledge graph and natural language processing technology. Roboprof can help provide insights into course details, student competencies, and course content across various academic subjects.
+Roboprof is an intelligent agent designed to answer questions related to university courses and students by leveraging a knowledge graph and natural language processing techniques. It can handle queries like, “What is course COMP 474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia teach deep learning?”
 
-For instance, Roboprof can respond to queries like:
-- "What is course COMP 474 about?"
-- "Which topics is Jane competent in?"
-- "Which courses at Concordia teach deep learning?"
-
----
+## Getting Started
 
 ### Initial Setup
+1. Ensure you have Poetry installed on your computer.
+2. Clone the repository and navigate to the project directory.
+3. Run the following commands to set up the environment:
+   ```
+   poetry install
+   poetry shell
+   python -m spacy download en_core_web_sm
+   ```
 
-1. Install Poetry on your system.
-2. Clone the repository and run `poetry install` to set up dependencies.
-3. Activate the environment with `poetry shell`.
-4. Install spaCy's lightweight model for NLP with `python -m spacy download en_core_web_sm`.
+### Main Script Execution
+Run the main script using:
+```
+python main.py
+```
+This initiates the tasks: `fuseki-server`, `build_graph`, `setup_database`.
 
-### How to Run the Main Script
+### Individual Task Instructions
 
-Execute `python main.py` to initiate:
-- `fuseki-server`
-- `build_graph`
-- `setup_database`
+#### Set up Fuseki Server
+- Run the Fuseki server via:
+  ```
+  python main.py fuseki-server
+  ```
+  or follow the detailed setup instructions in the SPARQL server setup section below.
 
-You can also run specific functions as detailed below.
+#### Generate Graph Output Files
+- Ensure correct file structure as specified in the GitHub repository to avoid errors.
+- Download `CATALOG.csv` and `CU_SR_OPEN_DATA_CATALOG.csv` from:
+  ```
+  https://opendata.concordia.ca/datasets/
+  ```
+- Generate graph output by running:
+  ```
+  python main.py build_graph
+  ```
 
-### Specific Task Execution
+#### Upload TTL Files to SPARQL Database
+- Confirm that the Fuseki server is active at localhost:3030.
+- Execute:
+  ```
+  python main.py setup_database
+  ```
 
-- **Fuseki Server Setup:**
-  - Directly via terminal (refer to the SPARQL server setup section) or `python main.py fuseki-server`
-  
-- **Generating Output Files:**
-  - Ensure proper directory structure as noted in the repository.
-  - Acquire necessary `.csv` files from [Concordia OpenData](https://opendata.concordia.ca/datasets/).
-  - Run `python main.py build_graph` to parse data and save as `.ttl` in the `output` directory.
+#### Running Multiple Tasks
+- If ttl files are pre-generated, you can run:
+  ```
+  python main.py fuseki-server setup_database
+  ```
 
-- **Upload ttl to SPARQL Database:**
-  - Ensure the `fuseki-server` is active at `localhost:3030`.
-  - Run `python main.py setup_database`.
+### Development Guidelines
+- Add new packages via:
+  ```
+  poetry add <package_name>
+  ```
+- Keep this README updated with any significant changes.
 
-- **Combining Tasks:**
-  - E.g., With existing `.ttl` files: `python main.py fuseki-server setup_database`.
+## Project Organization
 
-### Development Tips
-
-- Use `poetry add ...` to install new packages.
-- Regularly update this README to reflect changes or enhancements.
-
-### Project Structure
-
-- `data`: Contains datasets and CSVs for students and courses.
-- `content`: Holds lectures for selected courses.
-- `queries` and `queries2`: Contain SPARQL queries and respective outputs for parts 1 and 2 of the project.
-- `rasa`: Includes Rasa setup files for the chatbot (models excluded from git).
+### Directories
+- `data`: Holds datasets from Concordia (downloadable [here](https://opendata.concordia.ca/datasets/)), and CSVs for student and course data.
+- `content`: Contains lecture materials for selected courses.
+- `queries`: Stores SPARQL queries and their results from project part 1.
+- `queries2`: Contains additional SPARQL queries for project part 2.
+- `rasa`: Includes all Rasa related files for the chatbot implementation.
 
 ### Scripts Overview
+- `academic_builder.py`: Parses academic-related CSVs and builds RDF triples.
+- `content_builder.py`: Parses educational content for RDF graph construction.
+- `course_builder.py`: Handles the parsing of Concordia University's course catalogs.
+- `graph_builder.py`: Consolidates graphs from various parsers into a unified RDF graph.
+- `topic_processor.py`: Implements named entity recognition and linking to Wikidata.
+- `constants.py`: Maintains consistent URIs across scripts.
+- `helpers.py`: Provides reusable utility functions.
+- `sparql_api.py`: Manages connections to the Fuseki SPARQL server.
+- `main.py`: Central script initiating the Fuseki server, graph building, and database setup.
 
-- `*_builder.py`: Scripts for parsing and building graphs for academic data, content, and courses.
-- `topic_processor.py`: Handles document parsing and entity recognition linking to Wikidata.
-- `constants.py`: Maintains consistent namespace domains.
-- `helpers.py`: Provides general-purpose methods.
-- `sparql_api.py`: Manages Fuseki server connections.
-- `main.py`: The primary script starting the fuseki-server and managing data processing tasks.
-
-### SPARQL Server Setup Instructions
-
-- **Mac:**
-  - Install with Homebrew: `brew install fuseki`.
-  - Start with: `fuseki-server`.
-  - Access at `http://localhost:3030/` and upload `.ttl` files for query execution.
-
-- **Windows:**
-  - Download and set up Apache Jena Fuseki.
-  - Start with `fuseki-server.bat`.
-  - Access at `http://localhost:3030/` and manage uploads and queries.
+### SPARQL Server Setup
+Refer to detailed instructions for setting up the SPARQL server on Mac or Windows as specified below in the README.
 
 ### Rasa Setup
-
-- Ensure Python version compatibility (3.7, 3.8, 3.9, 3.10).
-- Navigate to `rasa` directory.
-- Execute `rasa train` to prepare the model.
-- Run `rasa run actions` and `rasa shell` to start the chat interface.
-
----
-
-This structured and more visually appealing README aims to enhance user understanding and accessibility to project details, setup guidelines, and usage instructions.
+- Ensure Python version between 3.7 and 3.10.
+- Navigate to the `rasa` directory and run:
+  ```
+  rasa train
+  rasa run actions
+  rasa shell
+  ```
+This setup trains the Rasa model, runs the actions server, and opens a shell for interaction.
