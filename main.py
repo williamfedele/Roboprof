@@ -23,7 +23,6 @@ def setup_database():
 
 
 if __name__ == "__main__":
-    print("Running main.py...")
     if len(sys.argv) > 1:
         if 'start_fuseki' in sys.argv:
             start_fuseki()
