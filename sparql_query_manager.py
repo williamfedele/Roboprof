@@ -1,5 +1,4 @@
 from sparql_fuseki_manager import FusekiManager
-from constants import FUSEKI_BASE_URL, DATASET_NAME
 
 class QueryManager:
     def __init__(self):
@@ -12,10 +11,19 @@ class QueryManager:
         """
 
     def make_query(self, query):
-        print("Querying...")
         return self.fuseki_manager.query(query, self.prefixes)
 
+    def query_about_course(self, subject, number):
+        query = f"SELECT ?description WHERE {{ ?course focu:courseSubject '{subject}' . ?course focu:courseNumber '{number}' . ?course focu:courseDescription ?description }} LIMIT 1"
+        response = self.make_query(query)
+        if response == None:
+            return None
 
+        data = response.json()['results']['bindings']
+        if data:
+            return data[0]['description']['value']
+        
+        return None
 
 
     def example_query(self):
@@ -36,6 +44,5 @@ ORDER BY DESC(?count)
         return self.make_query(query)
 
 if __name__ == "__main__":
-    fm = FusekiManager()
-    qm = QueryManager(fm)
-    print(qm.example_query().text)
+    qm = QueryManager()
+    print(qm.query_about_course("COMP", "474"))

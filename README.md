@@ -100,6 +100,6 @@ on Windows:
 - Navigate to the `rasa` directory.
 - Train the Rasa model with `rasa train`.
 - Start the actions server with `rasa run actions`.
-- Interact with the trained model using `rasa shell`.
+- In a different terminal: Interact with the trained model using `rasa shell`.
 
 This setup trains the Rasa model, runs the actions server, and opens a shell for interaction.

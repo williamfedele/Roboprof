@@ -49,7 +49,6 @@ class FusekiManager:
 
     def query(self, sparql_query, prefixes=""):
         full_query = prefixes + sparql_query
-        print("now really querying...")
         response = requests.get(f"{self.base_url}{self.dataset_name}/query", params={'query': full_query})
         print("response status:", response.status_code)
         return response
