@@ -1,4 +1,4 @@
-from constants import FUSEKI_BASE_URL, DATASET_NAME
+from constants import FUSEKI_BASE_URL, DATASET_NAME, OUTPUT_TURTLE
 import requests
 
 # This class is a singleton class that manages the Apache Fuseki server
@@ -42,7 +42,7 @@ class FusekiManager:
             else:
                 raise Exception(f"Failed to upload data: {response.status_code} {response.text}")
 
-    def setup_new_database(self, file_path="./output/turtles.ttl"):
+    def setup_new_database(self, file_path=OUTPUT_TURTLE):
         self.delete_dataset()
         self.create_dataset()
         self.upload_turtle(file_path)
