@@ -23,7 +23,9 @@ intents:
   - grade_achieved_in_course
   - students_completed_course
   - student_transcript
-  
+  - course_count
+  - triple_count
+
 entities:
   - course
   - event
@@ -48,6 +50,8 @@ actions:
   - action_grade_achieved_in_course # part 1 query 11
   - action_students_completed_course # part 1 query 12
   - action_student_transcript # part 1 query 13
+  - action_course_count # part 1 statistic query
+  - action_triple_count # part 1 statistic query
 
 slots:
   course:

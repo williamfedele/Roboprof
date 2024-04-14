@@ -381,6 +381,44 @@ class QueryManager:
         response_msg = f"This is the transcript for student {student}:\n" + "\n".join(students)
 
         return response_msg
+    
+    def query_course_count(self):
+        query = f"""
+            SELECT (COUNT(*) as ?TotalCourses) WHERE {{
+                ?course rdf:type vivo:Course  
+            }}
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        response_msg = f"There are {response[0]['TotalCourses']['value']} courses in the graph."
+
+        return response_msg
+    
+    def query_total_triples(self):
+        query = f"""
+            SELECT (COUNT(*) as ?NumTriples) WHERE {{
+                ?s ?p ?o  
+            }}
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        response_msg = f"There are {response[0]['NumTriples']['value']} triples in the graph."
+
+        return response_msg
 
 
 if __name__ == "__main__":

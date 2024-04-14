@@ -107,6 +107,20 @@ stories:
     - intent: student_transcript
     - action: action_student_transcript
 
+- story: get total count of courses
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_count
+    - action: action_course_count
+
+- story: get total count of triples
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: triple_count
+    - action: action_triple_count
+
 
 # default stuff
 - story: happy path
