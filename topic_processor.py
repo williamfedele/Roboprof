@@ -15,9 +15,7 @@ def process(file):
     # filter to only organizations (ORG), locations (GPE), people (PERSON)
     # must have a wikidata link
     named_entities = {
-        (ent.text.strip(), ent._.url_wikidata)
-        for ent in doc.ents
-        if ent.label_ in ["ORG"] and ent._.url_wikidata
+        (ent.text.strip(), ent._.url_wikidata) for ent in doc.ents if ent.label_ in ["ORG"] and ent._.url_wikidata
     }
 
     return named_entities

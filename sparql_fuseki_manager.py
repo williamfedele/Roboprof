@@ -25,8 +25,8 @@ class FusekiManager:
 
     def create_dataset(self):
         admin_url = f"{self.base_url}$/datasets"
-        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-        data = f'dbName={self.dataset_name}&dbType=tdb'
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        data = f"dbName={self.dataset_name}&dbType=tdb"
         response = requests.post(admin_url, data=data, headers=headers)
         if response.status_code == 200:
             print(f"Dataset '{self.dataset_name}' created successfully.")
@@ -34,9 +34,9 @@ class FusekiManager:
             raise Exception(f"Failed to create dataset '{self.dataset_name}': {response.status_code} {response.text}")
 
     def upload_turtle(self, file_path):
-        with open(file_path, 'rb') as file:
-            headers = {'Content-Type': 'text/turtle;charset=utf-8'}
-            response = requests.post(f'{self.base_url}{self.dataset_name}/data?default', data=file, headers=headers)
+        with open(file_path, "rb") as file:
+            headers = {"Content-Type": "text/turtle;charset=utf-8"}
+            response = requests.post(f"{self.base_url}{self.dataset_name}/data?default", data=file, headers=headers)
             if response.status_code == 200:
                 print("Data uploaded successfully!")
             else:
@@ -49,7 +49,6 @@ class FusekiManager:
 
     def query(self, sparql_query, prefixes=""):
         full_query = prefixes + sparql_query
-        response = requests.get(f"{self.base_url}{self.dataset_name}/query", params={'query': full_query})
+        response = requests.get(f"{self.base_url}{self.dataset_name}/query", params={"query": full_query})
         print("response status:", response.status_code)
         return response
-
