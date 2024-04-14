@@ -156,6 +156,31 @@ class QueryManager:
         response_msg = f"These are the {subject} courses I found at {uni_name}:\n" + "\n".join(courses)
 
         return response_msg
+    
+    def query_materials_for_topic_in_course(self, topic, course_subject, course_number):
+        query = f"""
+            SELECT ?resource WHERE {{
+            ?topic focu:topicName ?topicName .
+            ?topic focu:provenance ?resource .
+            ?event focu:hasContent ?resource .
+            ?event focu:lectureBelongsTo ?course .
+            ?course focu:courseSubject "{course_subject.upper()}" .
+            ?course focu:courseNumber "{course_number}" .
+            filter contains(lcase(?topicName), "{topic}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        materials = [f"{row['resource']['value']}" for row in response]
+        response_msg = f"These are the materials recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
+
+        return response_msg
 
 if __name__ == "__main__":
     qm = QueryManager()

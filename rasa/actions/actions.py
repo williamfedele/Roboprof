@@ -171,12 +171,36 @@ class ActionCoursesOfferedBy(Action):
             return []
 
         qm = QueryManager()
-        print(uni_name)
-        print(subject)
         response = qm.query_courses_in_subject_offered_by(uni_name, subject)
 
         if response is None:
             dispatcher.utter_message(text="Sorry, I couldn't find anything for that.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionMaterialsForTopicInCourse(Action):
+    def name(self):
+        return "action_materials_for_topic_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        topic = tracker.get_slot("topic")
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or topic == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_materials_for_topic_in_course(topic,course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any materials.")
             return []
 
         dispatcher.utter_message(text=response)

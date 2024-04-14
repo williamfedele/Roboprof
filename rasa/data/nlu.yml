@@ -112,6 +112,18 @@ nlu:
     - Which courses are offered by [Concordia University](university) within [_oov](subject)?
     - Which courses are offered by [_oov](university) within [_oov](subject).
 
+- intent: materials_for_topic_in_course
+  examples: |
+    - What materials are recommended for [deep learning](topic) in [COMP 474](course)?
+    - What materials are recommended for [artificial intelligence](topic) in [comp 472](course)?
+    - What materials are recommended for [_oov](topic) in [_oov](course)?
+    - What materials are recommended for [data mining](topic) in [_oov](course)?
+    - What materials are recommended for [_oov](topic) in [_oov](course)?
+    - Give me the materials recommended for [deep learning](topic) in [COMP 474](course)?
+    - Give me the materials recommended for [artificial intelligence](topic) in [comp 472](course)?
+    - Give me the materials recommended for [_oov](topic) in [_oov](course)?
+    - Give me the materials recommended for [data mining](topic) in [_oov](course)?
+    - Give me the materials recommended for [_oov](topic) in [_oov](course)?
 # default stuff
 - intent: greet
   examples: |
