@@ -34,7 +34,7 @@ class QueryManager:
             return None
 
         query = f"""
-            SELECT ?topicName ?topic ?event
+            SELECT ?topicName ?topic ?resource
             WHERE 
             {{
             ?course rdf:type vivo:Course .

@@ -44,6 +44,7 @@ class ActionAboutCourse(Action):
         dispatcher.utter_message(text=f"Here's what I know: {description}")
         return []
 
+
 # part 2 query 3
 class ActionEventTopics(Action):
     def name(self):
@@ -53,7 +54,6 @@ class ActionEventTopics(Action):
         event = tracker.get_slot("event")
         course = tracker.get_slot("course")
 
-        print("im in")
         # expecting event = 'Lecture 2', course = 'COMP 474'
         if len(event.split(" ")) != 2 or len(course.split(" ")) != 2 or event == "unknown" or course == "unknown":
             dispatcher.utter_message(text="Please specify the course event you are interested in.")
@@ -71,9 +71,10 @@ class ActionEventTopics(Action):
             dispatcher.utter_message(text=f"No topics found for {event} in {course}.")
             return []
 
+        # TODO move to query manager
         if response:
             topics = [
-                f"{row['topicName']['value']}, {row['topic']['value']}, {row['event']['value']}" for row in response
+                f"{row['topicName']['value']}, {row['topic']['value']}, {row['resource']['value']}" for row in response
             ]
             response_message = "Here's what I found:\n" + "\n".join(topics)
         else:
@@ -81,6 +82,7 @@ class ActionEventTopics(Action):
 
         dispatcher.utter_message(text=response_message)
         return []
+
 
 # part 2 query 3
 class ActionCoversTopic(Action):
@@ -101,11 +103,13 @@ class ActionCoversTopic(Action):
             dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
             return []
 
+        # TODO move to query manager
         topics = [f"{row['course']['value']}, {row['event']['value']}" for row in response]
         response_msg = "Here's what I found:\n" + "\n".join(topics)
 
         dispatcher.utter_message(text=response_msg)
         return []
+
 
 # part 1 query 1
 class ActionCoursesOfferedBy(Action):
@@ -126,9 +130,9 @@ class ActionCoursesOfferedBy(Action):
             dispatcher.utter_message(text="Sorry, I don't recognize that university.")
             return []
 
-        
         dispatcher.utter_message(text=response)
         return []
+
 
 # part 1 query 2
 class ActionCoversTopic(Action):
@@ -148,8 +152,6 @@ class ActionCoversTopic(Action):
         if response is None:
             dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
             return []
-
-
 
         dispatcher.utter_message(text=response)
         return []

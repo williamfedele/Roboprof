@@ -18,6 +18,11 @@ nlu:
 
 - intent: course_event_topics
   examples: |
+    - Which topics are covered in [COMP 474](course) during [Lab 2](event)?
+    - Which topics are covered in [COMP 474](course) during [_oov](event)?
+    - Which topics are covered in [_oov](course) during [Lecture 4](event)?
+    - Which topics are covered in [_oov](course) during [_oov](event)?
+
     - Which topics are covered in [Lab 2](event) of [COMP 474](course)?
     - Which topics are covered in [_oov](event) of [COMP 474](course)?
     - Which topics are covered in [Lecture 4](event) of [_oov](course)?
