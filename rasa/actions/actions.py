@@ -19,7 +19,7 @@ sys.path.append(
 )  # needed since sparql_api is in the parent directory. we can move sparql_api here as an alternative
 from sparql_query_manager import QueryManager
 
-
+# part 2 query 2
 class ActionAboutCourse(Action):
     def name(self):
         return "action_about_course"
@@ -45,6 +45,7 @@ class ActionAboutCourse(Action):
         return []
 
 
+# part 2 query 3
 class ActionEventTopics(Action):
     def name(self):
         return "action_event_topics"
@@ -70,9 +71,10 @@ class ActionEventTopics(Action):
             dispatcher.utter_message(text=f"No topics found for {event} in {course}.")
             return []
 
+        # TODO move to query manager
         if response:
             topics = [
-                f"{row['topicName']['value']}, {row['topic']['value']}, {row['event']['value']}" for row in response
+                f"{row['topicName']['value']}, {row['topic']['value']}, {row['resource']['value']}" for row in response
             ]
             response_message = "Here's what I found:\n" + "\n".join(topics)
         else:
@@ -82,6 +84,7 @@ class ActionEventTopics(Action):
         return []
 
 
+# part 2 query 3
 class ActionCoversTopic(Action):
     def name(self):
         return "action_covers_topic"
@@ -100,8 +103,81 @@ class ActionCoversTopic(Action):
             dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
             return []
 
+        # TODO move to query manager
         topics = [f"{row['course']['value']}, {row['event']['value']}" for row in response]
         response_msg = "Here's what I found:\n" + "\n".join(topics)
 
         dispatcher.utter_message(text=response_msg)
+        return []
+
+
+# part 1 query 1
+class ActionCoursesOfferedBy(Action):
+    def name(self):
+        return "action_courses_offered_by"
+
+    def run(self, dispatcher, tracker, domain):
+        uni_name = tracker.get_slot("university")
+
+        if uni_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that university.")
+            return []
+
+        qm = QueryManager()
+        response = qm.query_courses_offered_by(uni_name)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I don't recognize that university.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 2
+class ActionCoversTopic(Action):
+    def name(self):
+        return "action_courses_covering_topic"
+
+    def run(self, dispatcher, tracker, domain):
+        topic_name = tracker.get_slot("topic")
+
+        if topic_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
+            return []
+
+        qm = QueryManager()
+        response = qm.query_courses_covering_topic(topic_name)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 4
+class ActionCoursesOfferedBy(Action):
+    def name(self):
+        return "action_courses_in_subject_offered_by"
+
+    def run(self, dispatcher, tracker, domain):
+        uni_name = tracker.get_slot("university")
+        subject = tracker.get_slot("subject")
+
+        if uni_name == "unknown" or subject == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        qm = QueryManager()
+        print(uni_name)
+        print(subject)
+        response = qm.query_courses_in_subject_offered_by(uni_name, subject)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find anything for that.")
+            return []
+
+        dispatcher.utter_message(text=response)
         return []

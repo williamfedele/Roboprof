@@ -18,6 +18,11 @@ nlu:
 
 - intent: course_event_topics
   examples: |
+    - Which topics are covered in [COMP 474](course) during [Lab 2](event)?
+    - Which topics are covered in [COMP 474](course) during [_oov](event)?
+    - Which topics are covered in [_oov](course) during [Lecture 4](event)?
+    - Which topics are covered in [_oov](course) during [_oov](event)?
+
     - Which topics are covered in [Lab 2](event) of [COMP 474](course)?
     - Which topics are covered in [_oov](event) of [COMP 474](course)?
     - Which topics are covered in [Lecture 4](event) of [_oov](course)?
@@ -62,7 +67,52 @@ nlu:
     - Can you tell me which course events cover [dbpedia](topic)
     - Can you tell me which course events cover [_oov](topic)
 
+- intent: courses_offered_by
+  examples: |
+    - List all courses offered by [Concordia University](university).
+    - List all courses offered by [Concordia](university).
+    - List all courses offered by [mcgill](university).
+    - List all courses offered by [_oov](university).
+    - Which courses are offered by [Concordia University](university)?
+    - Which courses are offered by [McGill](university)?
+    - Which courses are offered by [Concordia](university)?
+    - Which courses are offered by [_oov](university)?
+    - Tell me the courses at [Concordia University](university).
+    - Tell me the courses at [Concordia](university).
+    - Tell me the courses at [mcgill](university).
+    - Tell me the courses at [_oov](university). 
 
+- intent: courses_covering_topic
+  examples: |
+    - Can you tell me which course discusses [Data Mining](topic)?
+    - Can you tell me which course discusses [exploratory data analysis](topic)?
+    - Can you tell me which course discusses [eliza](topic)?
+    - Can you tell me which course discusses [_oov](topic)?
+    - In which course is [Data Mining](topic) discussed?
+    - In which course is [eliza](topic) discussed?
+    - In which course is [exploratory data analysis](topic) discussed?
+    - In which course is [_oov](topic) discussed?
+
+- intent: courses_in_subject_offered_by
+  examples: |
+    - List all courses offered by [Concordia](university) in [COMP](subject).
+    - List all courses offered by [_oov](university) within [soen](subject).
+    - List all courses offered by [mcgill](university) in [CHEM](subject)?
+    - List all courses offered by [concordia university](university) within [civi](subject)?
+    - List all courses offered by [_oov](university) within [COMP](subject)?
+    - List all courses offered by [mcgill](university) in [_oov](subject)?
+    - List all courses offered by [concordia university](university) within [_oov](subject)?
+    - List all courses offered by [_oov](university) within [_oov](subject)?
+    - Which courses are offered by [Concordia](university) in [COMP](subject)?
+    - Which courses are offered by [_oov](university) in [SOEN](subject).
+    - Which courses are offered by [mcgill](university) within [chem](subject)?
+    - Which courses are offered by [Concordia University](university) within [fbrs](subject)?
+    - Which courses are offered by [_oov](university) within [comp](subject).
+    - Which courses are offered by [mcgill](university) within [_oov](subject)?
+    - Which courses are offered by [Concordia University](university) within [_oov](subject)?
+    - Which courses are offered by [_oov](university) within [_oov](subject).
+
+# default stuff
 - intent: greet
   examples: |
     - hey
