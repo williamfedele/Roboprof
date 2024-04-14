@@ -396,7 +396,7 @@ class ActionStudentsCompletedCourse(Action):
         dispatcher.utter_message(text=response)
         return []
 
-
+# part 1 query 13
 class ActionStudentTranscript(Action):
     def name(self):
         return "action_student_transcript"
@@ -415,6 +415,40 @@ class ActionStudentTranscript(Action):
 
         if response is None:
             dispatcher.utter_message(text="This student has no transcript.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+    
+# part 1 statistic query
+class ActionCourseCount(Action):
+    def name(self):
+        return "action_course_count"
+
+    def run(self, dispatcher, tracker, domain):
+
+        qm = QueryManager()
+        response = qm.query_course_count()
+
+        if response is None:
+            dispatcher.utter_message(text="There are no courses in the graph.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+    
+# part 1 statistic query
+class ActionTriplesCount(Action):
+    def name(self):
+        return "action_triple_count"
+
+    def run(self, dispatcher, tracker, domain):
+
+        qm = QueryManager()
+        response = qm.query_total_triples()
+
+        if response is None:
+            dispatcher.utter_message(text="There are no triples in the graph.")
             return []
 
         dispatcher.utter_message(text=response)

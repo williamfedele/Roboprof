@@ -217,6 +217,21 @@ nlu:
     - Print a transcript for [_oov](student).
     - Print a transcript for [_oov](student) with their grades.
 
+- intent: course_count
+  examples: |
+    - How many courses are in the graph?
+    - How many course triples are in the graph?
+    - How many course URIs are there?
+    - How many courses are there?
+
+- intent: triple_count
+  examples: |
+    - How many triples are in the graph?
+    - How many triples are in the graph?
+    - How many triples are there?
+    - How many RDF triples are in the graph?
+    - How many RDF triples are in the graph?
+    - How many RDF triples are there?
 
 # default stuff
 - intent: greet
