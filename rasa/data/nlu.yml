@@ -124,6 +124,18 @@ nlu:
     - Give me the materials recommended for [_oov](topic) in [_oov](course)?
     - Give me the materials recommended for [data mining](topic) in [_oov](course)?
     - Give me the materials recommended for [_oov](topic) in [_oov](course)?
+
+- intent: credit_worth
+  examples: |
+    - How many credits is [COMP 474](course) worth?
+    - How many credits is [soen 228](course) worth?
+    - How many credits is [_oov](course) worth?
+    - How many credits is [comp 472](course)?
+    - How many credits is [CHEM 333](course)?
+    - How many credits is [_oov](course)?
+
+
+
 # default stuff
 - intent: greet
   examples: |

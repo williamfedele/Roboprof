@@ -15,6 +15,7 @@ intents:
   - courses_covering_topic
   - courses_in_subject_offered_by
   - materials_for_topic_in_course
+  - credit_worth
 
 entities:
   - course
@@ -31,7 +32,8 @@ actions:
   - action_courses_covering_topic # Part 1 query 2
   - action_courses_in_subject_offered_by # part 1 query 4
   - action_materials_for_topic_in_course
-
+  - action_credit_worth
+  
 slots:
   course:
     type: text

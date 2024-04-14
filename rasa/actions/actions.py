@@ -180,6 +180,7 @@ class ActionCoursesOfferedBy(Action):
         dispatcher.utter_message(text=response)
         return []
 
+# part 1 query 5
 class ActionMaterialsForTopicInCourse(Action):
     def name(self):
         return "action_materials_for_topic_in_course"
@@ -204,4 +205,29 @@ class ActionMaterialsForTopicInCourse(Action):
             return []
 
         dispatcher.utter_message(text=response)
+        return []
+
+# part 1 query 6
+class ActionCreditWorth(Action):
+    def name(self):
+        return "action_credit_worth"
+
+    def run(self, dispatcher, tracker, domain):
+        course_name = tracker.get_slot("course")
+
+        if len(course_name.split(" ")) != 2 or course_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that course.")
+            return []
+
+        subject = course_name.split(" ")[0].upper()
+        number = course_name.split(" ")[1]
+
+        qm = QueryManager()
+        credits = qm.query_credit_worth(subject, number)
+
+        if credits is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find the credits for that course.")
+            return []
+
+        dispatcher.utter_message(text=credits)
         return []

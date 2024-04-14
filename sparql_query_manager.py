@@ -182,6 +182,27 @@ class QueryManager:
 
         return response_msg
 
+    def query_credit_worth(self, course_subject, course_number):
+        query = f"""
+            SELECT ?credits 
+            WHERE 
+            {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?course vivo:courseCredits ?credits .
+            }}
+            LIMIT 1
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        return f"{course_subject} {course_number} is worth {response[0]['credits']['value']} credits." 
+
 if __name__ == "__main__":
     qm = QueryManager()
     print(qm.query_courses_offered_by("concordia"))
