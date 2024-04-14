@@ -203,6 +203,27 @@ class QueryManager:
 
         return f"{course_subject} {course_number} is worth {response[0]['credits']['value']} credits." 
 
+    def query_additional_resources(self, course_subject, course_number):
+        query = f"""
+            SELECT ?link WHERE {{
+                ?course rdf:type vivo:Course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?course rdfs:seeAlso ?link
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        links = [f"{row['link']['value']}" for row in response]
+        response_msg = f"These are the additional resources for {course_subject} {course_number}:\n" + "\n".join(links)
+
+        return response_msg
 if __name__ == "__main__":
     qm = QueryManager()
-    print(qm.query_courses_offered_by("concordia"))
+    print(qm.query_additional_resources("comp", "442"))

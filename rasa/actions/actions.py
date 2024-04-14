@@ -231,3 +231,28 @@ class ActionCreditWorth(Action):
 
         dispatcher.utter_message(text=credits)
         return []
+    
+# part 1 query 7
+class ActionAdditionalResources(Action):
+    def name(self):
+        return "action_additional_resources"
+
+    def run(self, dispatcher, tracker, domain):
+        course_name = tracker.get_slot("course")
+
+        if len(course_name.split(" ")) != 2 or course_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that course.")
+            return []
+
+        subject = course_name.split(" ")[0].upper()
+        number = course_name.split(" ")[1]
+
+        qm = QueryManager()
+        additional_res = qm.query_additional_resources(subject, number)
+
+        if additional_res is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any additional resources for that course.")
+            return []
+
+        dispatcher.utter_message(text=additional_res)
+        return []

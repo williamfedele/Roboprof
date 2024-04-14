@@ -134,7 +134,14 @@ nlu:
     - How many credits is [CHEM 333](course)?
     - How many credits is [_oov](course)?
 
-
+- intent: additional_resources
+  examples: |
+    - For [COMP 474](course), what additional resources are available?
+    - For [soen 228](course), what additional resources are available?
+    - For [_oov](course), what additional resources are available?
+    - What additional resources are available for [COMP 474](course)?
+    - What additional resources are available for [soen 228](course)?
+    - What additional resources are available for [_oov](course)?
 
 # default stuff
 - intent: greet

@@ -58,6 +58,12 @@ stories:
     - intent: credit_worth
     - action: action_credit_worth
 
+- story: get additional resources
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: additional_resources
+    - action: action_additional_resources
 
 - story: happy path
   steps:
