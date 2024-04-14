@@ -23,7 +23,7 @@ class ActionAboutCourse(Action):
     def run(self, dispatcher, tracker, domain):
         course_name = tracker.get_slot('course')
         
-        if len(course_name.split(' ')) != 2 or not course_name or course_name == "unknown":
+        if len(course_name.split(' ')) != 2 or course_name == "unknown":
             dispatcher.utter_message(text="Sorry, I don't recognize that course.")
             return []
         
