@@ -72,6 +72,13 @@ stories:
     - intent: content_in_lecture
     - action: action_content_in_lecture
 
+- story: get readings for a topic in a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: readings_for_topic_in_course
+    - action: action_readings_for_topic_in_course
+
 - story: happy path
   steps:
   - intent: greet

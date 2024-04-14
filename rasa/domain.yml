@@ -18,6 +18,7 @@ intents:
   - credit_worth
   - additional_resources
   - content_in_lecture
+  - readings_for_topic_in_course
 
 entities:
   - course
@@ -37,6 +38,7 @@ actions:
   - action_credit_worth #part 1 query 6
   - action_additional_resources # part 1 query 7
   - action_content_in_lecture # part 1 query 8
+  - action_readings_for_topic_in_course # part 1 query 9
 
 slots:
   course:

@@ -288,3 +288,29 @@ class ActionContentInLecture(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
+# part 1 query 9
+class ActionReadingsForTopicInCourse(Action):
+    def name(self):
+        return "action_readings_for_topic_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        topic = tracker.get_slot("topic")
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or topic == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_readings_for_topic_in_course(topic, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any readings materials.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

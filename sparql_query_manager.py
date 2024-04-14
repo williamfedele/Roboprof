@@ -255,6 +255,32 @@ class QueryManager:
 
         return response_msg
 
+    def query_readings_for_topic_in_course(self, topic, course_subject, course_number):    
+        query = f"""
+            SELECT ?resource WHERE {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?event focu:lectureBelongsTo ?course .
+                ?event focu:hasContent ?resource2 .
+                ?event focu:hasContent ?resource .
+                ?topic focu:provenance ?resource2 .
+                ?topic focu:topicName ?topicName .
+                ?resource rdf:type focu:Reading .                
+                filter contains(lcase(?topicName), "{topic}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        materials = [f"{row['resource']['value']}" for row in response]
+        response_msg = f"These are the readings recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
+
+        return response_msg
 
 if __name__ == "__main__":
     qm = QueryManager()
