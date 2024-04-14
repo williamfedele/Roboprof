@@ -1,9 +1,10 @@
 PREFIX focu: <http://focu.io/schema#>
 
 SELECT ?topic WHERE {
-  ?topic focu:provenance ?lecture .
-  ?lecture focu:lectureBelongsTo ?course .
-  ?lecture focu:hasTopic ?topic .
   ?course focu:courseSubject "COMP" .
-  ?course focu:courseNumber "474" .
+  ?course focu:courseNumber "472" .
+  ?lecture focu:lectureBelongsTo ?course .
+  ?lecture focu:hasContent ?resource .
+  ?topic focu:provenance ?resource .
+  ?topic focu:topicName ?topicName .
 }

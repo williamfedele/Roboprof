@@ -19,6 +19,7 @@ intents:
   - additional_resources
   - content_in_lecture
   - readings_for_topic_in_course
+  - competencies_for_course_completion
 
 entities:
   - course
@@ -39,6 +40,7 @@ actions:
   - action_additional_resources # part 1 query 7
   - action_content_in_lecture # part 1 query 8
   - action_readings_for_topic_in_course # part 1 query 9
+  - action_competencies_for_course_completion # part 1 query 10
 
 slots:
   course:

@@ -314,3 +314,28 @@ class ActionReadingsForTopicInCourse(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
+# part 1 query 10
+class ActionCompetenciesForCourseCompletion(Action):
+    def name(self):
+        return "action_competencies_for_course_completion"
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_competencies_for_course_completion(course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any competencies for that course.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

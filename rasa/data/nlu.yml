@@ -169,6 +169,15 @@ nlu:
     - Give me the reading materials recommended for studying[data mining](topic) in [_oov](course)?
     - Give me the reading materials recommended for [_oov](topic) in [_oov](course)?
 
+- intent: competencies_for_course_completion
+  examples: |
+    - What competencies does a student gain after completing [COMP 474](course).
+    - What competencies does a student gain after completing [comp 228](course)?
+    - What competencies does a student gain after completing [_oov](course)?
+    - What competencies does a student gain after [COMP 474](course)?
+    - What competencies does a student gain after [comp 228](course).
+    - What competencies does a student gain after [_oov](course)?
+
 # default stuff
 - intent: greet
   examples: |

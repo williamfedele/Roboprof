@@ -281,6 +281,30 @@ class QueryManager:
         response_msg = f"These are the readings recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
 
         return response_msg
+    
+    def query_competencies_for_course_completion(self, course_subject, course_number):
+        query = f"""
+            SELECT ?topic WHERE {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?lecture focu:lectureBelongsTo ?course .
+                ?lecture focu:hasContent ?resource .
+                ?topic focu:provenance ?resource .
+                ?topic focu:topicName ?topicName .
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        competencies = [f"{row['topic']['value']}" for row in response]
+        response_msg = f"These are the competencies acquired for completing {course_subject} {course_number}:\n" + "\n".join(competencies)
+
+        return response_msg
 
 if __name__ == "__main__":
     qm = QueryManager()
