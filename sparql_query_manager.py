@@ -54,6 +54,27 @@ class QueryManager:
 
         return response.json()['results']['bindings']
 
+    def query_covers_topic(self, topic_name):
+
+
+        query = f"""
+            SELECT ?course ?event (COUNT(?topic) AS ?count)
+            WHERE 
+            {{
+            ?course rdf:type vivo:Course .
+            ?event focu:lectureBelongsTo ?course ;
+                    focu:hasContent ?resource .
+            ?topic focu:provenance ?resource .
+            ?topic focu:topicName ?topicName ;
+            filter contains(lcase(?topicName), "{topic_name.lower()}")
+            }}
+            GROUP BY ?course ?event
+            ORDER BY DESC(?count)
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        return response.json()['results']['bindings']
 
 
 if __name__ == "__main__":
