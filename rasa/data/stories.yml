@@ -23,6 +23,19 @@ stories:
     - intent: covers_topic
     - action: action_covers_topic
 
+- story: get courses offered by university
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: courses_offered_by
+    - action: action_courses_offered_by
+
+- story: get courses events that cover a topic
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: courses_covering_topic
+    - action: action_courses_covering_topic
 
 
 

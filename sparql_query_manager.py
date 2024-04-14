@@ -75,8 +75,61 @@ class QueryManager:
         if response == None:
             return None
         return response.json()["results"]["bindings"]
+    
+    def query_courses_offered_by(self, uni_name):
+
+        query = f"""
+            SELECT ?course ?name 
+            WHERE 
+            {{
+                ?course rdf:type vivo:Course .
+                ?course vivo:offeredBy ?uni .
+                ?uni rdfs:label ?uni_name .  
+                ?course focu:courseName ?name .
+                filter contains(lcase(?uni_name), "{uni_name.lower()}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        courses = [f"{row['course']['value']}, {row['name']['value']}" for row in response]
+        response_msg = "Here's what I found:\n" + "\n".join(courses)
+
+        return response_msg
+    
+    def query_courses_covering_topic(self, topic_name):
+
+        query = f"""
+            SELECT DISTINCT ?course 
+            WHERE 
+            {{
+                ?topic rdf:type focu:Topic .
+                ?topic focu:provenance ?resource .
+                ?topic focu:topicName ?topicName .
+                ?event focu:hasContent ?resource .
+                ?event focu:lectureBelongsTo ?course .
+                filter contains(lcase(?topicName), "{topic_name.lower()}")
+            }}
+        """
+        response = self.make_query(query)        
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        topics = [f"{row['course']['value']}" for row in response]
+        response_msg = f"I found {topic_name} discussed here:\n" + "\n".join(topics)
+
+        return response_msg
 
 
 if __name__ == "__main__":
     qm = QueryManager()
-    print(qm.query_about_course("COMP", "474"))
+    print(qm.query_courses_offered_by("concordia"))

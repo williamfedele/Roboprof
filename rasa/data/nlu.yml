@@ -62,7 +62,34 @@ nlu:
     - Can you tell me which course events cover [dbpedia](topic)
     - Can you tell me which course events cover [_oov](topic)
 
+- intent: courses_offered_by
+  examples: |
+    - List all courses offered by [Concordia University](university).
+    - List all courses offered by [Concordia](university).
+    - List all courses offered by [mcgill](university).
+    - List all courses offered by [_oov](university).
+    - Which courses are offered by [Concordia University](university)?
+    - Which courses are offered by [McGill](university)?
+    - Which courses are offered by [Concordia](university)?
+    - Which courses are offered by [_oov](university)?
+    - Tell me the courses at [Concordia University](university).
+    - Tell me the courses at [Concordia](university).
+    - Tell me the courses at [mcgill](university).
+    - Tell me the courses at [_oov](university). 
 
+- intent: courses_covering_topic
+  examples: |
+    - Can you tell me which course discusses [Data Mining](topic)?
+    - Can you tell me which course discusses [exploratory data analysis](topic)?
+    - Can you tell me which course discusses [eliza](topic)?
+    - Can you tell me which course discusses [_oov](topic)?
+    - In which course is [Data Mining](topic) discussed?
+    - In which course is [eliza](topic) discussed?
+    - In which course is [exploratory data analysis](topic) discussed?
+    - In which course is [_oov](topic) discussed?
+
+
+# default stuff
 - intent: greet
   examples: |
     - hey
