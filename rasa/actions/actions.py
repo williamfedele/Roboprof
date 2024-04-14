@@ -156,6 +156,7 @@ class ActionCoversTopic(Action):
         dispatcher.utter_message(text=response)
         return []
 
+
 # part 1 query 4
 class ActionCoursesOfferedBy(Action):
     def name(self):
