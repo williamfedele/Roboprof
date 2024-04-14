@@ -356,6 +356,31 @@ class QueryManager:
         response_msg = f"These are the students that completed {course_subject} {course_number}:\n" + "\n".join(students)
 
         return response_msg
+    
+    def query_student_transcript(self, student):
+        query = f"""
+            SELECT ?course ?grade ?date WHERE {{
+                ?student focu:studentId {student} .
+                ?student focu:CompletedCourses ?completed .
+                ?completed focu:achievedInCourse ?course .
+                ?completed focu:achievedGrade ?grade .
+                ?completed focu:achievedDate ?date .
+            }}
+            ORDER BY ?course DESC(?date)
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        students = [f"{row['course']['value']}, {row['grade']['value']}, {row['date']['value']}" for row in response]
+        response_msg = f"This is the transcript for student {student}:\n" + "\n".join(students)
+
+        return response_msg
 
 
 if __name__ == "__main__":

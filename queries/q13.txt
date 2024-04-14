@@ -1,9 +1,11 @@
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?course ?grade ?date WHERE {
+SELECT ?course ?grade ?date WHERE 
+{
   ?student focu:studentId 23456789 .
   ?student focu:CompletedCourses ?completed .
   ?completed focu:achievedInCourse ?course .
   ?completed focu:achievedGrade ?grade .
   ?completed focu:achievedDate ?date .
-} ORDER BY ?course DESC(?date)
+} 
+ORDER BY ?course DESC(?date)

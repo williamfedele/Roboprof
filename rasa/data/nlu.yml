@@ -202,6 +202,22 @@ nlu:
     - Which students completed [chem 333](course).
     - Which students completed [_oov](course)?
 
+- intent: student_transcript
+  examples: |
+    - Print a transcript for [55372742](student), listing all the courses taken with their grades.
+    - Print a transcript for [11723611](student), listing all the courses taken with their grades.
+    - Print a transcript for [62512434](student), listing all the courses taken with their grades.
+    - Print a transcript for [84525235](student), listing all the courses taken with their grades.
+    - Print a transcript for [_oov](student), listing all the courses taken with their grades.
+    - Print a transcript for [_oov](student), listing all their grades.
+    - Print a transcript for [55372742](student).
+    - Print a transcript for [11723611](student).
+    - Print a transcript for [82352352](student).
+    - Print a transcript for [83452123](student).
+    - Print a transcript for [_oov](student).
+    - Print a transcript for [_oov](student) with their grades.
+
+
 # default stuff
 - intent: greet
   examples: |

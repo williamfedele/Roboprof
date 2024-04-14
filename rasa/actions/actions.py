@@ -391,3 +391,27 @@ class ActionStudentsCompletedCourse(Action):
 
         dispatcher.utter_message(text=response)
         return []
+    
+class ActionStudentTranscript(Action):
+    def name(self):
+        return "action_student_transcript"
+
+    def run(self, dispatcher, tracker, domain):
+        student = tracker.get_slot("student")
+
+        print(student)
+        if student == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        student = int(student)
+
+        qm = QueryManager()
+        response = qm.query_student_transcript(student)
+
+        if response is None:
+            dispatcher.utter_message(text="This student has no transcript.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

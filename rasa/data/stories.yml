@@ -100,6 +100,14 @@ stories:
     - intent: students_completed_course
     - action: action_students_completed_course
 
+- story: get a students transcript
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: student_transcript
+    - action: action_student_transcript
+
+
 # default stuff
 - story: happy path
   steps:
