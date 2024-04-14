@@ -22,7 +22,7 @@ class ActionAboutCourse(Action):
         return "action_about_course"
     def run(self, dispatcher, tracker, domain):
         course_name = tracker.get_slot('course')
-        print(course_name)
+        
         if len(course_name.split(' ')) != 2 or not course_name or course_name == "unknown":
             dispatcher.utter_message(text="Sorry, I don't recognize that course.")
             return []
@@ -30,8 +30,6 @@ class ActionAboutCourse(Action):
         subject = course_name.split(' ')[0].upper()
         number = course_name.split(' ')[1]
 
-        print(f"sub: {subject}")
-        print(f"num: {number}")
         qm = QueryManager()
         description = qm.query_about_course(subject, number)
         
