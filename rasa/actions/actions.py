@@ -180,6 +180,7 @@ class ActionCoursesOfferedBy(Action):
         dispatcher.utter_message(text=response)
         return []
 
+
 # part 1 query 5
 class ActionMaterialsForTopicInCourse(Action):
     def name(self):
@@ -193,12 +194,11 @@ class ActionMaterialsForTopicInCourse(Action):
             dispatcher.utter_message(text="Sorry, I don't understand.")
             return []
 
-        
         course_subject = course.split(" ")[0]
         course_number = course.split(" ")[1]
 
         qm = QueryManager()
-        response = qm.query_materials_for_topic_in_course(topic,course_subject, course_number)
+        response = qm.query_materials_for_topic_in_course(topic, course_subject, course_number)
 
         if response is None:
             dispatcher.utter_message(text="Sorry, I couldn't find any materials.")
@@ -206,6 +206,7 @@ class ActionMaterialsForTopicInCourse(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
 
 # part 1 query 6
 class ActionCreditWorth(Action):
@@ -231,7 +232,8 @@ class ActionCreditWorth(Action):
 
         dispatcher.utter_message(text=credits)
         return []
-    
+
+
 # part 1 query 7
 class ActionAdditionalResources(Action):
     def name(self):
@@ -256,6 +258,7 @@ class ActionAdditionalResources(Action):
 
         dispatcher.utter_message(text=additional_res)
         return []
+
 
 # part 1 query 8
 class ActionContentInLecture(Action):
