@@ -256,3 +256,32 @@ class ActionAdditionalResources(Action):
 
         dispatcher.utter_message(text=additional_res)
         return []
+
+# part 1 query 8
+class ActionContentInLecture(Action):
+    def name(self):
+        return "action_content_in_lecture"
+
+    def run(self, dispatcher, tracker, domain):
+        event = tracker.get_slot("event")
+        course = tracker.get_slot("course")
+
+        # expecting event = 'Lecture 2', course = 'COMP 474'
+        if len(event.split(" ")) != 2 or len(course.split(" ")) != 2 or event == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Please specify the course event you are interested in.")
+            return []
+
+        event_type = event.split(" ")[0]
+        event_num = int(event.split(" ")[1])
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_content_in_lecture(event_type, event_num, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text=f"No content found for {event} in {course}.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

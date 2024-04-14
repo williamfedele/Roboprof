@@ -65,6 +65,13 @@ stories:
     - intent: additional_resources
     - action: action_additional_resources
 
+- story: get content from lecture in class
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: content_in_lecture
+    - action: action_content_in_lecture
+
 - story: happy path
   steps:
   - intent: greet

@@ -143,6 +143,19 @@ nlu:
     - What additional resources are available for [soen 228](course)?
     - What additional resources are available for [_oov](course)?
 
+- intent: content_in_lecture
+  examples: |
+    - Detail the content available for [lecture 2](event) in [COMP 474](course).
+    - Detail the content available for [Lecture 6](event) in [comp 472](course).
+    - Detail the content available for [lecture 10](event) in [_oov](course).
+    - Detail the content available for [_oov](event) in [SOEN 228](course).
+    - Detail the content available for [_oov](event) in [_oov](course).
+    - What content is available for [lecture 2](event) in [COMP 474](course).
+    - What content is available for [Lecture 6](event) in [comp 472](course).
+    - What content is available for [lecture 10](event) in [_oov](course).
+    - What content is available for [_oov](event) in [SOEN 228](course).
+    - What content is available for [_oov](event) in [_oov](course).
+
 # default stuff
 - intent: greet
   examples: |

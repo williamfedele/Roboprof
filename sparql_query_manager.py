@@ -224,6 +224,38 @@ class QueryManager:
         response_msg = f"These are the additional resources for {course_subject} {course_number}:\n" + "\n".join(links)
 
         return response_msg
+    
+    def query_content_in_lecture(self, event, event_number, course_subject, course_number):
+
+        # we only have lecture content right now
+        lecture_variants = ["lecture", "lec"]
+        if event.lower() not in lecture_variants:
+            return None
+
+        query = f"""
+            SELECT ?content ?type WHERE {{
+                ?lecture focu:lectureNumber {event_number} .
+                ?lecture focu:lectureBelongsTo ?course .
+                ?lecture focu:hasContent ?content .
+                ?content rdf:type ?type .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        content = [f"{row['content']['value']}, {row['type']['value']}" for row in response]
+        response_msg = f"This is the content for {course_subject} {course_number}, {event} {event_number}:\n" + "\n".join(content)
+
+        return response_msg
+
+
 if __name__ == "__main__":
     qm = QueryManager()
     print(qm.query_additional_resources("comp", "442"))
