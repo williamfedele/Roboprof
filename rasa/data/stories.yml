@@ -37,6 +37,12 @@ stories:
     - intent: courses_covering_topic
     - action: action_courses_covering_topic
 
+- story: get courses offered by university in subject
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: courses_in_subject_offered_by
+    - action: action_courses_in_subject_offered_by
 
 
 - story: happy path

@@ -13,12 +13,14 @@ intents:
   - covers_topic
   - courses_offered_by
   - courses_covering_topic
+  - courses_in_subject_offered_by
 
 entities:
   - course
   - event
   - topic
   - university
+  - subject
 
 actions:
   - action_about_course # Part 2 Query 2
@@ -26,6 +28,7 @@ actions:
   - action_covers_topic # Part 2 Query 4
   - action_courses_offered_by  # Part 1 query 1
   - action_courses_covering_topic # Part 1 query 2
+  - action_courses_in_subject_offered_by # part 1 query 4
 
 slots:
   course:
@@ -52,6 +55,12 @@ slots:
     mappings:
       - type: from_entity
         entity: university
+  subject:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: subject
 
 
 

@@ -93,6 +93,24 @@ nlu:
     - In which course is [exploratory data analysis](topic) discussed?
     - In which course is [_oov](topic) discussed?
 
+- intent: courses_in_subject_offered_by
+  examples: |
+    - List all courses offered by [Concordia](university) in [COMP](subject).
+    - List all courses offered by [_oov](university) within [soen](subject).
+    - List all courses offered by [mcgill](university) in [CHEM](subject)?
+    - List all courses offered by [concordia university](university) within [civi](subject)?
+    - List all courses offered by [_oov](university) within [COMP](subject)?
+    - List all courses offered by [mcgill](university) in [_oov](subject)?
+    - List all courses offered by [concordia university](university) within [_oov](subject)?
+    - List all courses offered by [_oov](university) within [_oov](subject)?
+    - Which courses are offered by [Concordia](university) in [COMP](subject)?
+    - Which courses are offered by [_oov](university) in [SOEN](subject).
+    - Which courses are offered by [mcgill](university) within [chem](subject)?
+    - Which courses are offered by [Concordia University](university) within [fbrs](subject)?
+    - Which courses are offered by [_oov](university) within [comp](subject).
+    - Which courses are offered by [mcgill](university) within [_oov](subject)?
+    - Which courses are offered by [Concordia University](university) within [_oov](subject)?
+    - Which courses are offered by [_oov](university) within [_oov](subject).
 
 # default stuff
 - intent: greet

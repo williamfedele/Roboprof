@@ -98,7 +98,7 @@ class QueryManager:
             return None
 
         courses = [f"{row['course']['value']}, {row['name']['value']}" for row in response]
-        response_msg = "Here's what I found:\n" + "\n".join(courses)
+        response_msg = f"These are the courses offerd by {uni_name}:\n" + "\n".join(courses)
 
         return response_msg
     
@@ -128,7 +128,34 @@ class QueryManager:
         response_msg = f"I found {topic_name} discussed here:\n" + "\n".join(topics)
 
         return response_msg
+    
+    def query_courses_in_subject_offered_by(self, uni_name, subject):
 
+        query = f"""
+            SELECT ?course ?name 
+            WHERE 
+            {{
+                ?course rdf:type vivo:Course .
+                ?course vivo:offeredBy ?uni .
+                ?uni rdfs:label ?uni_name .  
+                ?course focu:courseName ?name .
+    			?course focu:courseSubject ?subject .
+                filter contains(lcase(?uni_name), "{uni_name.lower()}") .
+    			filter contains(lcase(?subject), "{subject.lower()}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        courses = [f"{row['course']['value']}, {row['name']['value']}" for row in response]
+        response_msg = f"These are the {subject} courses I found at {uni_name}:\n" + "\n".join(courses)
+
+        return response_msg
 
 if __name__ == "__main__":
     qm = QueryManager()
