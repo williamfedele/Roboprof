@@ -9,6 +9,19 @@ stories:
     - intent: about_course
     - action: action_about_course
 
+- story: event topics query path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: course_event_topics
+  - action: action_event_topics
+
+- story: get courses events that cover a topic
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: covers_topic
+    - action: action_covers_topic
 
 
 
