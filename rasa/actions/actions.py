@@ -339,7 +339,8 @@ class ActionCompetenciesForCourseCompletion(Action):
 
         dispatcher.utter_message(text=response)
         return []
-    
+
+# part 1 query 11
 class ActionGradeAchievedInCourse(Action):
     def name(self):
         return "action_grade_achieved_in_course"
@@ -347,8 +348,6 @@ class ActionGradeAchievedInCourse(Action):
     def run(self, dispatcher, tracker, domain):
         student = tracker.get_slot("student")
         course = tracker.get_slot("course")
-        print(student)
-        print(course)
 
         if len(course.split(" ")) != 2 or course == "unknown" or student == "unknown":
             dispatcher.utter_message(text="Sorry, I don't understand.")
@@ -363,6 +362,31 @@ class ActionGradeAchievedInCourse(Action):
 
         if response is None:
             dispatcher.utter_message(text="Sorry, I couldn't find any grades for that student.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+    
+# part 1 query 12
+class ActionStudentsCompletedCourse(Action):
+    def name(self):
+        return "action_students_completed_course"
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_students_completed_course(course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="No students have completed that course.")
             return []
 
         dispatcher.utter_message(text=response)

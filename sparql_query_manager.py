@@ -332,6 +332,30 @@ class QueryManager:
         response_msg = f"These are the grades student {student} got in {course_subject} {course_number}:\n" + "\n".join(grades)
 
         return response_msg
+    
+    def query_students_completed_course(self, course_subject, course_number):
+        query = f"""
+            SELECT DISTINCT ?studentid WHERE {{
+                ?student focu:CompletedCourses ?completed .
+                ?student focu:studentId ?studentid .
+                ?completed focu:achievedInCourse ?course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+            }}
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        students = [f"{row['studentid']['value']}" for row in response]
+        response_msg = f"These are the students that completed {course_subject} {course_number}:\n" + "\n".join(students)
+
+        return response_msg
 
 
 if __name__ == "__main__":

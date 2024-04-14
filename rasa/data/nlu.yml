@@ -193,6 +193,15 @@ nlu:
     - What grade did [_oov](student) get in [soen 228](course)?
     - What grade did [_oov](student) get in [_oov](course).
 
+- intent: students_completed_course
+  examples: |
+    - Which students have completed [COMP 474](course).
+    - Which students have completed [comp 228](course)?
+    - Which students have completed [_oov](course)?
+    - Which students completed [COMP 474](course)?
+    - Which students completed [chem 333](course).
+    - Which students completed [_oov](course)?
+
 # default stuff
 - intent: greet
   examples: |
