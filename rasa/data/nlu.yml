@@ -112,6 +112,50 @@ nlu:
     - Which courses are offered by [Concordia University](university) within [_oov](subject)?
     - Which courses are offered by [_oov](university) within [_oov](subject).
 
+- intent: materials_for_topic_in_course
+  examples: |
+    - What materials are recommended for [deep learning](topic) in [COMP 474](course)?
+    - What materials are recommended for [artificial intelligence](topic) in [comp 472](course)?
+    - What materials are recommended for [_oov](topic) in [_oov](course)?
+    - What materials are recommended for [data mining](topic) in [_oov](course)?
+    - What materials are recommended for [_oov](topic) in [_oov](course)?
+    - Give me the materials recommended for [deep learning](topic) in [COMP 474](course)?
+    - Give me the materials recommended for [artificial intelligence](topic) in [comp 472](course)?
+    - Give me the materials recommended for [_oov](topic) in [_oov](course)?
+    - Give me the materials recommended for [data mining](topic) in [_oov](course)?
+    - Give me the materials recommended for [_oov](topic) in [_oov](course)?
+
+- intent: credit_worth
+  examples: |
+    - How many credits is [COMP 474](course) worth?
+    - How many credits is [soen 228](course) worth?
+    - How many credits is [_oov](course) worth?
+    - How many credits is [comp 472](course)?
+    - How many credits is [CHEM 333](course)?
+    - How many credits is [_oov](course)?
+
+- intent: additional_resources
+  examples: |
+    - For [COMP 474](course), what additional resources are available?
+    - For [soen 228](course), what additional resources are available?
+    - For [_oov](course), what additional resources are available?
+    - What additional resources are available for [COMP 474](course)?
+    - What additional resources are available for [soen 228](course)?
+    - What additional resources are available for [_oov](course)?
+
+- intent: content_in_lecture
+  examples: |
+    - Detail the content available for [lecture 2](event) in [COMP 474](course).
+    - Detail the content available for [Lecture 6](event) in [comp 472](course).
+    - Detail the content available for [lecture 10](event) in [_oov](course).
+    - Detail the content available for [_oov](event) in [SOEN 228](course).
+    - Detail the content available for [_oov](event) in [_oov](course).
+    - What content is available for [lecture 2](event) in [COMP 474](course).
+    - What content is available for [Lecture 6](event) in [comp 472](course).
+    - What content is available for [lecture 10](event) in [_oov](course).
+    - What content is available for [_oov](event) in [SOEN 228](course).
+    - What content is available for [_oov](event) in [_oov](course).
+
 # default stuff
 - intent: greet
   examples: |

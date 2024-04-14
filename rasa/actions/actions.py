@@ -171,12 +171,119 @@ class ActionCoursesOfferedBy(Action):
             return []
 
         qm = QueryManager()
-        print(uni_name)
-        print(subject)
         response = qm.query_courses_in_subject_offered_by(uni_name, subject)
 
         if response is None:
             dispatcher.utter_message(text="Sorry, I couldn't find anything for that.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 5
+class ActionMaterialsForTopicInCourse(Action):
+    def name(self):
+        return "action_materials_for_topic_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        topic = tracker.get_slot("topic")
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or topic == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_materials_for_topic_in_course(topic, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any materials.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 6
+class ActionCreditWorth(Action):
+    def name(self):
+        return "action_credit_worth"
+
+    def run(self, dispatcher, tracker, domain):
+        course_name = tracker.get_slot("course")
+
+        if len(course_name.split(" ")) != 2 or course_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that course.")
+            return []
+
+        subject = course_name.split(" ")[0].upper()
+        number = course_name.split(" ")[1]
+
+        qm = QueryManager()
+        credits = qm.query_credit_worth(subject, number)
+
+        if credits is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find the credits for that course.")
+            return []
+
+        dispatcher.utter_message(text=credits)
+        return []
+
+
+# part 1 query 7
+class ActionAdditionalResources(Action):
+    def name(self):
+        return "action_additional_resources"
+
+    def run(self, dispatcher, tracker, domain):
+        course_name = tracker.get_slot("course")
+
+        if len(course_name.split(" ")) != 2 or course_name == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't recognize that course.")
+            return []
+
+        subject = course_name.split(" ")[0].upper()
+        number = course_name.split(" ")[1]
+
+        qm = QueryManager()
+        additional_res = qm.query_additional_resources(subject, number)
+
+        if additional_res is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any additional resources for that course.")
+            return []
+
+        dispatcher.utter_message(text=additional_res)
+        return []
+
+
+# part 1 query 8
+class ActionContentInLecture(Action):
+    def name(self):
+        return "action_content_in_lecture"
+
+    def run(self, dispatcher, tracker, domain):
+        event = tracker.get_slot("event")
+        course = tracker.get_slot("course")
+
+        # expecting event = 'Lecture 2', course = 'COMP 474'
+        if len(event.split(" ")) != 2 or len(course.split(" ")) != 2 or event == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Please specify the course event you are interested in.")
+            return []
+
+        event_type = event.split(" ")[0]
+        event_num = int(event.split(" ")[1])
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_content_in_lecture(event_type, event_num, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text=f"No content found for {event} in {course}.")
             return []
 
         dispatcher.utter_message(text=response)

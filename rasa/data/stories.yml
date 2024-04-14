@@ -44,6 +44,33 @@ stories:
     - intent: courses_in_subject_offered_by
     - action: action_courses_in_subject_offered_by
 
+- story: get materials for a topic in a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: materials_for_topic_in_course
+    - action: action_materials_for_topic_in_course
+
+- story: get course credit value
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: credit_worth
+    - action: action_credit_worth
+
+- story: get additional resources
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: additional_resources
+    - action: action_additional_resources
+
+- story: get content from lecture in class
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: content_in_lecture
+    - action: action_content_in_lecture
 
 - story: happy path
   steps:

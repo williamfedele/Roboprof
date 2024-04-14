@@ -156,7 +156,106 @@ class QueryManager:
         response_msg = f"These are the {subject} courses I found at {uni_name}:\n" + "\n".join(courses)
 
         return response_msg
+    
+    def query_materials_for_topic_in_course(self, topic, course_subject, course_number):
+        query = f"""
+            SELECT ?resource WHERE {{
+            ?topic focu:topicName ?topicName .
+            ?topic focu:provenance ?resource .
+            ?event focu:hasContent ?resource .
+            ?event focu:lectureBelongsTo ?course .
+            ?course focu:courseSubject "{course_subject.upper()}" .
+            ?course focu:courseNumber "{course_number}" .
+            filter contains(lcase(?topicName), "{topic}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        materials = [f"{row['resource']['value']}" for row in response]
+        response_msg = f"These are the materials recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
+
+        return response_msg
+
+    def query_credit_worth(self, course_subject, course_number):
+        query = f"""
+            SELECT ?credits 
+            WHERE 
+            {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?course vivo:courseCredits ?credits .
+            }}
+            LIMIT 1
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        return f"{course_subject} {course_number} is worth {response[0]['credits']['value']} credits." 
+
+    def query_additional_resources(self, course_subject, course_number):
+        query = f"""
+            SELECT ?link WHERE {{
+                ?course rdf:type vivo:Course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?course rdfs:seeAlso ?link
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        links = [f"{row['link']['value']}" for row in response]
+        response_msg = f"These are the additional resources for {course_subject} {course_number}:\n" + "\n".join(links)
+
+        return response_msg
+    
+    def query_content_in_lecture(self, event, event_number, course_subject, course_number):
+
+        # we only have lecture content right now
+        lecture_variants = ["lecture", "lec"]
+        if event.lower() not in lecture_variants:
+            return None
+
+        query = f"""
+            SELECT ?content ?type WHERE {{
+                ?lecture focu:lectureNumber {event_number} .
+                ?lecture focu:lectureBelongsTo ?course .
+                ?lecture focu:hasContent ?content .
+                ?content rdf:type ?type .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        content = [f"{row['content']['value']}, {row['type']['value']}" for row in response]
+        response_msg = f"This is the content for {course_subject} {course_number}, {event} {event_number}:\n" + "\n".join(content)
+
+        return response_msg
+
 
 if __name__ == "__main__":
     qm = QueryManager()
-    print(qm.query_courses_offered_by("concordia"))
+    print(qm.query_additional_resources("comp", "442"))
