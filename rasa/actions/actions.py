@@ -289,6 +289,7 @@ class ActionContentInLecture(Action):
         dispatcher.utter_message(text=response)
         return []
 
+
 # part 1 query 9
 class ActionReadingsForTopicInCourse(Action):
     def name(self):
@@ -315,6 +316,7 @@ class ActionReadingsForTopicInCourse(Action):
         dispatcher.utter_message(text=response)
         return []
 
+
 # part 1 query 10
 class ActionCompetenciesForCourseCompletion(Action):
     def name(self):
@@ -339,6 +341,7 @@ class ActionCompetenciesForCourseCompletion(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
 
 # part 1 query 11
 class ActionGradeAchievedInCourse(Action):
@@ -366,7 +369,8 @@ class ActionGradeAchievedInCourse(Action):
 
         dispatcher.utter_message(text=response)
         return []
-    
+
+
 # part 1 query 12
 class ActionStudentsCompletedCourse(Action):
     def name(self):
@@ -391,7 +395,8 @@ class ActionStudentsCompletedCourse(Action):
 
         dispatcher.utter_message(text=response)
         return []
-    
+
+
 class ActionStudentTranscript(Action):
     def name(self):
         return "action_student_transcript"
@@ -399,7 +404,6 @@ class ActionStudentTranscript(Action):
     def run(self, dispatcher, tracker, domain):
         student = tracker.get_slot("student")
 
-        print(student)
         if student == "unknown":
             dispatcher.utter_message(text="Sorry, I don't understand.")
             return []
