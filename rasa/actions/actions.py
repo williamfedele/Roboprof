@@ -288,3 +288,134 @@ class ActionContentInLecture(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
+
+# part 1 query 9
+class ActionReadingsForTopicInCourse(Action):
+    def name(self):
+        return "action_readings_for_topic_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        topic = tracker.get_slot("topic")
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or topic == "unknown" or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_readings_for_topic_in_course(topic, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any readings materials.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 10
+class ActionCompetenciesForCourseCompletion(Action):
+    def name(self):
+        return "action_competencies_for_course_completion"
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_competencies_for_course_completion(course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any competencies for that course.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 11
+class ActionGradeAchievedInCourse(Action):
+    def name(self):
+        return "action_grade_achieved_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        student = tracker.get_slot("student")
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or course == "unknown" or student == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+        student_id = int(student)
+
+        qm = QueryManager()
+        response = qm.query_grade_achieved_in_course(student_id, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any grades for that student.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+# part 1 query 12
+class ActionStudentsCompletedCourse(Action):
+    def name(self):
+        return "action_students_completed_course"
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+
+        if len(course.split(" ")) != 2 or course == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+
+        qm = QueryManager()
+        response = qm.query_students_completed_course(course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="No students have completed that course.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+class ActionStudentTranscript(Action):
+    def name(self):
+        return "action_student_transcript"
+
+    def run(self, dispatcher, tracker, domain):
+        student = tracker.get_slot("student")
+
+        if student == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        student = int(student)
+
+        qm = QueryManager()
+        response = qm.query_student_transcript(student)
+
+        if response is None:
+            dispatcher.utter_message(text="This student has no transcript.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

@@ -156,6 +156,68 @@ nlu:
     - What content is available for [_oov](event) in [SOEN 228](course).
     - What content is available for [_oov](event) in [_oov](course).
 
+- intent: readings_for_topic_in_course
+  examples: |
+    - What reading materials are recommended for studying [deep learning](topic) in [COMP 474](course)?
+    - What reading materials are recommended for [artificial intelligence](topic) in [comp 472](course)?
+    - What reading materials are recommended for studying[_oov](topic) in [_oov](course)?
+    - What reading materials are recommended for [data mining](topic) in [_oov](course)?
+    - What reading materials are recommended for studying[_oov](topic) in [_oov](course)?
+    - Give me the reading materials recommended for [deep learning](topic) in [COMP 474](course)?
+    - Give me the reading materials recommended for studying[artificial intelligence](topic) in [comp 472](course)?
+    - Give me the reading materials recommended for [_oov](topic) in [_oov](course)?
+    - Give me the reading materials recommended for studying[data mining](topic) in [_oov](course)?
+    - Give me the reading materials recommended for [_oov](topic) in [_oov](course)?
+
+- intent: competencies_for_course_completion
+  examples: |
+    - What competencies does a student gain after completing [COMP 474](course).
+    - What competencies does a student gain after completing [comp 228](course)?
+    - What competencies does a student gain after completing [_oov](course)?
+    - What competencies does a student gain after [COMP 474](course)?
+    - What competencies does a student gain after [comp 228](course).
+    - What competencies does a student gain after [_oov](course)?
+
+- intent: grade_achieved_in_course
+  examples: |
+    - What grades did [12345678](student) achieve in [COMP 474](course)?
+    - What grades did [91827364](student) achieve in [comp 472](course)?
+    - What grades did [73625382](student) achieve in [COMP 474](course)?
+    - What grades did [28746372](student) achieve in [comp 472](course)?
+    - What grades did [_oov](student) achieve in [soen 228](course).
+    - What grades did [_oov](student) achieve in [_oov](course)?
+    - What grade did [91837231](student) get in [COMP 474](course)?
+    - What grade did [23456789](student) get in [CHEM 333](course).
+    - What grade did [23472828](student) get in [comp 474](course)?
+    - What grade did [55372742](student) get in [chem 333](course).
+    - What grade did [_oov](student) get in [soen 228](course)?
+    - What grade did [_oov](student) get in [_oov](course).
+
+- intent: students_completed_course
+  examples: |
+    - Which students have completed [COMP 474](course).
+    - Which students have completed [comp 228](course)?
+    - Which students have completed [_oov](course)?
+    - Which students completed [COMP 474](course)?
+    - Which students completed [chem 333](course).
+    - Which students completed [_oov](course)?
+
+- intent: student_transcript
+  examples: |
+    - Print a transcript for [55372742](student), listing all the courses taken with their grades.
+    - Print a transcript for [11723611](student), listing all the courses taken with their grades.
+    - Print a transcript for [62512434](student), listing all the courses taken with their grades.
+    - Print a transcript for [84525235](student), listing all the courses taken with their grades.
+    - Print a transcript for [_oov](student), listing all the courses taken with their grades.
+    - Print a transcript for [_oov](student), listing all their grades.
+    - Print a transcript for [55372742](student).
+    - Print a transcript for [11723611](student).
+    - Print a transcript for [82352352](student).
+    - Print a transcript for [83452123](student).
+    - Print a transcript for [_oov](student).
+    - Print a transcript for [_oov](student) with their grades.
+
+
 # default stuff
 - intent: greet
   examples: |

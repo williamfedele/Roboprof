@@ -255,6 +255,133 @@ class QueryManager:
 
         return response_msg
 
+    def query_readings_for_topic_in_course(self, topic, course_subject, course_number):    
+        query = f"""
+            SELECT ?resource WHERE {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?event focu:lectureBelongsTo ?course .
+                ?event focu:hasContent ?resource2 .
+                ?event focu:hasContent ?resource .
+                ?topic focu:provenance ?resource2 .
+                ?topic focu:topicName ?topicName .
+                ?resource rdf:type focu:Reading .                
+                filter contains(lcase(?topicName), "{topic}")
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        materials = [f"{row['resource']['value']}" for row in response]
+        response_msg = f"These are the readings recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
+
+        return response_msg
+    
+    def query_competencies_for_course_completion(self, course_subject, course_number):
+        query = f"""
+            SELECT ?topic WHERE {{
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?lecture focu:lectureBelongsTo ?course .
+                ?lecture focu:hasContent ?resource .
+                ?topic focu:provenance ?resource .
+                ?topic focu:topicName ?topicName .
+            }}
+        """
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        competencies = [f"{row['topic']['value']}" for row in response]
+        response_msg = f"These are the competencies acquired for completing {course_subject} {course_number}:\n" + "\n".join(competencies)
+
+        return response_msg
+    
+    def query_grade_achieved_in_course(self, student, course_subject, course_number):
+        query = f"""
+            SELECT ?grades WHERE {{
+                ?student focu:studentId {student} .
+                ?student focu:CompletedCourses ?completed .
+                ?completed focu:achievedInCourse ?course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?completed focu:achievedGrade ?grades .
+                ?completed focu:achievedDate ?date .
+            }}
+            ORDER BY DESC(?date)
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        grades = [f"{row['grades']['value']}" for row in response]
+        response_msg = f"These are the grades student {student} got in {course_subject} {course_number}:\n" + "\n".join(grades)
+
+        return response_msg
+    
+    def query_students_completed_course(self, course_subject, course_number):
+        query = f"""
+            SELECT DISTINCT ?studentid WHERE {{
+                ?student focu:CompletedCourses ?completed .
+                ?student focu:studentId ?studentid .
+                ?completed focu:achievedInCourse ?course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+            }}
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        students = [f"{row['studentid']['value']}" for row in response]
+        response_msg = f"These are the students that completed {course_subject} {course_number}:\n" + "\n".join(students)
+
+        return response_msg
+    
+    def query_student_transcript(self, student):
+        query = f"""
+            SELECT ?course ?grade ?date WHERE {{
+                ?student focu:studentId {student} .
+                ?student focu:CompletedCourses ?completed .
+                ?completed focu:achievedInCourse ?course .
+                ?completed focu:achievedGrade ?grade .
+                ?completed focu:achievedDate ?date .
+            }}
+            ORDER BY ?course DESC(?date)
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        students = [f"{row['course']['value']}, {row['grade']['value']}, {row['date']['value']}" for row in response]
+        response_msg = f"This is the transcript for student {student}:\n" + "\n".join(students)
+
+        return response_msg
+
 
 if __name__ == "__main__":
     qm = QueryManager()

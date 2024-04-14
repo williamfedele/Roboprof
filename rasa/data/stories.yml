@@ -72,6 +72,43 @@ stories:
     - intent: content_in_lecture
     - action: action_content_in_lecture
 
+- story: get readings for a topic in a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: readings_for_topic_in_course
+    - action: action_readings_for_topic_in_course
+
+- story: get competencies for completing a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: competencies_for_course_completion
+    - action: action_competencies_for_course_completion
+
+- story: get grades achieved in a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: grade_achieved_in_course
+    - action: action_grade_achieved_in_course
+
+- story: get students who have completed a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: students_completed_course
+    - action: action_students_completed_course
+
+- story: get a students transcript
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: student_transcript
+    - action: action_student_transcript
+
+
+# default stuff
 - story: happy path
   steps:
   - intent: greet

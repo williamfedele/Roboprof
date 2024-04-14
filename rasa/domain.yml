@@ -18,13 +18,19 @@ intents:
   - credit_worth
   - additional_resources
   - content_in_lecture
-
+  - readings_for_topic_in_course
+  - competencies_for_course_completion
+  - grade_achieved_in_course
+  - students_completed_course
+  - student_transcript
+  
 entities:
   - course
   - event
   - topic
   - university
   - subject
+  - student
 
 actions:
   - action_about_course # Part 2 Query 2
@@ -37,6 +43,11 @@ actions:
   - action_credit_worth #part 1 query 6
   - action_additional_resources # part 1 query 7
   - action_content_in_lecture # part 1 query 8
+  - action_readings_for_topic_in_course # part 1 query 9
+  - action_competencies_for_course_completion # part 1 query 10
+  - action_grade_achieved_in_course # part 1 query 11
+  - action_students_completed_course # part 1 query 12
+  - action_student_transcript # part 1 query 13
 
 slots:
   course:
@@ -69,6 +80,12 @@ slots:
     mappings:
       - type: from_entity
         entity: subject
+  student:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: student
 
 
 
