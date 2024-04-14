@@ -339,3 +339,31 @@ class ActionCompetenciesForCourseCompletion(Action):
 
         dispatcher.utter_message(text=response)
         return []
+    
+class ActionGradeAchievedInCourse(Action):
+    def name(self):
+        return "action_grade_achieved_in_course"
+
+    def run(self, dispatcher, tracker, domain):
+        student = tracker.get_slot("student")
+        course = tracker.get_slot("course")
+        print(student)
+        print(course)
+
+        if len(course.split(" ")) != 2 or course == "unknown" or student == "unknown":
+            dispatcher.utter_message(text="Sorry, I don't understand.")
+            return []
+
+        course_subject = course.split(" ")[0]
+        course_number = course.split(" ")[1]
+        student_id = int(student)
+
+        qm = QueryManager()
+        response = qm.query_grade_achieved_in_course(student_id, course_subject, course_number)
+
+        if response is None:
+            dispatcher.utter_message(text="Sorry, I couldn't find any grades for that student.")
+            return []
+
+        dispatcher.utter_message(text=response)
+        return []

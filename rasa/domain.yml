@@ -20,6 +20,7 @@ intents:
   - content_in_lecture
   - readings_for_topic_in_course
   - competencies_for_course_completion
+  - grade_achieved_in_course
 
 entities:
   - course
@@ -27,6 +28,7 @@ entities:
   - topic
   - university
   - subject
+  - student
 
 actions:
   - action_about_course # Part 2 Query 2
@@ -41,6 +43,7 @@ actions:
   - action_content_in_lecture # part 1 query 8
   - action_readings_for_topic_in_course # part 1 query 9
   - action_competencies_for_course_completion # part 1 query 10
+  - action_grade_achieved_in_course
 
 slots:
   course:
@@ -73,6 +76,12 @@ slots:
     mappings:
       - type: from_entity
         entity: subject
+  student:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: student
 
 
 

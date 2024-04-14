@@ -178,6 +178,21 @@ nlu:
     - What competencies does a student gain after [comp 228](course).
     - What competencies does a student gain after [_oov](course)?
 
+- intent: grade_achieved_in_course
+  examples: |
+    - What grades did [12345678](student) achieve in [COMP 474](course)?
+    - What grades did [91827364](student) achieve in [comp 472](course)?
+    - What grades did [73625382](student) achieve in [COMP 474](course)?
+    - What grades did [28746372](student) achieve in [comp 472](course)?
+    - What grades did [_oov](student) achieve in [soen 228](course).
+    - What grades did [_oov](student) achieve in [_oov](course)?
+    - What grade did [91837231](student) get in [COMP 474](course)?
+    - What grade did [23456789](student) get in [CHEM 333](course).
+    - What grade did [23472828](student) get in [comp 474](course)?
+    - What grade did [55372742](student) get in [chem 333](course).
+    - What grade did [_oov](student) get in [soen 228](course)?
+    - What grade did [_oov](student) get in [_oov](course).
+
 # default stuff
 - intent: greet
   examples: |

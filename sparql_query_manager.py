@@ -305,6 +305,34 @@ class QueryManager:
         response_msg = f"These are the competencies acquired for completing {course_subject} {course_number}:\n" + "\n".join(competencies)
 
         return response_msg
+    
+    def query_grade_achieved_in_course(self, student, course_subject, course_number):
+        query = f"""
+            SELECT ?grades WHERE {{
+                ?student focu:studentId {student} .
+                ?student focu:CompletedCourses ?completed .
+                ?completed focu:achievedInCourse ?course .
+                ?course focu:courseSubject "{course_subject.upper()}" .
+                ?course focu:courseNumber "{course_number}" .
+                ?completed focu:achievedGrade ?grades .
+                ?completed focu:achievedDate ?date .
+            }}
+            ORDER BY DESC(?date)
+        """
+
+        response = self.make_query(query)
+        if response == None:
+            return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        grades = [f"{row['grades']['value']}" for row in response]
+        response_msg = f"These are the grades student {student} got in {course_subject} {course_number}:\n" + "\n".join(grades)
+
+        return response_msg
+
 
 if __name__ == "__main__":
     qm = QueryManager()

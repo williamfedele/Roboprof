@@ -86,6 +86,13 @@ stories:
     - intent: competencies_for_course_completion
     - action: action_competencies_for_course_completion
 
+- story: get grades achieved in a curse
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: grade_achieved_in_course
+    - action: action_grade_achieved_in_course
+
 - story: happy path
   steps:
   - intent: greet
