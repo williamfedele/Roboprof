@@ -1,11 +1,17 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?topic WHERE {
-  ?topic rdf:type focu:Topic .
-  ?topic focu:provenance ?lecture .
-  ?lecture focu:lectureNumber 1 .
-  ?lecture focu:lectureBelongsTo ?course .
-  ?course focu:courseSubject "COMP" .
-  ?course focu:courseNumber "474" .
-}
+SELECT ?topicName ?topic ?resource
+WHERE 
+{{
+?course rdf:type vivo:Course .
+?course focu:courseSubject "COMP" .
+?course focu:courseNumber "474" .
+?event rdf:type focu:Lecture ;
+            focu:lectureBelongsTo ?course ;
+            focu:lectureNumber 2 ;
+            focu:hasContent ?resource .
+?topic focu:provenance ?resource .
+?topic focu:topicName ?topicName ;
+}}
+ORDER BY ?topicName

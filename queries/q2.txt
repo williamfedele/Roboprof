@@ -1,9 +1,13 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT DISTINCT ?course WHERE {
-  ?topic rdf:type focu:Topic .
-  ?topic focu:topicName "NLP" .
-  ?topic focu:provenance ?lecture .
-  ?lecture focu:lectureBelongsTo ?course .
-}
+SELECT DISTINCT ?course 
+WHERE 
+{{
+    ?topic rdf:type focu:Topic .
+    ?topic focu:provenance ?resource .
+    ?topic focu:topicName ?topicName .
+    ?event focu:hasContent ?resource .
+    ?event focu:lectureBelongsTo ?course .
+    filter contains(lcase(?topicName), "deep learning")
+}}
