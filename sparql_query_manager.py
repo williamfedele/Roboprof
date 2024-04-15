@@ -34,7 +34,7 @@ class QueryManager:
             return None
 
         query = f"""
-            SELECT ?topicName ?topic ?resource
+            SELECT ?topicName ?resource
             WHERE 
             {{
             ?course rdf:type vivo:Course .
@@ -52,40 +52,60 @@ class QueryManager:
         response = self.make_query(query)
         if response == None:
             return None
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+        
+        topics = [f"{row['topicName']['value']} which can be found at {row['resource']['value']}." for row in response]
+        response_message = "Here's what I found:\n" + "\n".join(topics)
 
-        return response.json()["results"]["bindings"]
+        return response_message
 
     def query_covers_topic(self, topic_name):
 
         query = f"""
-            SELECT ?course ?event (COUNT(?topic) AS ?count)
+            SELECT ?subject ?number ?lecNumber (COUNT(?topic) AS ?count)
             WHERE 
             {{
             ?course rdf:type vivo:Course .
+            ?course focu:courseSubject ?subject .
+            ?course focu:courseNumber ?number .
             ?event focu:lectureBelongsTo ?course ;
+                    focu:lectureNumber ?lecNumber ;
                     focu:hasContent ?resource .
             ?topic focu:provenance ?resource .
             ?topic focu:topicName ?topicName ;
-            filter contains(lcase(?topicName), "{topic_name.lower()}")
+            filter contains(lcase(?topicName), "{topic_name}")
             }}
-            GROUP BY ?course ?event
+            GROUP BY ?subject ?number ?lecNumber
             ORDER BY DESC(?count)
         """
         response = self.make_query(query)
         if response == None:
             return None
-        return response.json()["results"]["bindings"]
+        
+        response = response.json()["results"]["bindings"]
+        if not response:
+            return None
+
+        topics = [f"{row['subject']['value']} {row['number']['value']} covers that topic in lecture {row['lecNumber']['value']}. It appears {row['count']['value']} time(s)." for row in response]
+        response_msg = "Here's what I found:\n" + "\n".join(topics)
+
+        return response_msg
     
     def query_courses_offered_by(self, uni_name):
 
         query = f"""
-            SELECT ?course ?name 
+            SELECT ?subject ?number ?name
             WHERE 
             {{
                 ?course rdf:type vivo:Course .
                 ?course vivo:offeredBy ?uni .
                 ?uni rdfs:label ?uni_name .  
                 ?course focu:courseName ?name .
+    			?course focu:courseSubject ?subject .
+    			?course focu:courseNumber ?number .
                 filter contains(lcase(?uni_name), "{uni_name.lower()}")
             }}
         """
@@ -97,15 +117,15 @@ class QueryManager:
         if not response:
             return None
 
-        courses = [f"{row['course']['value']}, {row['name']['value']}" for row in response]
-        response_msg = f"These are the courses offerd by {uni_name}:\n" + "\n".join(courses)
+        courses = [f"{row['subject']['value']} {row['number']['value']}: {row['name']['value']}" for row in response]
+        response_msg = f"These are the courses offered by {uni_name}:\n" + "\n".join(courses)
 
         return response_msg
     
     def query_courses_covering_topic(self, topic_name):
 
         query = f"""
-            SELECT DISTINCT ?course 
+            SELECT DISTINCT ?course ?subject ?number ?name 
             WHERE 
             {{
                 ?topic rdf:type focu:Topic .
@@ -113,6 +133,9 @@ class QueryManager:
                 ?topic focu:topicName ?topicName .
                 ?event focu:hasContent ?resource .
                 ?event focu:lectureBelongsTo ?course .
+    			?course focu:courseSubject ?subject .
+    			?course focu:courseNumber ?number .
+    			?course focu:courseName ?name .
                 filter contains(lcase(?topicName), "{topic_name.lower()}")
             }}
         """
@@ -124,7 +147,7 @@ class QueryManager:
         if not response:
             return None
 
-        topics = [f"{row['course']['value']}" for row in response]
+        topics = [f"{row['subject']['value']} {row['number']['value']}: {row['name']['value']}" for row in response]
         response_msg = f"I found {topic_name} discussed here:\n" + "\n".join(topics)
 
         return response_msg
@@ -132,13 +155,14 @@ class QueryManager:
     def query_courses_in_subject_offered_by(self, uni_name, subject):
 
         query = f"""
-            SELECT ?course ?name 
+            SELECT ?subject ?number ?name 
             WHERE 
             {{
                 ?course rdf:type vivo:Course .
                 ?course vivo:offeredBy ?uni .
                 ?uni rdfs:label ?uni_name .  
                 ?course focu:courseName ?name .
+                ?course focu:courseNumber ?number .
     			?course focu:courseSubject ?subject .
                 filter contains(lcase(?uni_name), "{uni_name.lower()}") .
     			filter contains(lcase(?subject), "{subject.lower()}")
@@ -152,7 +176,7 @@ class QueryManager:
         if not response:
             return None
 
-        courses = [f"{row['course']['value']}, {row['name']['value']}" for row in response]
+        courses = [f"{row['subject']['value']} {row['number']['value']}: {row['name']['value']}" for row in response]
         response_msg = f"These are the {subject} courses I found at {uni_name}:\n" + "\n".join(courses)
 
         return response_msg
@@ -257,7 +281,7 @@ class QueryManager:
 
     def query_readings_for_topic_in_course(self, topic, course_subject, course_number):    
         query = f"""
-            SELECT ?resource WHERE {{
+            SELECT ?desc WHERE {{
                 ?course focu:courseSubject "{course_subject.upper()}" .
                 ?course focu:courseNumber "{course_number}" .
                 ?event focu:lectureBelongsTo ?course .
@@ -265,7 +289,8 @@ class QueryManager:
                 ?event focu:hasContent ?resource .
                 ?topic focu:provenance ?resource2 .
                 ?topic focu:topicName ?topicName .
-                ?resource rdf:type focu:Reading .                
+                ?resource rdf:type focu:Reading .
+                ?resource focu:readingDescription ?desc                
                 filter contains(lcase(?topicName), "{topic}")
             }}
         """
@@ -277,14 +302,14 @@ class QueryManager:
         if not response:
             return None
 
-        materials = [f"{row['resource']['value']}" for row in response]
+        materials = [f"{row['desc']['value']}" for row in response]
         response_msg = f"These are the readings recommended for {topic} in {course_subject} {course_number}:\n" + "\n".join(materials)
 
         return response_msg
     
     def query_competencies_for_course_completion(self, course_subject, course_number):
         query = f"""
-            SELECT ?topic WHERE {{
+            SELECT ?topicName WHERE {{
                 ?course focu:courseSubject "{course_subject.upper()}" .
                 ?course focu:courseNumber "{course_number}" .
                 ?lecture focu:lectureBelongsTo ?course .
@@ -301,8 +326,8 @@ class QueryManager:
         if not response:
             return None
 
-        competencies = [f"{row['topic']['value']}" for row in response]
-        response_msg = f"These are the competencies acquired for completing {course_subject} {course_number}:\n" + "\n".join(competencies)
+        competencies = [f"{row['topicName']['value']}" for row in response]
+        response_msg = f"These are the competencies acquired for completing {course_subject} {course_number}:\n" + ", ".join(competencies)
 
         return response_msg
     
@@ -329,7 +354,7 @@ class QueryManager:
             return None
 
         grades = [f"{row['grades']['value']}" for row in response]
-        response_msg = f"These are the grades student {student} got in {course_subject} {course_number}:\n" + "\n".join(grades)
+        response_msg = f"These are the grades student {student} got in {course_subject} {course_number}: " + ", ".join(grades)
 
         return response_msg
     
@@ -359,10 +384,12 @@ class QueryManager:
     
     def query_student_transcript(self, student):
         query = f"""
-            SELECT ?course ?grade ?date WHERE {{
+            SELECT ?subject ?number ?grade ?date WHERE {{
                 ?student focu:studentId {student} .
                 ?student focu:CompletedCourses ?completed .
                 ?completed focu:achievedInCourse ?course .
+                ?course focu:courseSubject ?subject .
+                ?course focu:courseNumber ?number .
                 ?completed focu:achievedGrade ?grade .
                 ?completed focu:achievedDate ?date .
             }}
@@ -377,7 +404,7 @@ class QueryManager:
         if not response:
             return None
 
-        students = [f"{row['course']['value']}, {row['grade']['value']}, {row['date']['value']}" for row in response]
+        students = [f"In {row['subject']['value']} {row['number']['value']}, a {row['grade']['value']} was achieved on {row['date']['value']}." for row in response]
         response_msg = f"This is the transcript for student {student}:\n" + "\n".join(students)
 
         return response_msg

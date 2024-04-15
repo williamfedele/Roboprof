@@ -3,15 +3,18 @@ PREFIX vivo: <http://vivoweb.org/ontology/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?course ?event (COUNT(?topic) AS ?count)
+SELECT ?subject ?number ?lecNumber (COUNT(?topic) AS ?count)
 WHERE 
 {{
-?course rdf:type vivo:Course .
-?event focu:lectureBelongsTo ?course ;
-        focu:hasContent ?resource .
-?topic focu:provenance ?resource .
-?topic focu:topicName ?topicName ;
-filter contains(lcase(?topicName), "data mining")
+        ?course rdf:type vivo:Course .
+        ?course focu:courseSubject ?subject .
+        ?course focu:courseNumber ?number .
+        ?event focu:lectureBelongsTo ?course ;
+                focu:lectureNumber ?lecNumber ;
+                focu:hasContent ?resource .
+        ?topic focu:provenance ?resource .
+        ?topic focu:topicName ?topicName ;
+        filter contains(lcase(?topicName), "eliza")
 }}
-GROUP BY ?course ?event
+GROUP BY ?subject ?number ?lecNumber
 ORDER BY DESC(?count)

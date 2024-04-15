@@ -68,19 +68,11 @@ class ActionEventTopics(Action):
         response = qm.query_course_event_topics(event_type, event_num, course_subject, course_number)
 
         if response is None:
-            dispatcher.utter_message(text=f"No topics found for {event} in {course}.")
-            return []
+            dispatcher.utter_message(text=f"I couldn't find any topics for {event} in {course}")
+            return []  
 
-        # TODO move to query manager
-        if response:
-            topics = [
-                f"{row['topicName']['value']}, {row['topic']['value']}, {row['resource']['value']}" for row in response
-            ]
-            response_message = "Here's what I found:\n" + "\n".join(topics)
-        else:
-            response_message = f"No topics found for {event} in {course}."
 
-        dispatcher.utter_message(text=response_message)
+        dispatcher.utter_message(text=response)
         return []
 
 
@@ -100,14 +92,10 @@ class ActionCoversTopic(Action):
         response = qm.query_covers_topic(topic_name)
 
         if response is None:
-            dispatcher.utter_message(text="Sorry, I don't recognize that topic.")
-            return []
+            dispatcher.utter_message(text="Sorry, it doesn't look like any course covers that topic.")
+            return []        
 
-        # TODO move to query manager
-        topics = [f"{row['course']['value']}, {row['event']['value']}" for row in response]
-        response_msg = "Here's what I found:\n" + "\n".join(topics)
-
-        dispatcher.utter_message(text=response_msg)
+        dispatcher.utter_message(text=response)
         return []
 
 
