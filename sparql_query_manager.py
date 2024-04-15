@@ -48,6 +48,7 @@ class QueryManager:
             ?topic focu:topicName ?topicName ;
             }}
             ORDER BY ?topicName
+            LIMIT 10
         """
         response = self.make_query(query)
         if response == None:
@@ -108,6 +109,7 @@ class QueryManager:
     			?course focu:courseNumber ?number .
                 filter contains(lcase(?uni_name), "{uni_name.lower()}")
             }}
+            LIMIT 50
         """
         response = self.make_query(query)
         if response == None:
@@ -167,6 +169,7 @@ class QueryManager:
                 filter contains(lcase(?uni_name), "{uni_name.lower()}") .
     			filter contains(lcase(?subject), "{subject.lower()}")
             }}
+            LIMIT 50
         """
         response = self.make_query(query)
         if response == None:
@@ -317,6 +320,7 @@ class QueryManager:
                 ?topic focu:provenance ?resource .
                 ?topic focu:topicName ?topicName .
             }}
+            LIMIT 50
         """
         response = self.make_query(query)
         if response == None:

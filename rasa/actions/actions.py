@@ -19,7 +19,7 @@ sys.path.append(
 )  # needed since sparql_api is in the parent directory. we can move sparql_api here as an alternative
 from sparql_query_manager import QueryManager
 
-# part 2 query 2
+# part 2 query 1
 class ActionAboutCourse(Action):
     def name(self):
         return "action_about_course"
@@ -45,7 +45,7 @@ class ActionAboutCourse(Action):
         return []
 
 
-# part 2 query 3
+# part 2 query 2
 class ActionEventTopics(Action):
     def name(self):
         return "action_event_topics"
