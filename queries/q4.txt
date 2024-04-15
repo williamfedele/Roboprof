@@ -3,10 +3,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX focu: <http://focu.io/schema#>
 PREFIX focudata: <http://focu.io/data#>
 
-SELECT ?course ?name ?subject WHERE {
-  ?course rdf:type vivo:Course .
-  ?course vivo:offeredBy focudata:Concordia_University .
-  ?course focu:courseSubject ?subject .
-  FILTER(?subject="COMP") .
-  ?course focu:courseName ?name .
+SELECT ?course ?name
+WHERE
+{
+    ?course rdf:type vivo:Course .
+    ?course vivo:offeredBy ?uni .
+    ?uni rdfs:label ?uni_name .  
+    ?course focu:courseName ?name .
+    ?course focu:courseSubject ?subject .
+    filter contains(lcase(?uni_name), "concordia") .
+    filter contains(lcase(?subject), "comp")
 }

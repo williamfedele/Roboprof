@@ -1,11 +1,11 @@
 PREFIX focu: <http://focu.io/schema#>
 
-SELECT ?content WHERE {
-  ?topic focu:topicName "NLP" .
-  ?topic focu:provenance ?lecture .
-  ?lecture focu:lectureBelongsTo ?course .
-  ?lecture focu:hasTopic ?topic .
-  ?lecture focu:hasContent ?content .
+SELECT ?resource WHERE {{
+  ?topic focu:topicName ?topicName .
+  ?topic focu:provenance ?resource .
+  ?event focu:hasContent ?resource .
+  ?event focu:lectureBelongsTo ?course .
   ?course focu:courseSubject "COMP" .
   ?course focu:courseNumber "474" .
-}
+  filter contains(lcase(?topicName), "deep learning")
+}}
