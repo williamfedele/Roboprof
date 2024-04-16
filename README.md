@@ -70,7 +70,8 @@ Roboprof is an intelligent agent designed to answer questions related to univers
 - `topic_processor.py`: Implements named entity recognition and linking to Wikidata.
 - `constants.py`: Maintains consistent URIs across scripts.
 - `helpers.py`: Provides reusable utility functions.
-- `sparql_api.py`: Manages connections to the Fuseki SPARQL server.
+- `sparql_fuseki_manager.py`: Manages connection and creation to the Fuseki SPARQL server.
+- `sparql_query_manager.py`: Stores queries and parsing logic for each rasa action.
 - `main.py`: Central script initiating the Fuseki server, graph building, and database setup.
 
 ### SPARQL Server Setup
