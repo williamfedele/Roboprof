@@ -1,6 +1,14 @@
-# Roboprof Project README
+<div>
+  <h2 align="center">Roboprof</h2>
+  <p align="center">
+      An intelligent agent designed to answer questions related to university courses and students by leveraging a knowledge graph and NLP techniques in Python.
+  </p>
+  <p align="center">
+    <img src="assets/demo.png">
+  </p>
+</div>
 
-Roboprof is an intelligent agent designed to answer questions related to university courses and students by leveraging a knowledge graph and natural language processing techniques. It can handle queries like, “What is course COMP 474 about?”, “Which topics is Jane competent in?” or “Which courses at Concordia teach deep learning?”
+
 
 ## Getting Started
 
@@ -20,7 +28,7 @@ Roboprof is an intelligent agent designed to answer questions related to univers
 #### Set up Fuseki Server
 - Run the Fuseki server via:
   ```
-  python main.py fuseki-server
+  python main.py start_fuseki
   ```
   or follow the detailed setup instructions in the SPARQL server setup section below.
 
